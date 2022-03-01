@@ -52,10 +52,11 @@ jobs:
           # git rev-parse @~)
           echo $MYCOMMITID
           # create sub-directory named $MYCOMMITID
+          rm -rf $GITHUB_WORKSPACE/$MYCOMMITID
           mkdir -p $GITHUB_WORKSPACE/$MYCOMMITID
           # ls
           # shopt -s extglob
-          # mv !($MYCOMMITID) $MYCOMMITID
+          # mv !($MYCOMMITID) $MYCOMMITID          
           mv $GITHUB_WORKSPACE/source/nexus_definitions/manual/build/html/* $GITHUB_WORKSPACE/$MYCOMMITID
           # ls $MYCOMMITID/*
           # replace time and commitid on main page
