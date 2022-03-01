@@ -71,7 +71,8 @@ jobs:
           # sed -i 's/<<AUTO_INJECT_COMMIT_ID>>/'$MYCOMMITID'/' $GITHUB_WORKSPACE/$MYCOMMITID/index.html
           # sed -i "s/<<AUTO_INJECT_COMMIT_ID>>/$MYCOMMITID/" $GITHUB_WORKSPACE/$MYCOMMITID/index.html
           # sed -i 's/<<AUTO_INJECT_COMMIT_ID>>/'"$MYCOMMITID"'/' $GITHUB_WORKSPACE/$MYCOMMITID/index.html
-          sed -i 's/&lt;&lt;AUTO_INJECT_COMMIT_ID&gt;&gt;/$MYCOMMITID/' $GITHUB_WORKSPACE/$MYCOMMITID/index.html
+          # sed -i 's/&lt;&lt;AUTO_INJECT_COMMIT_ID&gt;&gt;/$MYCOMMITID/' $GITHUB_WORKSPACE/$MYCOMMITID/index.html
+          sed -i 's/&lt;&lt;AUTO_INJECT_COMMIT_ID&gt;&gt;/'"$MYCOMMITID"'/' $GITHUB_WORKSPACE/$MYCOMMITID/index.html          
           echo "Was auto inject commit id ??? replaced ???"
           head -1000 $GITHUB_WORKSPACE/$MYCOMMITID/index.html
           echo "Inspecting github workspace..."
