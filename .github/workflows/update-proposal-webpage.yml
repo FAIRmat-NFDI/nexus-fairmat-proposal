@@ -32,33 +32,38 @@ jobs:
         
       - name: Pull the state of the source repo, i.e. the one with the rst source code
         run: |
-          cd $GITHUB_WORKSPACE
-          mkdir -p source
-          cd source
-          ls $PWD
+          mkdir -p $GITHUB_WORKSPACE/source
+          cd $GITHUB_WORKSPACE/source
+          # ls $PWD
           git clone https://github.com/FAIRmat-Experimental/nexus_definitions.git
-          cd nexus_definitions
+          cd $GITHUB_WORKSPACE/source/nexus_definitions
           git checkout fairmat
-          git status
-          ls $PWD
+          # git status
+          # ls $PWD
           # local repository is the target repo
-          #mkdir -p docs
+          # mkdir -p docs
           make all
           # replace the links with the current one
           grep -rl '  https:\/\/github.com\/nexusformat\/definitions\/blob\/main' --exclude-dir=.git | xargs sed -i 's/  https:\/\/github.com\/nexusformat\/definitions\/blob\/main/  https:\/\/github.com\/FAIRmat-Experimental\/nexus_definitions\/tree\/fairmat/'
-          MYCOMMITID=$(git rev-parse @~)
+          cd $GITHUB_WORKSPACE
+          MYCOMMITID=$(git log -1 | grep ^commit | cut -d " " -f 2) 
+          # git rev-parse @~)
           echo $MYCOMMITID
           # create sub-directory named $MYCOMMITID
-          mkdir -p $MYCOMMITID
-          ls
-          shopt -s extglob
-          mv !($MYCOMMITID) $MYCOMMITID
-          ls $MYCOMMITID/*
+          mkdir -p $GITHUB_WORKSPACE/$MYCOMMITID
+          # ls
+          # shopt -s extglob
+          # mv !($MYCOMMITID) $MYCOMMITID
+          mv $GITHUB_WORKSPACE/source/nexus_definitions/manual/build/* $GITHUB_WORKSPACE/$MYCOMMITID
+          # ls $MYCOMMITID/*
           # replace time and commitid on main page
-          cp $MYCOMMITID/manual/source/sed/entry-page.html index.html
+          cp $GITHUB_WORKSPACE/source/nexus_definitions/manual/source/sed/entry-page.html $GITHUB_WORKSPACE/index.html
+          sed -i 's/<<AUTO_INJECT_CURRENT_VERSION>>/https:\/\/FAIRmat-Experimental.github.io\/nexus-fairmat-proposal\/' $GITHUB_WORKSPACE/index.html
           head -1000 index.html
-          echo "Inspect correct links in nxdls for nexus_definitions"
-          tail -1000 $MYCOMMITID/manual/build/html/classes/applications/NXapm.html
+          echo "Inspecting github workspace..."
+          ls $GITHUB_WORKSPACE/*
+          # echo "Inspect correct links in nxdls for nexus_definitions"
+          # tail -1000 $MYCOMMITID/manual/build/html/classes/applications/NXapm.html
           # replace link in the index.html to the one under mycommitid/index.html
           # replace 
           #/home/runner/work/nexus-fairmat-proposal/nexus-fairmat-proposal/source/definitions/manual
