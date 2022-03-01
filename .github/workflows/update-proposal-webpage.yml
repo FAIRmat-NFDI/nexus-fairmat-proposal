@@ -66,10 +66,11 @@ jobs:
           echo $MYCOMMITTC
           echo $MYCOMMITID
           #sed -i 's/<<AUTO_INJECT_COMMIT_TC>>/\'$MYCOMMITTC\'/' $GITHUB_WORKSPACE/$MYCOMMITID/index.html
-          sed -i 's/<<AUTO_INJECT_COMMIT_ID>>/\'$MYCOMMITID\'/' $GITHUB_WORKSPACE/$MYCOMMITID/index.html
+          sed -i 's/<<AUTO_INJECT_COMMIT_ID>>/'$MYCOMMITID'/' $GITHUB_WORKSPACE/$MYCOMMITID/index.html
           head -1000 $GITHUB_WORKSPACE/$MYCOMMITID/index.html
           echo "Inspecting github workspace..."
           ls $GITHUB_WORKSPACE/*
+          ls $GITHUB_WORKSPACE/$MYCOMMITID/*
           # echo "Inspect correct links in nxdls for nexus_definitions"
           # tail -1000 $MYCOMMITID/manual/build/html/classes/applications/NXapm.html
           # replace link in the index.html to the one under mycommitid/index.html
