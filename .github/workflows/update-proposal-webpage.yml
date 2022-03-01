@@ -51,7 +51,8 @@ jobs:
           # create sub-directory named $MYCOMMITID
           mkdir -p $MYCOMMITID
           ls
-          mv * $MYCOMMITID
+          shopt -s extglob
+          mv !($MYCOMMITID) $MYCOMMITID
           ls $MYCOMMITID/*
           # replace time and commitid on main page
           cp $MYCOMMITID/manual/source/sed/entry-page.html index.html
