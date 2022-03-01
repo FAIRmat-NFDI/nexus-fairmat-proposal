@@ -58,7 +58,7 @@ jobs:
           # ls $MYCOMMITID/*
           # replace time and commitid on main page
           cp $GITHUB_WORKSPACE/source/nexus_definitions/manual/source/sed/entry-page.html $GITHUB_WORKSPACE/index.html
-          sed -i 's/<<AUTO_INJECT_CURRENT_VERSION>>/https:\/\/FAIRmat-Experimental.github.io\/nexus-fairmat-proposal\/' $GITHUB_WORKSPACE/index.html
+          sed -i 's/<<AUTO_INJECT_CURRENT_VERSION>>/https:\/\/FAIRmat-Experimental.github.io\/nexus-fairmat-proposal/' $GITHUB_WORKSPACE/index.html
           head -1000 index.html
           echo "Inspecting github workspace..."
           ls $GITHUB_WORKSPACE/*
