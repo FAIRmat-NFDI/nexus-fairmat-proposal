@@ -43,10 +43,12 @@ jobs:
           # local repository is the target repo
           # mkdir -p docs
           make all
+          # get commit id of the source repo, not of the nexus-fairmat-proposal target repo !
+          MYCOMMITID=$(git log -1 | grep ^commit | cut -d " " -f 2)
+          MYCOMMITTC=$(git log -1 | grep ^Date)
           # replace the links with the current one
           grep -rl '  https:\/\/github.com\/nexusformat\/definitions\/blob\/main' --exclude-dir=.git | xargs sed -i 's/  https:\/\/github.com\/nexusformat\/definitions\/blob\/main/  https:\/\/github.com\/FAIRmat-Experimental\/nexus_definitions\/tree\/fairmat/'
-          cd $GITHUB_WORKSPACE
-          MYCOMMITID=$(git log -1 | grep ^commit | cut -d " " -f 2) 
+          cd $GITHUB_WORKSPACE          
           # git rev-parse @~)
           echo $MYCOMMITID
           # create sub-directory named $MYCOMMITID
@@ -60,6 +62,10 @@ jobs:
           cp $GITHUB_WORKSPACE/source/nexus_definitions/manual/source/sed/entry-page.html $GITHUB_WORKSPACE/index.html
           sed -i 's/<<AUTO_INJECT_CURRENT_VERSION>>/https:\/\/FAIRmat-Experimental.github.io\/nexus-fairmat-proposal/' $GITHUB_WORKSPACE/index.html
           head -1000 index.html
+          echo "Resetting auto placeholders"
+          sed -i 's/<<AUTO_INJECT_COMMIT_TC>>/$MYCOMMITTC/' $GITHUB_WORKSPACE/$MYCOMMITID/html/index.html
+          sed -i 's/<<AUTO_INJECT_COMMIT_ID>>/$MYCOMMITID/' $GITHUB_WORKSPACE/$MYCOMMITID/html/index.html
+          head -1000 $GITHUB_WORKSPACE/$MYCOMMITID/html/index.html
           echo "Inspecting github workspace..."
           ls $GITHUB_WORKSPACE/*
           # echo "Inspect correct links in nxdls for nexus_definitions"
