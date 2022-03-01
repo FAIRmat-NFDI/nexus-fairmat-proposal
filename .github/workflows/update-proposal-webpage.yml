@@ -72,6 +72,7 @@ jobs:
           # sed -i "s/<<AUTO_INJECT_COMMIT_ID>>/$MYCOMMITID/" $GITHUB_WORKSPACE/$MYCOMMITID/index.html
           # sed -i 's/<<AUTO_INJECT_COMMIT_ID>>/'"$MYCOMMITID"'/' $GITHUB_WORKSPACE/$MYCOMMITID/index.html
           # sed -i 's/&lt;&lt;AUTO_INJECT_COMMIT_ID&gt;&gt;/$MYCOMMITID/' $GITHUB_WORKSPACE/$MYCOMMITID/index.html
+          sed -i 's/&lt;&lt;AUTO_INJECT_COMMIT_TC&gt;&gt;/'"$MYCOMMITTC"'/' $GITHUB_WORKSPACE/$MYCOMMITID/index.html 
           sed -i 's/&lt;&lt;AUTO_INJECT_COMMIT_ID&gt;&gt;/'"$MYCOMMITID"'/' $GITHUB_WORKSPACE/$MYCOMMITID/index.html          
           echo "Was auto inject commit id ??? replaced ???"
           head -1000 $GITHUB_WORKSPACE/$MYCOMMITID/index.html
@@ -90,4 +91,4 @@ jobs:
           ## ls $GITHUB_WORKSPACE
           ## #need to add a .nojekyll file into the root directory where the gh-pages will be served from
           ## #to enforce that gitpages uses the css of the page and not just show it with any css
-          ## touch $GITHUB_WORKSPACE/.nojekyll
+          touch $GITHUB_WORKSPACE/.nojekyll
