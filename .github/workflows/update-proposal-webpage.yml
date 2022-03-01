@@ -38,12 +38,19 @@ jobs:
           ls $PWD
           git clone https://github.com/FAIRmat-Experimental/nexus_definitions.git
           cd nexus_definitions
-          git checkout -b fairmat
+          git checkout fairmat
           git status
           ls $PWD
           # local repository is the target repo
           #mkdir -p docs
           make all
+          # replace the links with the current one
+          grep -rl '  https:\/\/github.com\/nexusformat\/definitions\/blob\/main' --exclude-dir=.git | xargs sed -i 's/  https:\/\/github.com\/nexusformat\/definitions\/blob\/main/  https:\/\/github.com\/FAIRmat-Experimental\/nexus_definitions\/tree\/fairmat/'
+          MYCOMMITID=$(git rev-parse @~)
+          echo $MYCOMMITID
+          # replace time and commitid on main page
+          # create sub-directory named $MYCOMMITID
+          # replace 
           #/home/runner/work/nexus-fairmat-proposal/nexus-fairmat-proposal/source/definitions/manual
           # create a repository with the commit id version 
           ## echo "Carrying changes over to local version of the repo for the specific commit !"
