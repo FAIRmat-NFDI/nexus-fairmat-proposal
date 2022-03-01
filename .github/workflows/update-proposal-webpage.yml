@@ -60,15 +60,18 @@ jobs:
           # ls $MYCOMMITID/*
           # replace time and commitid on main page
           cp $GITHUB_WORKSPACE/source/nexus_definitions/manual/source/sed/entry-page.html $GITHUB_WORKSPACE/index.html
+          head -1000 $GITHUB_WORKSPACE/index.html
           sed -i 's/<<AUTO_INJECT_CURRENT_VERSION>>/https:\/\/FAIRmat-Experimental.github.io\/nexus-fairmat-proposal/' $GITHUB_WORKSPACE/index.html
-          head -1000 index.html
+          head -1000 $GITHUB_WORKSPACE/index.html
           echo "Resetting auto placeholders"
           echo $MYCOMMITTC
           echo $MYCOMMITID
+          head -1000 $GITHUB_WORKSPACE/$MYCOMMITID/index.html
           # sed -i 's/<<AUTO_INJECT_COMMIT_TC>>/\'$MYCOMMITTC\'/' $GITHUB_WORKSPACE/$MYCOMMITID/index.html
           # sed -i 's/<<AUTO_INJECT_COMMIT_ID>>/'$MYCOMMITID'/' $GITHUB_WORKSPACE/$MYCOMMITID/index.html
           # sed -i "s/<<AUTO_INJECT_COMMIT_ID>>/$MYCOMMITID/" $GITHUB_WORKSPACE/$MYCOMMITID/index.html
           sed -i 's/<<AUTO_INJECT_COMMIT_ID>>/'"$MYCOMMITID"'/' $GITHUB_WORKSPACE/$MYCOMMITID/index.html
+          echo "Was auto inject commit id ??? replaced ???"
           head -1000 $GITHUB_WORKSPACE/$MYCOMMITID/index.html
           echo "Inspecting github workspace..."
           ls $GITHUB_WORKSPACE/*
