@@ -63,8 +63,10 @@ jobs:
           sed -i 's/<<AUTO_INJECT_CURRENT_VERSION>>/https:\/\/FAIRmat-Experimental.github.io\/nexus-fairmat-proposal/' $GITHUB_WORKSPACE/index.html
           head -1000 index.html
           echo "Resetting auto placeholders"
-          sed -i 's/<<AUTO_INJECT_COMMIT_TC>>/'$MYCOMMITTC'/' $GITHUB_WORKSPACE/$MYCOMMITID/index.html
-          sed -i 's/<<AUTO_INJECT_COMMIT_ID>>/'$MYCOMMITID'/' $GITHUB_WORKSPACE/$MYCOMMITID/index.html
+          echo $MYCOMMITTC
+          echo $MYCOMMITID
+          sed -i 's/<<AUTO_INJECT_COMMIT_TC>>/\'$MYCOMMITTC\'/' $GITHUB_WORKSPACE/$MYCOMMITID/index.html
+          sed -i 's/<<AUTO_INJECT_COMMIT_ID>>/\'$MYCOMMITID\'/' $GITHUB_WORKSPACE/$MYCOMMITID/index.html
           head -1000 $GITHUB_WORKSPACE/$MYCOMMITID/index.html
           echo "Inspecting github workspace..."
           ls $GITHUB_WORKSPACE/*
