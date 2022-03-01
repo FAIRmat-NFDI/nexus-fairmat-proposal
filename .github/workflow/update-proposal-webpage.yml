@@ -1,0 +1,55 @@
+name: Generate Webpage
+
+on: 
+  #push
+  #pull_request:
+  #  branches: [ main ]
+  # Allows you to run this workflow manually from the Actions tab
+  #on:
+  #push:
+  #  branches: ['master']
+  #  paths: 'build/*.json'
+  workflow_dispatch:
+jobs:
+  update-proposal-webpage:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout local repo as target repo
+        uses: actions/checkout@v2
+
+      - name: Set up Python 3.9
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.9
+          persist-credentials: false # otherwise, the token used is the GITHUB_TOKEN, instead of your personal access token.
+          fetch-depth: 0 # otherwise, there would be errors pushing refs to the destination repository.
+ 
+      - name: Update pip and install sphinx and required tools
+        run: |
+          echo $GITHUB_WORKSPACE
+          pip install --upgrade pip
+          pip install lxml Sphinx sphinx_comments pyRestTable six
+        
+      - name: Pull the state of the source repo, i.e. the one with the rst source code
+        run: |
+          cd $GITHUB_WORKSPACE
+          mkdir -p source
+          cd source
+          ls $PWD
+          git clone https://github.com/FAIRmat-Experimental/nexus_definitions.git
+          cd nexus_definitions
+          git checkout -b fairmat
+          git status
+          ls $PWD
+          # local repository is the target repo
+          #mkdir -p docs
+          make all
+          #/home/runner/work/nexus-fairmat-proposal/nexus-fairmat-proposal/source/definitions/manual
+          # create a repository with the commit id version 
+          ## echo "Carrying changes over to local version of the repo for the specific commit !"
+          ## cp -R $GITHUB_WORKSPACE/source/definitions/manual/build/html/* $GITHUB_WORKSPACE
+          ## rm -rf $GITHUB_WORKSPACE/source
+          ## ls $GITHUB_WORKSPACE
+          ## #need to add a .nojekyll file into the root directory where the gh-pages will be served from
+          ## #to enforce that gitpages uses the css of the page and not just show it with any css
+          ## touch $GITHUB_WORKSPACE/.nojekyll
