@@ -57,7 +57,7 @@ jobs:
           # replace time and commitid on main page
           cp $MYCOMMITID/manual/source/sed/entry-page.html index.html
           head -1000 index.html
-          echo "Inspect correct links in nxdls for nexus_definitions
+          echo "Inspect correct links in nxdls for nexus_definitions"
           head -1000 $MYCOMMITID/manual/build/html/classes/applications/NXapm.html
           # replace link in the index.html to the one under mycommitid/index.html
           # replace 
