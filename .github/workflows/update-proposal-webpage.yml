@@ -48,8 +48,14 @@ jobs:
           grep -rl '  https:\/\/github.com\/nexusformat\/definitions\/blob\/main' --exclude-dir=.git | xargs sed -i 's/  https:\/\/github.com\/nexusformat\/definitions\/blob\/main/  https:\/\/github.com\/FAIRmat-Experimental\/nexus_definitions\/tree\/fairmat/'
           MYCOMMITID=$(git rev-parse @~)
           echo $MYCOMMITID
-          # replace time and commitid on main page
           # create sub-directory named $MYCOMMITID
+          mkdir -p $MYCOMMITID
+          ls
+          mv * $MYCOMMITID
+          ls $MYCOMMITID/*
+          # replace time and commitid on main page
+          cp $MYCOMMITID/manual/source/sed/entry-page.html index.html
+          # replace link in the index.html to the one under mycommitid/index.html
           # replace 
           #/home/runner/work/nexus-fairmat-proposal/nexus-fairmat-proposal/source/definitions/manual
           # create a repository with the commit id version 
