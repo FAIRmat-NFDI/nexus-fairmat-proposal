@@ -34,14 +34,9 @@ jobs:
         run: |
           mkdir -p $GITHUB_WORKSPACE/source
           cd $GITHUB_WORKSPACE/source
-          # ls $PWD
           git clone https://github.com/FAIRmat-Experimental/nexus_definitions.git
           cd $GITHUB_WORKSPACE/source/nexus_definitions
           git checkout fairmat
-          # git status
-          # ls $PWD
-          # local repository is the target repo
-          # mkdir -p docs
           make all
           # get commit id of the source repo, not of the nexus-fairmat-proposal target repo !
           MYCOMMITID=$(git log -1 | grep ^commit | cut -d " " -f 2)
@@ -49,7 +44,6 @@ jobs:
           # replace the links with the current one
           grep -rl '  https:\/\/github.com\/nexusformat\/definitions\/blob\/main' --exclude-dir=.git | xargs sed -i 's/  https:\/\/github.com\/nexusformat\/definitions\/blob\/main/  https:\/\/github.com\/FAIRmat-Experimental\/nexus_definitions\/tree\/fairmat/'
           cd $GITHUB_WORKSPACE          
-          # git rev-parse @~)
           echo $MYCOMMITID
           # create sub-directory named $MYCOMMITID
           rm -rf $GITHUB_WORKSPACE/$MYCOMMITID
@@ -58,43 +52,29 @@ jobs:
           # shopt -s extglob
           # mv !($MYCOMMITID) $MYCOMMITID          
           mv $GITHUB_WORKSPACE/source/nexus_definitions/manual/build/html/* $GITHUB_WORKSPACE/$MYCOMMITID
-          # ls $MYCOMMITID/*
           # replace time and commitid on main page
           cp $GITHUB_WORKSPACE/source/nexus_definitions/manual/source/sed/entry-page.html $GITHUB_WORKSPACE/index.html
           rm -rf $GITHUB_WORKSPACE/source
-          head -1000 $GITHUB_WORKSPACE/index.html
+          # head -1000 $GITHUB_WORKSPACE/index.html
           sed -i 's/<<AUTO_INJECT_CURRENT_VERSION>>/https:\/\/FAIRmat-Experimental.github.io\/nexus-fairmat-proposal\/'"$MYCOMMITID"'\/index.html/' $GITHUB_WORKSPACE/index.html
-          head -1000 $GITHUB_WORKSPACE/index.html
+          # head -1000 $GITHUB_WORKSPACE/index.html
           echo "Resetting auto placeholders"
           echo $MYCOMMITTC
           echo $MYCOMMITID
-          head -1000 $GITHUB_WORKSPACE/$MYCOMMITID/index.html
-          # sed -i 's/<<AUTO_INJECT_COMMIT_TC>>/\'$MYCOMMITTC\'/' $GITHUB_WORKSPACE/$MYCOMMITID/index.html
-          # sed -i 's/<<AUTO_INJECT_COMMIT_ID>>/'$MYCOMMITID'/' $GITHUB_WORKSPACE/$MYCOMMITID/index.html
-          # sed -i "s/<<AUTO_INJECT_COMMIT_ID>>/$MYCOMMITID/" $GITHUB_WORKSPACE/$MYCOMMITID/index.html
-          # sed -i 's/<<AUTO_INJECT_COMMIT_ID>>/'"$MYCOMMITID"'/' $GITHUB_WORKSPACE/$MYCOMMITID/index.html
-          # sed -i 's/&lt;&lt;AUTO_INJECT_COMMIT_ID&gt;&gt;/$MYCOMMITID/' $GITHUB_WORKSPACE/$MYCOMMITID/index.html
+          # head -1000 $GITHUB_WORKSPACE/$MYCOMMITID/index.html
           sed -i 's/&lt;&lt;AUTO_INJECT_COMMIT_TC&gt;&gt;/'"$MYCOMMITTC"'/' $GITHUB_WORKSPACE/$MYCOMMITID/index.html 
           sed -i 's/&lt;&lt;AUTO_INJECT_COMMIT_ID&gt;&gt;/'"$MYCOMMITID"'/' $GITHUB_WORKSPACE/$MYCOMMITID/index.html          
-          echo "Was auto inject commit id ??? replaced ???"
-          head -1000 $GITHUB_WORKSPACE/$MYCOMMITID/index.html
+          # echo "Was auto inject commit id ??? replaced ???"
+          # head -1000 $GITHUB_WORKSPACE/$MYCOMMITID/index.html
           echo "Inspecting github workspace..."
           ls $GITHUB_WORKSPACE/*
           ls $GITHUB_WORKSPACE/$MYCOMMITID/*
-          # echo "Inspect correct links in nxdls for nexus_definitions"
-          # tail -1000 $MYCOMMITID/manual/build/html/classes/applications/NXapm.html
-          # replace link in the index.html to the one under mycommitid/index.html
-          # replace 
-          #/home/runner/work/nexus-fairmat-proposal/nexus-fairmat-proposal/source/definitions/manual
-          # create a repository with the commit id version 
-          ## echo "Carrying changes over to local version of the repo for the specific commit !"
-          ## cp -R $GITHUB_WORKSPACE/source/definitions/manual/build/html/* $GITHUB_WORKSPACE
-          ## rm -rf $GITHUB_WORKSPACE/source
-          ## ls $GITHUB_WORKSPACE
-          ## #need to add a .nojekyll file into the root directory where the gh-pages will be served from
-          ## #to enforce that gitpages uses the css of the page and not just show it with any css
+          # need to add a .nojekyll file into the root directory where the gh-pages will be served from
+          # to enforce that gitpages uses the css of the page and not just show it with any css
           rm -f $GITHUB_WORKSPACE/.nojekyll
-          touch $GITHUB_WORKSPACE/$MYCOMMITID/.nojekyll
+          touch $GITHUB_WORKSPACE/.nojekyll
+          rm -f $GITHUB_WORKSPACE/$MYCOMMITID/.nojekyll
+          touch $GITHUB_WORKSPACE/$MYCOMMITID/.nojekyll          
 
       - name: Commit files into the local repository from which this action was triggered
         run: |
