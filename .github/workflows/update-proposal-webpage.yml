@@ -42,8 +42,9 @@ jobs:
           MYCOMMITID=$(git log -1 | grep ^commit | cut -d " " -f 2)
           MYCOMMITTC=$(git log -1 | grep ^Date)
           # replace the links with the current one
-          grep -rl '  https:\/\/github.com\/nexusformat\/definitions\/blob\/main' --exclude-dir=.git | xargs sed -i 's/  https:\/\/github.com\/nexusformat\/definitions\/blob\/main/  https:\/\/github.com\/FAIRmat-Experimental\/nexus_definitions\/tree\/fairmat/'
-          cd $GITHUB_WORKSPACE          
+          # grep -rl '  https:\/\/github.com\/nexusformat\/definitions\/blob\/main' --exclude-dir=.git | xargs sed -i 's/  https:\/\/github.com\/nexusformat\/definitions\/blob\/main/  https:\/\/github.com\/FAIRmat-Experimental\/nexus_definitions\/tree\/fairmat/'
+          grep -rl 'https:\/\/github.com\/nexusformat\/definitions\/blob\/main' --exclude-dir=.git | xargs sed -i 's/https:\/\/github.com\/nexusformat\/definitions\/blob\/main/https:\/\/github.com\/FAIRmat-Experimental\/nexus_definitions\/tree\/fairmat/g'
+          cd $GITHUB_WORKSPACE
           echo $MYCOMMITID
           # create sub-directory named $MYCOMMITID
           rm -rf $GITHUB_WORKSPACE/$MYCOMMITID
