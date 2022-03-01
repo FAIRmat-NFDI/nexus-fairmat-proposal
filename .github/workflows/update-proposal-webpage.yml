@@ -61,7 +61,7 @@ jobs:
           # replace time and commitid on main page
           cp $GITHUB_WORKSPACE/source/nexus_definitions/manual/source/sed/entry-page.html $GITHUB_WORKSPACE/index.html
           head -1000 $GITHUB_WORKSPACE/index.html
-          sed -i 's/<<AUTO_INJECT_CURRENT_VERSION>>/https:\/\/FAIRmat-Experimental.github.io\/nexus-fairmat-proposal/'"$MYCOMMITID"'/index.html/' $GITHUB_WORKSPACE/index.html
+          sed -i 's/<<AUTO_INJECT_CURRENT_VERSION>>/https:\/\/FAIRmat-Experimental.github.io\/nexus-fairmat-proposal\/'"$MYCOMMITID"'\/index.html/' $GITHUB_WORKSPACE/index.html
           head -1000 $GITHUB_WORKSPACE/index.html
           echo "Resetting auto placeholders"
           echo $MYCOMMITTC
