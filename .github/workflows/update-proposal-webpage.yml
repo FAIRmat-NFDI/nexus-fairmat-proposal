@@ -60,6 +60,7 @@ jobs:
           # ls $MYCOMMITID/*
           # replace time and commitid on main page
           cp $GITHUB_WORKSPACE/source/nexus_definitions/manual/source/sed/entry-page.html $GITHUB_WORKSPACE/index.html
+          rm -rf $GITHUB_WORKSPACE/source
           head -1000 $GITHUB_WORKSPACE/index.html
           sed -i 's/<<AUTO_INJECT_CURRENT_VERSION>>/https:\/\/FAIRmat-Experimental.github.io\/nexus-fairmat-proposal\/'"$MYCOMMITID"'\/index.html/' $GITHUB_WORKSPACE/index.html
           head -1000 $GITHUB_WORKSPACE/index.html
@@ -91,7 +92,8 @@ jobs:
           ## ls $GITHUB_WORKSPACE
           ## #need to add a .nojekyll file into the root directory where the gh-pages will be served from
           ## #to enforce that gitpages uses the css of the page and not just show it with any css
-          touch $GITHUB_WORKSPACE/.nojekyll
+          rm -f $GITHUB_WORKSPACE/.nojekyll
+          touch $GITHUB_WORKSPACE/$MYCOMMITID/.nojekyll
 
       - name: Commit files into the local repository from which this action was triggered
         run: |
