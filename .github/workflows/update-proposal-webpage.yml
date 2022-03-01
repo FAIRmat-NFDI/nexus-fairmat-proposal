@@ -65,7 +65,7 @@ jobs:
           echo "Resetting auto placeholders"
           echo $MYCOMMITTC
           echo $MYCOMMITID
-          sed -i 's/<<AUTO_INJECT_COMMIT_TC>>/\'$MYCOMMITTC\'/' $GITHUB_WORKSPACE/$MYCOMMITID/index.html
+          #sed -i 's/<<AUTO_INJECT_COMMIT_TC>>/\'$MYCOMMITTC\'/' $GITHUB_WORKSPACE/$MYCOMMITID/index.html
           sed -i 's/<<AUTO_INJECT_COMMIT_ID>>/\'$MYCOMMITID\'/' $GITHUB_WORKSPACE/$MYCOMMITID/index.html
           head -1000 $GITHUB_WORKSPACE/$MYCOMMITID/index.html
           echo "Inspecting github workspace..."
