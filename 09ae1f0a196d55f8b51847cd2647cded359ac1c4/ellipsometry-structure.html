@@ -1,0 +1,180 @@
+
+
+
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Ellipsometry Structure &#8212; NeXus-FAIRmat v2020.10 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css" />
+    <link rel="stylesheet" type="text/css" href="_static/to_alabaster.css" />
+    <link rel="stylesheet" href="_static/blockquote.css" type="text/css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="copyright" title="Copyright" href="copyright.html" />
+    <link rel="next" title="Electron Microscopy Structure" href="em-structure.html" />
+    <link rel="prev" title="MPES Structure" href="mpes-structure.html" /> 
+    <link rel="stylesheet" href="../../_static/blockquote.css" type="text/css" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="ellipsometry-structure">
+<span id="id1"></span><h1>Ellipsometry Structure<a class="headerlink" href="#ellipsometry-structure" title="Permalink to this headline">¶</a></h1>
+<section id="introduction">
+<span id="introductionellipsometry"></span><span id="index-0"></span><h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>Ellipsometry is an optical characterization method to describe optical properties of interfaces and thickness of films. The measurements are based on determining how the polarization state of light changes upon transmission and reflection. Interpretation is based on Fresnel equations and numerical models of the optical properties of the materials.</p>
+<p>In the application definition we provide a minimum set of description elements allowing for a reproducible recording of ellipsometry measurements.</p>
+</section>
+<section id="new-application-definitions">
+<span id="ellnewappdef"></span><h2>New Application Definitions<a class="headerlink" href="#new-application-definitions" title="Permalink to this headline">¶</a></h2>
+<p>We created one application definition:</p>
+<blockquote>
+<div><dl class="simple">
+<dt><a class="reference internal" href="classes/contributed_definitions/NXellipsometry.html#nxellipsometry"><span class="std std-ref">NXellipsometry</span></a>:</dt><dd><p>A general application definition for ellipsometry measurements, including complex systems up to variable angle spectroscopic ellipsometry.</p>
+</dd>
+</dl>
+</div></blockquote>
+</section>
+<section id="base-classes-extended-in-application-definitions">
+<span id="extendedbc"></span><h2>Base Classes Extended in Application Definitions<a class="headerlink" href="#base-classes-extended-in-application-definitions" title="Permalink to this headline">¶</a></h2>
+<p>We use existent base classes in application definitions and add descriptors:</p>
+<blockquote>
+<div><dl class="simple">
+<dt><a class="reference internal" href="classes/base_classes/NXinstrument.html#nxinstrument"><span class="std std-ref">NXinstrument</span></a></dt><dd><p>Added fields to add information that is important for an ellipsometry setup, such as the ellipsometer type, the light source, the type of the sample stage, or the angle(s) of incidence, as well as information on calibration, focussing probes, data correction etc.</p>
+</dd>
+<dt><a class="reference internal" href="classes/base_classes/NXdetector.html#nxdetector"><span class="std std-ref">NXdetector</span></a></dt><dd><p>Added fields to describe spectroscopic detection with polarization (e.g. rotating analyzer).</p>
+</dd>
+<dt><a class="reference internal" href="classes/base_classes/NXaperture.html#nxaperture"><span class="std std-ref">NXaperture</span></a></dt><dd><p>Added fields to define parameters that describe windows (e.g. windows of a UHV cryostat), such as the thickness and the orientation angle of the window, as well as reference data to calculate window effects.</p>
+</dd>
+<dt><a class="reference internal" href="classes/base_classes/NXsample.html#nxsample"><span class="std std-ref">NXsample</span></a></dt><dd><p>Added fields to specify the sample and material properties, as well as the sample environment (e.g. refractive index of surrounding medium) and experimental conditions (e.g. temperature, pressure, pH value etc.).</p>
+</dd>
+</dl>
+</div></blockquote>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="index.html">
+              <img class="logo" src="_static/FAIRmat.png" alt="Logo"/>
+            </a></p>
+<h1 class="logo"><a href="index.html">NeXus-FAIRmat</a></h1>
+
+
+
+<p class="blurb">Proposal of NeXus expansion for FAIRmat data.</p>
+
+
+
+
+<p>
+<iframe src="https://ghbtns.com/github-btn.html?user=FAIRmat-Experimental&repo=nexus_definitions/tree/fairmat&type=watch&count=false&size=large&v=2"
+  allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="35px"></iframe>
+</p>
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="fairmat-cover.html">FAIRmat-NeXus Proposal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nexus-index.html">NeXus Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mpes-structure.html">MPES Structure</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Ellipsometry Structure</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#new-application-definitions">New Application Definitions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#base-classes-extended-in-application-definitions">Base Classes Extended in Application Definitions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="em-structure.html">Electron Microscopy Structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apm-structure.html">Atom Probe Microscopy Structure</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="mpes-structure.html" title="previous chapter">MPES Structure</a></li>
+      <li>Next: <a href="em-structure.html" title="next chapter">Electron Microscopy Structure</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+<div id="google_search" style="display: none">
+	<hr />
+	<h3>Google search</h3>
+	<form method="get" action="https://www.google.com/search">
+		<table border="0" align="center" cellpadding="0">
+			<tr>
+				<td>
+					<input type="text"   name="q" value="" />
+				</td>
+			</tr>
+			<tr>
+				<td align="center" style="font-size:75%">
+					<input type="radio"  name="sitesearch" value="" />global
+					<input type="radio"  name="sitesearch"
+						value="manual.nexusformat.org" 
+						checked />NeXus manual
+					<input type="submit" value="Go" />
+					<br />
+				</td>
+			</tr>
+		</table>
+	</form>                                
+</div>
+<script type="text/javascript">$('#google_search').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2022-2022, The FAIRmat collaboration.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.5.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/ellipsometry-structure.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
