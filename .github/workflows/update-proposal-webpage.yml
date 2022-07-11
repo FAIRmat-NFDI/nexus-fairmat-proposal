@@ -28,7 +28,7 @@ jobs:
         run: |
           echo $GITHUB_WORKSPACE
           pip install --upgrade pip
-          pip install lxml Sphinx sphinx_comments pyRestTable six
+          pip install lxml pyyaml Sphinx sphinx_comments pyRestTable six
         
       - name: Pull the state of the source repo, i.e. the one with the rst source code
         run: |
