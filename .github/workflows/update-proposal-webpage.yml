@@ -28,7 +28,7 @@ jobs:
         run: |
           echo $GITHUB_WORKSPACE
           pip install --upgrade pip
-          pip install lxml pyyaml Sphinx sphinx_comments pyRestTable six
+          pip install lxml==4.9.1 pyyaml==6.0 Sphinx==5.0.2 sphinx_comments==0.0.3 pyRestTable==2020.0.3 six==1.16.0
         
       - name: Pull the state of the source repo, i.e. the one with the rst source code
         run: |
@@ -48,14 +48,14 @@ jobs:
           # ... base classes and appdefs from fairmat are inside contributed_definitions, so ...
           # ... we need to replace NXDL links by how they are differently pointing to the github repo for appdefs, base, and contributed
           # NeXus base classes
-          cd $GITHUB_WORKSPACE/source/nexus_definitions/manual/build/classes/base_classes
+          cd $GITHUB_WORKSPACE/source/nexus_definitions/manual/build/html/classes/base_classes
           grep -rl 'https:\/\/github.com\/nexusformat\/definitions\/blob\/main\/base_classes' --exclude-dir=.git | xargs sed -i 's/https:\/\/github.com\/nexusformat\/definitions\/blob\/main\/base_classes/https:\/\/github.com\/FAIRmat-Experimental\/nexus_definitions\/tree\/fairmat\/base_classes/g'
           # NeXus application definitions
-          cd $GITHUB_WORKSPACE/source/nexus_definitions/manual/build/classes/applications
+          cd $GITHUB_WORKSPACE/source/nexus_definitions/manual/build/html/classes/applications
           grep -rl 'https:\/\/github.com\/nexusformat\/definitions\/blob\/main\/applications' --exclude-dir=.git | xargs sed -i 's/https:\/\/github.com\/nexusformat\/definitions\/blob\/main\/applications/https:\/\/github.com\/FAIRmat-Experimental\/nexus_definitions\/tree\/fairmat\/applications/g'
           # NeXus contributed definitions as showing up in the nexus-fairmat-proposal fairmat branch of nexus_definitions
           # in contributed definitions there can be base classes appdefs or 
-          cd $GITHUB_WORKSPACE/source/nexus_definitions/manual/build/classes/contributed_definitions
+          cd $GITHUB_WORKSPACE/source/nexus_definitions/manual/build/html/classes/contributed_definitions
           grep -rl 'https:\/\/github.com\/nexusformat\/definitions\/blob\/main\/base_classes' --exclude-dir=.git | xargs sed -i 's/https:\/\/github.com\/nexusformat\/definitions\/blob\/main\/base_classes/https:\/\/github.com\/FAIRmat-Experimental\/nexus_definitions\/tree\/fairmat\/contributed_definitions/g'
           grep -rl 'https:\/\/github.com\/nexusformat\/definitions\/blob\/main\/applications' --exclude-dir=.git | xargs sed -i 's/https:\/\/github.com\/nexusformat\/definitions\/blob\/main\/applications/https:\/\/github.com\/FAIRmat-Experimental\/nexus_definitions\/tree\/fairmat\/contributed_definitions/g'
           cd $GITHUB_WORKSPACE
