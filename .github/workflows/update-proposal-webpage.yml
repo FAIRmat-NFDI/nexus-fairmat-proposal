@@ -58,7 +58,6 @@ jobs:
           cd $GITHUB_WORKSPACE/source/nexus_definitions/manual/source/classes/contributed_definitions
           grep -rl 'https:\/\/github.com\/nexusformat\/definitions\/blob\/main\/base_classes' --exclude-dir=.git | xargs sed -i 's/https:\/\/github.com\/nexusformat\/definitions\/blob\/main\/base_classes/https:\/\/github.com\/FAIRmat-Experimental\/nexus_definitions\/tree\/fairmat\/contributed_definitions/g'
           grep -rl 'https:\/\/github.com\/nexusformat\/definitions\/blob\/main\/applications' --exclude-dir=.git | xargs sed -i 's/https:\/\/github.com\/nexusformat\/definitions\/blob\/main\/applications/https:\/\/github.com\/FAIRmat-Experimental\/nexus_definitions\/tree\/fairmat\/contributed_definitions/g'
-          grep -rl 'https:\/\/github.com\/nexusformat\/definitions\/blob\/main\/contributed_definitions' --exclude-dir=.git | xargs sed -i 's/https:\/\/github.com\/nexusformat\/definitions\/blob\/main\/contributed_definitions/https:\/\/github.com\/FAIRmat-Experimental\/nexus_definitions\/tree\/fairmat\/contributed_definitions/g'
           cd $GITHUB_WORKSPACE
           echo $MYCOMMITID
           # create sub-directory named $MYCOMMITID
