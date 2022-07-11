@@ -1,0 +1,277 @@
+
+
+
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>NXaperture &#8212; NeXus-FAIRmat v2020.10 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/alabaster.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/to_alabaster.css" />
+    <link rel="stylesheet" href="../../_static/blockquote.css" type="text/css" />
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="copyright" title="Copyright" href="../../copyright.html" />
+    <link rel="next" title="NXaperture_em" href="NXaperture_em.html" />
+    <link rel="prev" title="NXaberration" href="NXaberration.html" /> 
+    <link rel="stylesheet" href="../../_static/blockquote.css" type="text/css" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="nxaperture">
+<span id="index-0"></span><span id="id1"></span><h1>NXaperture<a class="headerlink" href="#nxaperture" title="Permalink to this heading">¶</a></h1>
+<p><strong>Status</strong>:</p>
+<blockquote>
+<div><p>base class, extends <a class="reference internal" href="../base_classes/NXobject.html#nxobject"><span class="std std-ref">NXobject</span></a></p>
+</div></blockquote>
+<p><strong>Description</strong>:</p>
+<blockquote>
+<div><p>A beamline aperture</p>
+</div></blockquote>
+<p><strong>Symbols</strong>:</p>
+<blockquote>
+<div><p>No symbol table</p>
+</div></blockquote>
+<dl class="simple">
+<dt><strong>Groups cited</strong>:</dt><dd><p><a class="reference internal" href="../base_classes/NXgeometry.html#nxgeometry"><span class="std std-ref">NXgeometry</span></a>, <a class="reference internal" href="../base_classes/NXnote.html#nxnote"><span class="std std-ref">NXnote</span></a>, <a class="reference internal" href="../base_classes/NXpositioner.html#nxpositioner"><span class="std std-ref">NXpositioner</span></a>, <a class="reference internal" href="../base_classes/NXtransformations.html#nxtransformations"><span class="std std-ref">NXtransformations</span></a></p>
+</dd>
+</dl>
+<p id="index-1"><strong>Structure</strong>:</p>
+<blockquote>
+<div><span class="target" id="nxaperture-default-attribute"></span><p id="index-2"><strong>&#64;default</strong>: (optional) <a class="reference internal" href="../../nxdl-types.html#nx-char"><span class="std std-ref">NX_CHAR</span></a></p>
+<blockquote>
+<div><p>Declares which child group contains a path leading to a <a class="reference internal" href="../base_classes/NXdata.html#nxdata"><span class="std std-ref">NXdata</span></a> group.</p>
+<div class="line-block">
+<div class="line">It is recommended (as of NIAC2014) to use this attribute to help define the path to the</div>
+</div>
+<p>default dataset to be plotted. See <a class="reference external" href="https://www.nexusformat.org/2014_How_to_find_default_data.html">https://www.nexusformat.org/2014_How_to_find_default_data.html</a>
+for a summary of the discussion.</p>
+</div></blockquote>
+<span class="target" id="nxaperture-material-field"></span><p id="index-3"><strong>material</strong>: (optional) <a class="reference internal" href="../../nxdl-types.html#nx-char"><span class="std std-ref">NX_CHAR</span></a></p>
+<blockquote>
+<div><p>Absorbing material of the aperture.</p>
+</div></blockquote>
+<span class="target" id="nxaperture-description-field"></span><p id="index-4"><strong>description</strong>: (optional) <a class="reference internal" href="../../nxdl-types.html#nx-char"><span class="std std-ref">NX_CHAR</span></a></p>
+<blockquote>
+<div><p>Description of the aperture.</p>
+</div></blockquote>
+<span class="target" id="nxaperture-shape-field"></span><p id="index-5"><strong>shape</strong>: (optional) <a class="reference internal" href="../../nxdl-types.html#nx-char"><span class="std std-ref">NX_CHAR</span></a></p>
+<blockquote>
+<div><p>Shape of the aperture.</p>
+<p>Any of these values:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">straight</span> <span class="pre">slit</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">curved</span> <span class="pre">slit</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pinhole</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">circle</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">square</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">hexagon</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">octagon</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">bladed</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">open</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">grid</span></code></p></li>
+</ul>
+</div></blockquote>
+</div></blockquote>
+<span class="target" id="nxaperture-size-field"></span><p id="index-6"><strong>size</strong>: (optional) <a class="reference internal" href="../../nxdl-types.html#nx-number"><span class="std std-ref">NX_NUMBER</span></a> {units=<a class="reference internal" href="../../nxdl-types.html#nx-length"><span class="std std-ref">NX_LENGTH</span></a>}</p>
+<blockquote>
+<div><p>The relevant dimension for the aperture, i.e. slit width, pinhole and iris
+diameter</p>
+</div></blockquote>
+<span class="target" id="nxaperture-depends-on-field"></span><p id="index-7"><strong>depends_on</strong>: (optional) <a class="reference internal" href="../../nxdl-types.html#nx-char"><span class="std std-ref">NX_CHAR</span></a></p>
+<blockquote>
+<div><p>Specifies the position of the aperture by pointing to the last transformation in
+the transformation chain in the NXtransformations group.</p>
+</div></blockquote>
+<p id="nxaperture-transformations-group"><strong>TRANSFORMATIONS</strong>: (optional) <a class="reference internal" href="../base_classes/NXtransformations.html#nxtransformations"><span class="std std-ref">NXtransformations</span></a></p>
+<blockquote>
+<div><p>Collection of axis-based translations and rotations to describe the location and
+geometry of the deflector as a component in the instrument. Conventions from the
+NXtransformations base class are used. In principle, the McStas coordinate
+system is used. The first transformation has to point either to another
+component of the system or . (for pointing to the reference frame) to relate it
+relative to the experimental setup. Typically, the components of a system should
+all be related relative to each other and only one component should relate to
+the reference coordinate system.</p>
+</div></blockquote>
+<p id="nxaperture-positioner-group"><strong>POSITIONER</strong>: (optional) <a class="reference internal" href="../base_classes/NXpositioner.html#nxpositioner"><span class="std std-ref">NXpositioner</span></a></p>
+<blockquote>
+<div><p>Stores the raw positions of aperture motors.</p>
+</div></blockquote>
+<p id="nxaperture-geometry-group"><strong>GEOMETRY</strong>: (optional) <a class="reference internal" href="../base_classes/NXgeometry.html#nxgeometry"><span class="std std-ref">NXgeometry</span></a></p>
+<blockquote>
+<div><p>Location and shape of the aperture.</p>
+</div></blockquote>
+<p id="nxaperture-blade-geometry-group"><strong>BLADE_GEOMETRY</strong>: (optional) <a class="reference internal" href="../base_classes/NXgeometry.html#nxgeometry"><span class="std std-ref">NXgeometry</span></a></p>
+<blockquote>
+<div><p>Location and shape of each blade.</p>
+</div></blockquote>
+<p id="nxaperture-note-group"><strong>NOTE</strong>: (optional) <a class="reference internal" href="../base_classes/NXnote.html#nxnote"><span class="std std-ref">NXnote</span></a></p>
+<blockquote>
+<div><p>Describes any additional information.</p>
+</div></blockquote>
+</div></blockquote>
+<section id="hypertext-anchors">
+<h2>Hypertext Anchors<a class="headerlink" href="#hypertext-anchors" title="Permalink to this heading">¶</a></h2>
+<p>List of hypertext anchors for all groups, fields,
+attributes, and links defined in this class.</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#nxaperture-blade-geometry-group"><span class="std std-ref">/NXaperture/BLADE_GEOMETRY-group</span></a></p></li>
+<li><p><a class="reference internal" href="#nxaperture-depends-on-field"><span class="std std-ref">/NXaperture/depends_on-field</span></a></p></li>
+<li><p><a class="reference internal" href="#nxaperture-description-field"><span class="std std-ref">/NXaperture/description-field</span></a></p></li>
+<li><p><a class="reference internal" href="#nxaperture-geometry-group"><span class="std std-ref">/NXaperture/GEOMETRY-group</span></a></p></li>
+<li><p><a class="reference internal" href="#nxaperture-material-field"><span class="std std-ref">/NXaperture/material-field</span></a></p></li>
+<li><p><a class="reference internal" href="#nxaperture-note-group"><span class="std std-ref">/NXaperture/NOTE-group</span></a></p></li>
+<li><p><a class="reference internal" href="#nxaperture-positioner-group"><span class="std std-ref">/NXaperture/POSITIONER-group</span></a></p></li>
+<li><p><a class="reference internal" href="#nxaperture-shape-field"><span class="std std-ref">/NXaperture/shape-field</span></a></p></li>
+<li><p><a class="reference internal" href="#nxaperture-size-field"><span class="std std-ref">/NXaperture/size-field</span></a></p></li>
+<li><p><a class="reference internal" href="#nxaperture-transformations-group"><span class="std std-ref">/NXaperture/TRANSFORMATIONS-group</span></a></p></li>
+<li><p><a class="reference internal" href="#nxaperture-default-attribute"><span class="std std-ref">/NXaperture&#64;default-attribute</span></a></p></li>
+</ul>
+<dl class="simple">
+<dt><strong>NXDL Source</strong>:</dt><dd><p><a class="reference external" href="https://github.com/nexusformat/definitions/blob/main/base_classes/NXaperture.nxdl.xml">https://github.com/nexusformat/definitions/blob/main/base_classes/NXaperture.nxdl.xml</a></p>
+</dd>
+</dl>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../../index.html">
+              <img class="logo" src="../../_static/FAIRmat.png" alt="Logo"/>
+            </a></p>
+<h1 class="logo"><a href="../../index.html">NeXus-FAIRmat</a></h1>
+
+
+
+<p class="blurb">Proposal of NeXus expansion for FAIRmat data.</p>
+
+
+
+
+<p>
+<iframe src="https://ghbtns.com/github-btn.html?user=FAIRmat-Experimental&repo=nexus_definitions/tree/fairmat&type=watch&count=false&size=large&v=2"
+  allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="35px"></iframe>
+</p>
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../fairmat-cover.html">FAIRmat-NeXus Proposal</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../nexus-index.html">NeXus Documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../user_manual.html">NeXus: User Manual</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/index.html">Examples of writing and reading NeXus data files</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../ref_doc.html">NeXus: Reference Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../community.html">NeXus Community</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../installation.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../utilities.html">NeXus Utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../docs_about.html">About these docs</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../mpes-structure.html">MPES Structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ellipsometry-structure.html">Ellipsometry Structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../em-structure.html">Electron Microscopy Structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apm-structure.html">Atom Probe Microscopy Structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../epics-structure.html">EPICS Structure</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../../nexus-index.html">NeXus Documentation</a><ul>
+  <li><a href="../../ref_doc.html">NeXus: Reference Documentation</a><ul>
+  <li><a href="../index.html">NeXus Class Definitions</a><ul>
+  <li><a href="index.html">Contributed Definitions</a><ul>
+      <li>Previous: <a href="NXaberration.html" title="previous chapter">NXaberration</a></li>
+      <li>Next: <a href="NXaperture_em.html" title="next chapter">NXaperture_em</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+<div id="google_search" style="display: none">
+	<hr />
+	<h3>Google search</h3>
+	<form method="get" action="https://www.google.com/search">
+		<table border="0" align="center" cellpadding="0">
+			<tr>
+				<td>
+					<input type="text"   name="q" value="" />
+				</td>
+			</tr>
+			<tr>
+				<td align="center" style="font-size:75%">
+					<input type="radio"  name="sitesearch" value="" />global
+					<input type="radio"  name="sitesearch"
+						value="manual.nexusformat.org" 
+						checked />NeXus manual
+					<input type="submit" value="Go" />
+					<br />
+				</td>
+			</tr>
+		</table>
+	</form>                                
+</div>
+<script type="text/javascript">$('#google_search').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2022-2022, The FAIRmat collaboration.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.0.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../../_sources/classes/contributed_definitions/NXaperture.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

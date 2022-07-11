@@ -1,0 +1,534 @@
+
+
+
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>NXiv_temp &#8212; NeXus-FAIRmat v2020.10 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/alabaster.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/to_alabaster.css" />
+    <link rel="stylesheet" href="../../_static/blockquote.css" type="text/css" />
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="copyright" title="Copyright" href="../../copyright.html" />
+    <link rel="next" title="NXlens_em" href="NXlens_em.html" />
+    <link rel="prev" title="NXion" href="NXion.html" /> 
+    <link rel="stylesheet" href="../../_static/blockquote.css" type="text/css" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="nxiv-temp">
+<span id="index-0"></span><span id="id1"></span><h1>NXiv_temp<a class="headerlink" href="#nxiv-temp" title="Permalink to this heading">¶</a></h1>
+<p><strong>Status</strong>:</p>
+<blockquote>
+<div><p>application definition, extends <a class="reference internal" href="../base_classes/NXobject.html#nxobject"><span class="std std-ref">NXobject</span></a></p>
+</div></blockquote>
+<p><strong>Description</strong>:</p>
+<blockquote>
+<div><p>Application definition for temperature-dependent IV curve measurements.</p>
+<p>In this application definition, times should be specified always together
+with an UTC offset.</p>
+<p>This is the application definition describing temperature dependent IV curve
+measurements. For this a temperature is set. After reaching the temperature,
+a voltage sweep is performed. For each voltage a current is measured.
+Then, the next desired temperature is set and an IV measurement is performed.
+The application definition defines:
+- elements of the experimental instrument
+- calibration information if available
+- parameters used to tune the state of the sample
+- sample description</p>
+</div></blockquote>
+<p><strong>Symbols</strong>:</p>
+<blockquote>
+<div><p>Variables used throughout the document, e.g. dimensions and important
+parameters</p>
+<p><strong>N_data_points</strong>: Number of elements in the scanned voltage array</p>
+<p><strong>N_variables</strong>: Number of additional variables that are changed with the temperature (can be understood as columns next to the temperature)</p>
+<p><strong>N_different_temperatures</strong>: Number of different temperatures that are set</p>
+</div></blockquote>
+<dl class="simple">
+<dt><strong>Groups cited</strong>:</dt><dd><p><a class="reference internal" href="../base_classes/NXdata.html#nxdata"><span class="std std-ref">NXdata</span></a>, <a class="reference internal" href="NXentry.html#nxentry"><span class="std std-ref">NXentry</span></a>, <a class="reference internal" href="../base_classes/NXenvironment.html#nxenvironment"><span class="std std-ref">NXenvironment</span></a>, <a class="reference internal" href="NXinstrument.html#nxinstrument"><span class="std std-ref">NXinstrument</span></a>, <a class="reference internal" href="NXprocess.html#nxprocess"><span class="std std-ref">NXprocess</span></a>, <a class="reference internal" href="NXsample.html#nxsample"><span class="std std-ref">NXsample</span></a>, <a class="reference internal" href="../base_classes/NXsensor.html#nxsensor"><span class="std std-ref">NXsensor</span></a>, <a class="reference internal" href="../base_classes/NXsubentry.html#nxsubentry"><span class="std std-ref">NXsubentry</span></a>, <a class="reference internal" href="../base_classes/NXuser.html#nxuser"><span class="std std-ref">NXuser</span></a></p>
+</dd>
+</dl>
+<p id="index-1"><strong>Structure</strong>:</p>
+<blockquote>
+<div><p id="nxiv-temp-entry-group"><strong>ENTRY</strong>: (required) <a class="reference internal" href="NXentry.html#nxentry"><span class="std std-ref">NXentry</span></a></p>
+<blockquote>
+<div><span class="target" id="nxiv-temp-entry-version-attribute"></span><p id="index-2"><strong>&#64;version</strong>: (required) <a class="reference internal" href="../../nxdl-types.html#nx-char"><span class="std std-ref">NX_CHAR</span></a></p>
+<blockquote>
+<div><p>Version number to identify which definition of this application
+definition was used for this entry/data.</p>
+</div></blockquote>
+<span class="target" id="nxiv-temp-entry-definition-field"></span><p id="index-3"><strong>definition</strong>: (required) <a class="reference internal" href="../../nxdl-types.html#nx-char"><span class="std std-ref">NX_CHAR</span></a></p>
+<blockquote>
+<div><p>NeXus NXDL schema to which this file conforms.</p>
+<p>Obligatory value: <code class="docutils literal notranslate"><span class="pre">NXiv_temp</span></code></p>
+<span class="target" id="nxiv-temp-entry-definition-url-attribute"></span><p id="index-4"><strong>&#64;url</strong>: (optional) <a class="reference internal" href="../../nxdl-types.html#nx-char"><span class="std std-ref">NX_CHAR</span></a></p>
+<blockquote>
+<div><p>URL where to find further material (documentation, examples)
+relevant to the application definition</p>
+</div></blockquote>
+</div></blockquote>
+<span class="target" id="nxiv-temp-entry-experiment-identifier-field"></span><p id="index-5"><strong>experiment_identifier</strong>: (required) <a class="reference internal" href="../../nxdl-types.html#nx-char"><span class="std std-ref">NX_CHAR</span></a></p>
+<blockquote>
+<div><p>Unique identifier of the experiment, such as a (globally persistent)
+unique identifier. The identifier is usually defined by the
+facility or principle investigator. The identifier enables to link
+experiments to e.g. proposals.</p>
+</div></blockquote>
+<span class="target" id="nxiv-temp-entry-experiment-description-field"></span><p id="index-6"><strong>experiment_description</strong>: (required) <a class="reference internal" href="../../nxdl-types.html#nx-char"><span class="std std-ref">NX_CHAR</span></a></p>
+<blockquote>
+<div><p>Description of the exact experiment performed.</p>
+</div></blockquote>
+<span class="target" id="nxiv-temp-entry-start-time-field"></span><p id="index-7"><strong>start_time</strong>: (recommended) <a class="reference internal" href="../../nxdl-types.html#nx-date-time"><span class="std std-ref">NX_DATE_TIME</span></a></p>
+<blockquote>
+<div><p>UTC offset should be specifiec.</p>
+</div></blockquote>
+<p id="nxiv-temp-entry-process-group"><strong>PROCESS</strong>: (optional) <a class="reference internal" href="NXprocess.html#nxprocess"><span class="std std-ref">NXprocess</span></a></p>
+<blockquote>
+<div><p>Define the program that was used to generate the results file(s)
+with measured data and metadata.</p>
+<span class="target" id="nxiv-temp-entry-process-program-field"></span><p id="index-8"><strong>program</strong>: (required) <a class="reference internal" href="../../nxdl-types.html#nx-char"><span class="std std-ref">NX_CHAR</span></a></p>
+<blockquote>
+<div><p>Commercial or otherwise defined given name of the program
+(or a link to the instrument software).</p>
+<span class="target" id="nxiv-temp-entry-process-program-version-attribute"></span><p id="index-9"><strong>&#64;version</strong>: (required) <a class="reference internal" href="../../nxdl-types.html#nx-char"><span class="std std-ref">NX_CHAR</span></a></p>
+<blockquote>
+<div><p>Either version with build number, commit hash, or description of an
+(online) repository where the source code of the program and build
+instructions can be found so that the program can be configured in
+such a way that result files can be created ideally in a
+deterministic manner.</p>
+</div></blockquote>
+<span class="target" id="nxiv-temp-entry-process-program-program-url-attribute"></span><p id="index-10"><strong>&#64;program_url</strong>: (recommended) <a class="reference internal" href="../../nxdl-types.html#nx-char"><span class="std std-ref">NX_CHAR</span></a></p>
+<blockquote>
+<div><p>Website of the software.</p>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p id="nxiv-temp-entry-operator-group"><strong>operator</strong>: (required) <a class="reference internal" href="../base_classes/NXuser.html#nxuser"><span class="std std-ref">NXuser</span></a></p>
+<blockquote>
+<div><p>Contact information of at least the user of the instrument or the
+investigator who performed this experiment. Adding multiple users if
+relevant is recommended.</p>
+<span class="target" id="nxiv-temp-entry-operator-name-field"></span><p id="index-11"><strong>name</strong>: (required) <a class="reference internal" href="../../nxdl-types.html#nx-char"><span class="std std-ref">NX_CHAR</span></a></p>
+<blockquote>
+<div><p>Name of the user.</p>
+</div></blockquote>
+<span class="target" id="nxiv-temp-entry-operator-affiliation-field"></span><p id="index-12"><strong>affiliation</strong>: (required) <a class="reference internal" href="../../nxdl-types.html#nx-char"><span class="std std-ref">NX_CHAR</span></a></p>
+<blockquote>
+<div><p>Name of the affiliation of the user at the point in time when
+the experiment was performed.</p>
+</div></blockquote>
+<span class="target" id="nxiv-temp-entry-operator-address-field"></span><p id="index-13"><strong>address</strong>: (required) <a class="reference internal" href="../../nxdl-types.html#nx-char"><span class="std std-ref">NX_CHAR</span></a></p>
+<blockquote>
+<div><p>Full address (street, street number, ZIP, city, country)
+of the user’s affiliation.</p>
+</div></blockquote>
+<span class="target" id="nxiv-temp-entry-operator-email-field"></span><p id="index-14"><strong>email</strong>: (required) <a class="reference internal" href="../../nxdl-types.html#nx-char"><span class="std std-ref">NX_CHAR</span></a></p>
+<blockquote>
+<div><p>Email address of the user.</p>
+</div></blockquote>
+<span class="target" id="nxiv-temp-entry-operator-orcid-field"></span><p id="index-15"><strong>orcid</strong>: (recommended) <a class="reference internal" href="../../nxdl-types.html#nx-char"><span class="std std-ref">NX_CHAR</span></a></p>
+<blockquote>
+<div><p>Author ID defined by <a class="reference external" href="https://orcid.org/">https://orcid.org/</a>.</p>
+</div></blockquote>
+<span class="target" id="nxiv-temp-entry-operator-telephone-number-field"></span><p id="index-16"><strong>telephone_number</strong>: (recommended) <a class="reference internal" href="../../nxdl-types.html#nx-char"><span class="std std-ref">NX_CHAR</span></a></p>
+<blockquote>
+<div><p>Official telephone number of the user.</p>
+</div></blockquote>
+</div></blockquote>
+<p id="nxiv-temp-entry-instrument-group"><strong>INSTRUMENT</strong>: (required) <a class="reference internal" href="NXinstrument.html#nxinstrument"><span class="std std-ref">NXinstrument</span></a></p>
+<blockquote>
+<div><p>General properties of the temperature dependent IV curve
+measurements equipment</p>
+<p id="nxiv-temp-entry-instrument-ivvoltage-source-group"><strong>IVvoltage_source</strong>: (required) <a class="reference internal" href="../base_classes/NXsensor.html#nxsensor"><span class="std std-ref">NXsensor</span></a></p>
+<blockquote>
+<div><p>Specify the used voltage source used in the voltage
+sweep for the IV measurement.</p>
+<span class="target" id="nxiv-temp-entry-instrument-ivvoltage-source-model-field"></span><p id="index-17"><strong>model</strong>: (optional) <a class="reference internal" href="../../nxdl-types.html#nx-char"><span class="std std-ref">NX_CHAR</span></a></p>
+<blockquote>
+<div><p>Free-text desribing the model and make of the voltage source
+which is used for the IV sweep measurement.</p>
+</div></blockquote>
+<span class="target" id="nxiv-temp-entry-instrument-ivvoltage-source-name-field"></span><p id="index-18"><strong>name</strong>: (optional) <a class="reference internal" href="../../nxdl-types.html#nx-char"><span class="std std-ref">NX_CHAR</span></a></p>
+<blockquote>
+<div><p>Custom name of the voltage source for the IV sweep given
+by the user/institution.</p>
+</div></blockquote>
+<span class="target" id="nxiv-temp-entry-instrument-ivvoltage-source-measurement-field"></span><p id="index-19"><strong>measurement</strong>: (optional) <a class="reference internal" href="../../nxdl-types.html#nx-char"><span class="std std-ref">NX_CHAR</span></a></p>
+<blockquote>
+<div><p>Free-text describing the measurement performed in a few words.</p>
+</div></blockquote>
+<span class="target" id="nxiv-temp-entry-instrument-ivvoltage-source-type-field"></span><p id="index-20"><strong>type</strong>: (optional) <a class="reference internal" href="../../nxdl-types.html#nx-char"><span class="std std-ref">NX_CHAR</span></a></p>
+<blockquote>
+<div><p>Free-text describing the type of voltage setting: an internal sweep
+using the functionality of the voltage supply, or a
+set/wait/read/repeat mechanism.</p>
+</div></blockquote>
+</div></blockquote>
+<p id="nxiv-temp-entry-instrument-ivcurrent-source-group"><strong>IVcurrent_source</strong>: (required) <a class="reference internal" href="../base_classes/NXsensor.html#nxsensor"><span class="std std-ref">NXsensor</span></a></p>
+<blockquote>
+<div><p>Specify the used current source used in the voltage sweep
+for the IV measurement.”</p>
+<span class="target" id="nxiv-temp-entry-instrument-ivcurrent-source-model-field"></span><p id="index-21"><strong>model</strong>: (optional) <a class="reference internal" href="../../nxdl-types.html#nx-char"><span class="std std-ref">NX_CHAR</span></a></p>
+<blockquote>
+<div><p>Free-text desribing the model and make of the current source
+which is used for the IV sweep measurement.</p>
+</div></blockquote>
+<span class="target" id="nxiv-temp-entry-instrument-ivcurrent-source-name-field"></span><p id="index-22"><strong>name</strong>: (optional) <a class="reference internal" href="../../nxdl-types.html#nx-char"><span class="std std-ref">NX_CHAR</span></a></p>
+<blockquote>
+<div><p>Custom name of the current source for the IV sweep given
+by the user/institution</p>
+</div></blockquote>
+<span class="target" id="nxiv-temp-entry-instrument-ivcurrent-source-measurement-field"></span><p id="index-23"><strong>measurement</strong>: (optional) <a class="reference internal" href="../../nxdl-types.html#nx-char"><span class="std std-ref">NX_CHAR</span></a></p>
+<blockquote>
+<div><p>Free-text describing the measurement performed in a few words</p>
+</div></blockquote>
+<span class="target" id="nxiv-temp-entry-instrument-ivcurrent-source-type-field"></span><p id="index-24"><strong>type</strong>: (optional) <a class="reference internal" href="../../nxdl-types.html#nx-char"><span class="std std-ref">NX_CHAR</span></a></p>
+<blockquote>
+<div><p>Free-text describing the type of current measuring: an internal
+sweep using the functionality of the voltage supply,
+or a set/wait/read/repeat mechanism.</p>
+</div></blockquote>
+</div></blockquote>
+<p id="nxiv-temp-entry-instrument-calibration-group"><strong>calibration</strong>: (optional) <a class="reference internal" href="../base_classes/NXsubentry.html#nxsubentry"><span class="std std-ref">NXsubentry</span></a></p>
+<blockquote>
+<div><p>Calibration of the temperature sensor is possible</p>
+<span class="target" id="nxiv-temp-entry-instrument-calibration-calibration-time-field"></span><p id="index-25"><strong>calibration_time</strong>: (required) <a class="reference internal" href="../../nxdl-types.html#nx-date-time"><span class="std std-ref">NX_DATE_TIME</span></a></p>
+<blockquote>
+<div><p>ISO8601 datum when calibration was last performed
+before this measurement. UTC offset should be specified.</p>
+</div></blockquote>
+</div></blockquote>
+<p id="nxiv-temp-entry-instrument-temperature-control-group"><strong>temperature_control</strong>: (optional) <a class="reference internal" href="../base_classes/NXsubentry.html#nxsubentry"><span class="std std-ref">NXsubentry</span></a></p>
+<blockquote>
+<div><p>Describes the system for controlling the temperature
+if temperature control was used.</p>
+<span class="target" id="nxiv-temp-entry-instrument-temperature-control-type-field"></span><p id="index-26"><strong>type</strong>: (required) <a class="reference internal" href="../../nxdl-types.html#nx-char"><span class="std std-ref">NX_CHAR</span></a></p>
+<blockquote>
+<div><p>What kind of temperature control was used?
+PID, custom temp control?</p>
+</div></blockquote>
+<span class="target" id="nxiv-temp-entry-instrument-temperature-control-temp-sensor-type-field"></span><p id="index-27"><strong>temp_sensor_type</strong>: (required) <a class="reference internal" href="../../nxdl-types.html#nx-char"><span class="std std-ref">NX_CHAR</span></a></p>
+<blockquote>
+<div><p>Specify the temperature sensor that was used</p>
+<p>Any of these values: <code class="docutils literal notranslate"><span class="pre">thermocouple</span></code> | <code class="docutils literal notranslate"><span class="pre">thermistor</span></code> | <code class="docutils literal notranslate"><span class="pre">RTD</span></code> | <code class="docutils literal notranslate"><span class="pre">other</span></code></p>
+</div></blockquote>
+<span class="target" id="nxiv-temp-entry-instrument-temperature-control-other-temp-sensor-field"></span><p id="index-28"><strong>other_temp_sensor</strong>: (optional) <a class="reference internal" href="../../nxdl-types.html#nx-char"><span class="std std-ref">NX_CHAR</span></a></p>
+<blockquote>
+<div><p>If you specified ‘other’ as temperature sensor,
+please write down what it is.</p>
+</div></blockquote>
+<span class="target" id="nxiv-temp-entry-instrument-temperature-control-raw-temp-data-field"></span><p id="index-29"><strong>raw_temp_data</strong>: (optional) <a class="reference internal" href="../../nxdl-types.html#nx-number"><span class="std std-ref">NX_NUMBER</span></a> (Rank: 1, Dimensions: [N_raw_temp_data])</p>
+<blockquote>
+<div><p>Data of the most principal measurement of the temperature.
+For example resistance of a Pt1000.</p>
+</div></blockquote>
+<span class="target" id="nxiv-temp-entry-instrument-temperature-control-conversion-function-field"></span><p id="index-30"><strong>conversion_function</strong>: (optional) <a class="reference internal" href="../../nxdl-types.html#nx-char"><span class="std std-ref">NX_CHAR</span></a></p>
+<blockquote>
+<div><p>Algebraic function that is used to determine temperature from the
+raw_temp_data. All values should be given in SI units.</p>
+</div></blockquote>
+<p id="nxiv-temp-entry-instrument-temperature-control-pid-settings-group"><strong>PID_settings</strong>: (optional) <a class="reference internal" href="../base_classes/NXenvironment.html#nxenvironment"><span class="std std-ref">NXenvironment</span></a></p>
+<blockquote>
+<div><p>Specify the settings of the PID temperature controller:
+K_p, K_i, and K_d values used for the temperature control</p>
+<span class="target" id="nxiv-temp-entry-instrument-temperature-control-pid-settings-k-p-value-field"></span><p id="index-31"><strong>K_p_value</strong>: (required) <a class="reference internal" href="../../nxdl-types.html#nx-number"><span class="std std-ref">NX_NUMBER</span></a></p>
+<blockquote>
+<div><p>Proportional term. The proportional term produces an output value
+that is proportional to the current error value.
+The proportional response can be adjusted by multiplying the error
+by a constant Kp, called the proportional gain constant.</p>
+</div></blockquote>
+<span class="target" id="nxiv-temp-entry-instrument-temperature-control-pid-settings-k-i-value-field"></span><p id="index-32"><strong>K_i_value</strong>: (required) <a class="reference internal" href="../../nxdl-types.html#nx-number"><span class="std std-ref">NX_NUMBER</span></a></p>
+<blockquote>
+<div><p>The contribution from the integral term is proportional to both
+the magnitude of the error and the duration of the error.
+The integral in a PID controller is the sum of the instantaneous
+error over time and gives the accumulated offset that should have
+been corrected previously. The accumulated error is then
+multiplied by the integral gain (Ki) and added to the
+controller output.</p>
+</div></blockquote>
+<span class="target" id="nxiv-temp-entry-instrument-temperature-control-pid-settings-k-d-value-field"></span><p id="index-33"><strong>K_d_value</strong>: (required) <a class="reference internal" href="../../nxdl-types.html#nx-number"><span class="std std-ref">NX_NUMBER</span></a></p>
+<blockquote>
+<div><p>The derivative of the process error is calculated by determining
+the slope of the error over time and multiplying this rate of
+change by the derivative gain K_d. The magnitude of the
+contribution of the derivative term to the overall control
+action is termed the derivative gain, K_d</p>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p id="nxiv-temp-entry-sample-group"><strong>SAMPLE</strong>: (required) <a class="reference internal" href="NXsample.html#nxsample"><span class="std std-ref">NXsample</span></a></p>
+<blockquote>
+<div><p>Properties of the sample, its history, the sample environment and
+experimental conditions (e.g. surrounding medium, temperature,
+pressure etc.), along with the data (data type, wavelength array,
+measured data).</p>
+<span class="target" id="nxiv-temp-entry-sample-sample-name-field"></span><p id="index-34"><strong>sample_name</strong>: (required) <a class="reference internal" href="../../nxdl-types.html#nx-char"><span class="std std-ref">NX_CHAR</span></a></p>
+<blockquote>
+<div><p>Descriptive name of the sample</p>
+</div></blockquote>
+<span class="target" id="nxiv-temp-entry-sample-sample-history-field"></span><p id="index-35"><strong>sample_history</strong>: (required) <a class="reference internal" href="../../nxdl-types.html#nx-char"><span class="std std-ref">NX_CHAR</span></a></p>
+<blockquote>
+<div><p>Ideally, a reference to the location or a unique (globally persistent)
+identifier (e.g.) of e.g. another file which gives as many as possible
+details of the material, its microstructure. In the case that such a
+detailed history of the sample is not available, use this field as a
+free-text description to specify details of the sample and its
+preparation.</p>
+</div></blockquote>
+<span class="target" id="nxiv-temp-entry-sample-preparation-date-field"></span><p id="index-36"><strong>preparation_date</strong>: (recommended) <a class="reference internal" href="../../nxdl-types.html#nx-date-time"><span class="std std-ref">NX_DATE_TIME</span></a></p>
+<blockquote>
+<div><p>ISO 8601 date with time zone specified. UTC offset should be specified.</p>
+</div></blockquote>
+<span class="target" id="nxiv-temp-entry-sample-data-identifier-field"></span><p id="index-37"><strong>data_identifier</strong>: (required) <a class="reference internal" href="../../nxdl-types.html#nx-number"><span class="std std-ref">NX_NUMBER</span></a> {units=<a class="reference internal" href="../../nxdl-types.html#nx-unitless"><span class="std std-ref">NX_UNITLESS</span></a>}</p>
+<blockquote>
+<div><p>An identifier to correlate data to the experimental conditions,
+if several were used in this measurement; typically an index of 0 - N</p>
+</div></blockquote>
+<span class="target" id="nxiv-temp-entry-sample-measured-data-field"></span><p id="index-38"><strong>measured_data</strong>: (required) <a class="reference internal" href="../../nxdl-types.html#nx-number"><span class="std std-ref">NX_NUMBER</span></a> (Rank: 3, Dimensions: [N_data_points, N_variables, N_different_temperatures])</p>
+<blockquote>
+<div><p>Resulting data from the measurement, described by data type.</p>
+</div></blockquote>
+<span class="target" id="nxiv-temp-entry-sample-environment-conditions-field"></span><p id="index-39"><strong>environment_conditions</strong>: (optional) <a class="reference internal" href="../../nxdl-types.html#nx-char"><span class="std std-ref">NX_CHAR</span></a></p>
+<blockquote>
+<div><p>Information about external parameters that have influenced the sample.</p>
+</div></blockquote>
+<span class="target" id="nxiv-temp-entry-sample-varied-parameters-field"></span><p id="index-40"><strong>varied_parameters</strong>: (optional) <a class="reference internal" href="../../nxdl-types.html#nx-char"><span class="std std-ref">NX_CHAR</span></a></p>
+<blockquote>
+<div><p>Indicates which parameter was changed. Its definition must exist below.
+The specified variable has to be number_of_runs long,
+providing the parameters for each data set.</p>
+<p>Obligatory value: <code class="docutils literal notranslate"><span class="pre">temperature</span></code></p>
+</div></blockquote>
+</div></blockquote>
+<p id="nxiv-temp-entry-plot-group"><strong>plot</strong>: (optional) <a class="reference internal" href="../base_classes/NXdata.html#nxdata"><span class="std std-ref">NXdata</span></a></p>
+<blockquote>
+<div><p>A default view of the data. The current (y-axis) should be plotted
+against the voltage (x-axis) with color coding for the temperature
+of each IV-curve.</p>
+<span class="target" id="nxiv-temp-entry-plot-long-name-attribute"></span><p id="index-41"><strong>&#64;long_name</strong>: (required) <a class="reference internal" href="../../nxdl-types.html#nx-char"><span class="std std-ref">NX_CHAR</span></a></p>
+<blockquote>
+<div><p>IV curve.</p>
+</div></blockquote>
+<span class="target" id="nxiv-temp-entry-plot-voltage-field"></span><p id="index-42"><strong>voltage</strong>: (required) <a class="reference internal" href="../../nxdl-types.html#nx-number"><span class="std std-ref">NX_NUMBER</span></a> (Rank: 1, Dimensions: [N_data_points]) {units=<a class="reference internal" href="../../nxdl-types.html#nx-voltage"><span class="std std-ref">NX_VOLTAGE</span></a>}</p>
+<blockquote>
+<div><p>Array of voltage values on the independent axis supporting the curve.</p>
+</div></blockquote>
+<span class="target" id="nxiv-temp-entry-plot-current-field"></span><p id="index-43"><strong>current</strong>: (required) <a class="reference internal" href="../../nxdl-types.html#nx-number"><span class="std std-ref">NX_NUMBER</span></a> {units=<a class="reference internal" href="../../nxdl-types.html#nx-any"><span class="std std-ref">NX_ANY</span></a>}</p>
+<blockquote>
+<div><p>Array of current values on the dependent axis of the curve.</p>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<section id="hypertext-anchors">
+<h2>Hypertext Anchors<a class="headerlink" href="#hypertext-anchors" title="Permalink to this heading">¶</a></h2>
+<p>List of hypertext anchors for all groups, fields,
+attributes, and links defined in this class.</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#nxiv-temp-entry-group"><span class="std std-ref">/NXiv_temp/ENTRY-group</span></a></p></li>
+<li><p><a class="reference internal" href="#nxiv-temp-entry-definition-field"><span class="std std-ref">/NXiv_temp/ENTRY/definition-field</span></a></p></li>
+<li><p><a class="reference internal" href="#nxiv-temp-entry-definition-url-attribute"><span class="std std-ref">/NXiv_temp/ENTRY/definition&#64;url-attribute</span></a></p></li>
+<li><p><a class="reference internal" href="#nxiv-temp-entry-experiment-description-field"><span class="std std-ref">/NXiv_temp/ENTRY/experiment_description-field</span></a></p></li>
+<li><p><a class="reference internal" href="#nxiv-temp-entry-experiment-identifier-field"><span class="std std-ref">/NXiv_temp/ENTRY/experiment_identifier-field</span></a></p></li>
+<li><p><a class="reference internal" href="#nxiv-temp-entry-instrument-group"><span class="std std-ref">/NXiv_temp/ENTRY/INSTRUMENT-group</span></a></p></li>
+<li><p><a class="reference internal" href="#nxiv-temp-entry-instrument-calibration-group"><span class="std std-ref">/NXiv_temp/ENTRY/INSTRUMENT/calibration-group</span></a></p></li>
+<li><p><a class="reference internal" href="#nxiv-temp-entry-instrument-calibration-calibration-time-field"><span class="std std-ref">/NXiv_temp/ENTRY/INSTRUMENT/calibration/calibration_time-field</span></a></p></li>
+<li><p><a class="reference internal" href="#nxiv-temp-entry-instrument-ivcurrent-source-group"><span class="std std-ref">/NXiv_temp/ENTRY/INSTRUMENT/IVcurrent_source-group</span></a></p></li>
+<li><p><a class="reference internal" href="#nxiv-temp-entry-instrument-ivcurrent-source-measurement-field"><span class="std std-ref">/NXiv_temp/ENTRY/INSTRUMENT/IVcurrent_source/measurement-field</span></a></p></li>
+<li><p><a class="reference internal" href="#nxiv-temp-entry-instrument-ivcurrent-source-model-field"><span class="std std-ref">/NXiv_temp/ENTRY/INSTRUMENT/IVcurrent_source/model-field</span></a></p></li>
+<li><p><a class="reference internal" href="#nxiv-temp-entry-instrument-ivcurrent-source-name-field"><span class="std std-ref">/NXiv_temp/ENTRY/INSTRUMENT/IVcurrent_source/name-field</span></a></p></li>
+<li><p><a class="reference internal" href="#nxiv-temp-entry-instrument-ivcurrent-source-type-field"><span class="std std-ref">/NXiv_temp/ENTRY/INSTRUMENT/IVcurrent_source/type-field</span></a></p></li>
+<li><p><a class="reference internal" href="#nxiv-temp-entry-instrument-ivvoltage-source-group"><span class="std std-ref">/NXiv_temp/ENTRY/INSTRUMENT/IVvoltage_source-group</span></a></p></li>
+<li><p><a class="reference internal" href="#nxiv-temp-entry-instrument-ivvoltage-source-measurement-field"><span class="std std-ref">/NXiv_temp/ENTRY/INSTRUMENT/IVvoltage_source/measurement-field</span></a></p></li>
+<li><p><a class="reference internal" href="#nxiv-temp-entry-instrument-ivvoltage-source-model-field"><span class="std std-ref">/NXiv_temp/ENTRY/INSTRUMENT/IVvoltage_source/model-field</span></a></p></li>
+<li><p><a class="reference internal" href="#nxiv-temp-entry-instrument-ivvoltage-source-name-field"><span class="std std-ref">/NXiv_temp/ENTRY/INSTRUMENT/IVvoltage_source/name-field</span></a></p></li>
+<li><p><a class="reference internal" href="#nxiv-temp-entry-instrument-ivvoltage-source-type-field"><span class="std std-ref">/NXiv_temp/ENTRY/INSTRUMENT/IVvoltage_source/type-field</span></a></p></li>
+<li><p><a class="reference internal" href="#nxiv-temp-entry-instrument-temperature-control-group"><span class="std std-ref">/NXiv_temp/ENTRY/INSTRUMENT/temperature_control-group</span></a></p></li>
+<li><p><a class="reference internal" href="#nxiv-temp-entry-instrument-temperature-control-conversion-function-field"><span class="std std-ref">/NXiv_temp/ENTRY/INSTRUMENT/temperature_control/conversion_function-field</span></a></p></li>
+<li><p><a class="reference internal" href="#nxiv-temp-entry-instrument-temperature-control-other-temp-sensor-field"><span class="std std-ref">/NXiv_temp/ENTRY/INSTRUMENT/temperature_control/other_temp_sensor-field</span></a></p></li>
+<li><p><a class="reference internal" href="#nxiv-temp-entry-instrument-temperature-control-pid-settings-group"><span class="std std-ref">/NXiv_temp/ENTRY/INSTRUMENT/temperature_control/PID_settings-group</span></a></p></li>
+<li><p><a class="reference internal" href="#nxiv-temp-entry-instrument-temperature-control-pid-settings-k-d-value-field"><span class="std std-ref">/NXiv_temp/ENTRY/INSTRUMENT/temperature_control/PID_settings/K_d_value-field</span></a></p></li>
+<li><p><a class="reference internal" href="#nxiv-temp-entry-instrument-temperature-control-pid-settings-k-i-value-field"><span class="std std-ref">/NXiv_temp/ENTRY/INSTRUMENT/temperature_control/PID_settings/K_i_value-field</span></a></p></li>
+<li><p><a class="reference internal" href="#nxiv-temp-entry-instrument-temperature-control-pid-settings-k-p-value-field"><span class="std std-ref">/NXiv_temp/ENTRY/INSTRUMENT/temperature_control/PID_settings/K_p_value-field</span></a></p></li>
+<li><p><a class="reference internal" href="#nxiv-temp-entry-instrument-temperature-control-raw-temp-data-field"><span class="std std-ref">/NXiv_temp/ENTRY/INSTRUMENT/temperature_control/raw_temp_data-field</span></a></p></li>
+<li><p><a class="reference internal" href="#nxiv-temp-entry-instrument-temperature-control-temp-sensor-type-field"><span class="std std-ref">/NXiv_temp/ENTRY/INSTRUMENT/temperature_control/temp_sensor_type-field</span></a></p></li>
+<li><p><a class="reference internal" href="#nxiv-temp-entry-instrument-temperature-control-type-field"><span class="std std-ref">/NXiv_temp/ENTRY/INSTRUMENT/temperature_control/type-field</span></a></p></li>
+<li><p><a class="reference internal" href="#nxiv-temp-entry-operator-group"><span class="std std-ref">/NXiv_temp/ENTRY/operator-group</span></a></p></li>
+<li><p><a class="reference internal" href="#nxiv-temp-entry-operator-address-field"><span class="std std-ref">/NXiv_temp/ENTRY/operator/address-field</span></a></p></li>
+<li><p><a class="reference internal" href="#nxiv-temp-entry-operator-affiliation-field"><span class="std std-ref">/NXiv_temp/ENTRY/operator/affiliation-field</span></a></p></li>
+<li><p><a class="reference internal" href="#nxiv-temp-entry-operator-email-field"><span class="std std-ref">/NXiv_temp/ENTRY/operator/email-field</span></a></p></li>
+<li><p><a class="reference internal" href="#nxiv-temp-entry-operator-name-field"><span class="std std-ref">/NXiv_temp/ENTRY/operator/name-field</span></a></p></li>
+<li><p><a class="reference internal" href="#nxiv-temp-entry-operator-orcid-field"><span class="std std-ref">/NXiv_temp/ENTRY/operator/orcid-field</span></a></p></li>
+<li><p><a class="reference internal" href="#nxiv-temp-entry-operator-telephone-number-field"><span class="std std-ref">/NXiv_temp/ENTRY/operator/telephone_number-field</span></a></p></li>
+<li><p><a class="reference internal" href="#nxiv-temp-entry-plot-group"><span class="std std-ref">/NXiv_temp/ENTRY/plot-group</span></a></p></li>
+<li><p><a class="reference internal" href="#nxiv-temp-entry-plot-current-field"><span class="std std-ref">/NXiv_temp/ENTRY/plot/current-field</span></a></p></li>
+<li><p><a class="reference internal" href="#nxiv-temp-entry-plot-voltage-field"><span class="std std-ref">/NXiv_temp/ENTRY/plot/voltage-field</span></a></p></li>
+<li><p><a class="reference internal" href="#nxiv-temp-entry-plot-long-name-attribute"><span class="std std-ref">/NXiv_temp/ENTRY/plot&#64;long_name-attribute</span></a></p></li>
+<li><p><a class="reference internal" href="#nxiv-temp-entry-process-group"><span class="std std-ref">/NXiv_temp/ENTRY/PROCESS-group</span></a></p></li>
+<li><p><a class="reference internal" href="#nxiv-temp-entry-process-program-field"><span class="std std-ref">/NXiv_temp/ENTRY/PROCESS/program-field</span></a></p></li>
+<li><p><a class="reference internal" href="#nxiv-temp-entry-process-program-program-url-attribute"><span class="std std-ref">/NXiv_temp/ENTRY/PROCESS/program&#64;program_url-attribute</span></a></p></li>
+<li><p><a class="reference internal" href="#nxiv-temp-entry-process-program-version-attribute"><span class="std std-ref">/NXiv_temp/ENTRY/PROCESS/program&#64;version-attribute</span></a></p></li>
+<li><p><a class="reference internal" href="#nxiv-temp-entry-sample-group"><span class="std std-ref">/NXiv_temp/ENTRY/SAMPLE-group</span></a></p></li>
+<li><p><a class="reference internal" href="#nxiv-temp-entry-sample-data-identifier-field"><span class="std std-ref">/NXiv_temp/ENTRY/SAMPLE/data_identifier-field</span></a></p></li>
+<li><p><a class="reference internal" href="#nxiv-temp-entry-sample-environment-conditions-field"><span class="std std-ref">/NXiv_temp/ENTRY/SAMPLE/environment_conditions-field</span></a></p></li>
+<li><p><a class="reference internal" href="#nxiv-temp-entry-sample-measured-data-field"><span class="std std-ref">/NXiv_temp/ENTRY/SAMPLE/measured_data-field</span></a></p></li>
+<li><p><a class="reference internal" href="#nxiv-temp-entry-sample-preparation-date-field"><span class="std std-ref">/NXiv_temp/ENTRY/SAMPLE/preparation_date-field</span></a></p></li>
+<li><p><a class="reference internal" href="#nxiv-temp-entry-sample-sample-history-field"><span class="std std-ref">/NXiv_temp/ENTRY/SAMPLE/sample_history-field</span></a></p></li>
+<li><p><a class="reference internal" href="#nxiv-temp-entry-sample-sample-name-field"><span class="std std-ref">/NXiv_temp/ENTRY/SAMPLE/sample_name-field</span></a></p></li>
+<li><p><a class="reference internal" href="#nxiv-temp-entry-sample-varied-parameters-field"><span class="std std-ref">/NXiv_temp/ENTRY/SAMPLE/varied_parameters-field</span></a></p></li>
+<li><p><a class="reference internal" href="#nxiv-temp-entry-start-time-field"><span class="std std-ref">/NXiv_temp/ENTRY/start_time-field</span></a></p></li>
+<li><p><a class="reference internal" href="#nxiv-temp-entry-version-attribute"><span class="std std-ref">/NXiv_temp/ENTRY&#64;version-attribute</span></a></p></li>
+</ul>
+<dl class="simple">
+<dt><strong>NXDL Source</strong>:</dt><dd><p><a class="reference external" href="https://github.com/nexusformat/definitions/blob/main/applications/NXiv_temp.nxdl.xml">https://github.com/nexusformat/definitions/blob/main/applications/NXiv_temp.nxdl.xml</a></p>
+</dd>
+</dl>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../../index.html">
+              <img class="logo" src="../../_static/FAIRmat.png" alt="Logo"/>
+            </a></p>
+<h1 class="logo"><a href="../../index.html">NeXus-FAIRmat</a></h1>
+
+
+
+<p class="blurb">Proposal of NeXus expansion for FAIRmat data.</p>
+
+
+
+
+<p>
+<iframe src="https://ghbtns.com/github-btn.html?user=FAIRmat-Experimental&repo=nexus_definitions/tree/fairmat&type=watch&count=false&size=large&v=2"
+  allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="35px"></iframe>
+</p>
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../fairmat-cover.html">FAIRmat-NeXus Proposal</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../nexus-index.html">NeXus Documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../user_manual.html">NeXus: User Manual</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/index.html">Examples of writing and reading NeXus data files</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../ref_doc.html">NeXus: Reference Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../community.html">NeXus Community</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../installation.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../utilities.html">NeXus Utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../docs_about.html">About these docs</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../mpes-structure.html">MPES Structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ellipsometry-structure.html">Ellipsometry Structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../em-structure.html">Electron Microscopy Structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apm-structure.html">Atom Probe Microscopy Structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../epics-structure.html">EPICS Structure</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../../nexus-index.html">NeXus Documentation</a><ul>
+  <li><a href="../../ref_doc.html">NeXus: Reference Documentation</a><ul>
+  <li><a href="../index.html">NeXus Class Definitions</a><ul>
+  <li><a href="index.html">Contributed Definitions</a><ul>
+      <li>Previous: <a href="NXion.html" title="previous chapter">NXion</a></li>
+      <li>Next: <a href="NXlens_em.html" title="next chapter">NXlens_em</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+<div id="google_search" style="display: none">
+	<hr />
+	<h3>Google search</h3>
+	<form method="get" action="https://www.google.com/search">
+		<table border="0" align="center" cellpadding="0">
+			<tr>
+				<td>
+					<input type="text"   name="q" value="" />
+				</td>
+			</tr>
+			<tr>
+				<td align="center" style="font-size:75%">
+					<input type="radio"  name="sitesearch" value="" />global
+					<input type="radio"  name="sitesearch"
+						value="manual.nexusformat.org" 
+						checked />NeXus manual
+					<input type="submit" value="Go" />
+					<br />
+				</td>
+			</tr>
+		</table>
+	</form>                                
+</div>
+<script type="text/javascript">$('#google_search').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2022-2022, The FAIRmat collaboration.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.0.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../../_sources/classes/contributed_definitions/NXiv_temp.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
