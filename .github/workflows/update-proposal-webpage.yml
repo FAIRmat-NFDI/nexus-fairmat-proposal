@@ -43,7 +43,25 @@ jobs:
           MYCOMMITTC=$(git log -1 | grep ^Date)
           # replace the links with the current one
           # grep -rl '  https:\/\/github.com\/nexusformat\/definitions\/blob\/main' --exclude-dir=.git | xargs sed -i 's/  https:\/\/github.com\/nexusformat\/definitions\/blob\/main/  https:\/\/github.com\/FAIRmat-Experimental\/nexus_definitions\/tree\/fairmat/'
-          grep -rl 'https:\/\/github.com\/nexusformat\/definitions\/blob\/main' --exclude-dir=.git | xargs sed -i 's/https:\/\/github.com\/nexusformat\/definitions\/blob\/main/https:\/\/github.com\/FAIRmat-Experimental\/nexus_definitions\/tree\/fairmat/g'
+          # so far we got away with the next line because we placed our base classes and appdefs in the respective base and applications dirs but now ...
+          # grep -rl 'https:\/\/github.com\/nexusformat\/definitions\/blob\/main' --exclude-dir=.git | xargs sed -i 's/https:\/\/github.com\/nexusformat\/definitions\/blob\/main/https:\/\/github.com\/FAIRmat-Experimental\/nexus_definitions\/tree\/fairmat/g'
+          # ... base classes and appdefs from fairmat are inside contributed_definitions, so ...
+          # ... we need to replace NXDL links by how they are differently pointing to the github repo for appdefs, base, and contributed
+          # NeXus base classes
+          cd manual/source/classes/base_classes
+          grep -rl 'https:\/\/github.com\/nexusformat\/definitions\/blob\/main\/base_classes' --exclude-dir=.git | xargs sed -i 's/https:\/\/github.com\/nexusformat\/definitions\/blob\/main\/base_classes/https:\/\/github.com\/FAIRmat-Experimental\/nexus_definitions\/tree\/fairmat\/base_classes/g'
+          cd ../../../../
+          # NeXus application definitions
+          cd manual/source/classes/applications
+          grep -rl 'https:\/\/github.com\/nexusformat\/definitions\/blob\/main\/applications' --exclude-dir=.git | xargs sed -i 's/https:\/\/github.com\/nexusformat\/definitions\/blob\/main\/applications/https:\/\/github.com\/FAIRmat-Experimental\/nexus_definitions\/tree\/fairmat\/applications/g'
+          cd ../../../../
+          # NeXus contributed definitions as showing up in the nexus-fairmat-proposal fairmat branch of nexus_definitions
+          # in contributed definitions there can be base classes appdefs or 
+          cd manual/source/classes/contributed_definitions
+          grep -rl 'https:\/\/github.com\/nexusformat\/definitions\/blob\/main\/base_classes' --exclude-dir=.git | xargs sed -i 's/https:\/\/github.com\/nexusformat\/definitions\/blob\/main\/base_classes/https:\/\/github.com\/FAIRmat-Experimental\/nexus_definitions\/tree\/fairmat\/contributed_definitions/g'
+          grep -rl 'https:\/\/github.com\/nexusformat\/definitions\/blob\/main\/applications' --exclude-dir=.git | xargs sed -i 's/https:\/\/github.com\/nexusformat\/definitions\/blob\/main\/applications/https:\/\/github.com\/FAIRmat-Experimental\/nexus_definitions\/tree\/fairmat\/contributed_definitions/g'
+          grep -rl 'https:\/\/github.com\/nexusformat\/definitions\/blob\/main\/contributed_definitions' --exclude-dir=.git | xargs sed -i 's/https:\/\/github.com\/nexusformat\/definitions\/blob\/main\/contributed_definitions/https:\/\/github.com\/FAIRmat-Experimental\/nexus_definitions\/tree\/fairmat\/contributed_definitions/g'
+          cd ../../../../
           cd $GITHUB_WORKSPACE
           echo $MYCOMMITID
           # create sub-directory named $MYCOMMITID
