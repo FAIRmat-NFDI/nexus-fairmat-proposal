@@ -1,0 +1,508 @@
+
+
+
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>NXapm_paraprobe_results_ranger &#8212; NeXus-FAIRmat v2020.10 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/alabaster.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/to_alabaster.css" />
+    <link rel="stylesheet" href="../../_static/blockquote.css" type="text/css" />
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="copyright" title="Copyright" href="../../copyright.html" />
+    <link rel="next" title="NXapm_paraprobe_results_transcoder" href="NXapm_paraprobe_results_transcoder.html" />
+    <link rel="prev" title="NXapm_paraprobe_config_transcoder" href="NXapm_paraprobe_config_transcoder.html" /> 
+    <link rel="stylesheet" href="../../_static/blockquote.css" type="text/css" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="nxapm-paraprobe-results-ranger">
+<span id="index-0"></span><span id="id1"></span><h1>NXapm_paraprobe_results_ranger<a class="headerlink" href="#nxapm-paraprobe-results-ranger" title="Permalink to this heading">¶</a></h1>
+<p><strong>Status</strong>:</p>
+<blockquote>
+<div><p>application definition, extends <a class="reference internal" href="../base_classes/NXobject.html#nxobject"><span class="std std-ref">NXobject</span></a></p>
+</div></blockquote>
+<p><strong>Description</strong>:</p>
+<blockquote>
+<div><p>Results of a paraprobe-ranger tool run in atom probe microscopy.</p>
+</div></blockquote>
+<p><strong>Symbols</strong>:</p>
+<blockquote>
+<div><p>The symbols used in the schema to specify e.g. dimensions of arrays.</p>
+<p><strong>n_ions</strong>: The total number of ions in the reconstruction.</p>
+<p><strong>n_ivec</strong>: The maximum number of atoms per molecular ion type.</p>
+</div></blockquote>
+<dl class="simple">
+<dt><strong>Groups cited</strong>:</dt><dd><p><a class="reference internal" href="NXcoordinate_system_set.html#nxcoordinate-system-set"><span class="std std-ref">NXcoordinate_system_set</span></a>, <a class="reference internal" href="NXcs_computer.html#nxcs-computer"><span class="std std-ref">NXcs_computer</span></a>, <a class="reference internal" href="NXcs_cpu.html#nxcs-cpu"><span class="std std-ref">NXcs_cpu</span></a>, <a class="reference internal" href="NXcs_gpu.html#nxcs-gpu"><span class="std std-ref">NXcs_gpu</span></a>, <a class="reference internal" href="NXcs_io_obj.html#nxcs-io-obj"><span class="std std-ref">NXcs_io_obj</span></a>, <a class="reference internal" href="NXcs_io_sys.html#nxcs-io-sys"><span class="std std-ref">NXcs_io_sys</span></a>, <a class="reference internal" href="NXcs_mm_sys.html#nxcs-mm-sys"><span class="std std-ref">NXcs_mm_sys</span></a>, <a class="reference internal" href="NXcs_profiling_event.html#nxcs-profiling-event"><span class="std std-ref">NXcs_profiling_event</span></a>, <a class="reference internal" href="NXcs_profiling.html#nxcs-profiling"><span class="std std-ref">NXcs_profiling</span></a>, <a class="reference internal" href="NXentry.html#nxentry"><span class="std std-ref">NXentry</span></a>, <a class="reference internal" href="NXfabrication.html#nxfabrication"><span class="std std-ref">NXfabrication</span></a>, <a class="reference internal" href="NXion.html#nxion"><span class="std std-ref">NXion</span></a>, <a class="reference internal" href="NXprocess.html#nxprocess"><span class="std std-ref">NXprocess</span></a>, <a class="reference internal" href="../base_classes/NXtransformations.html#nxtransformations"><span class="std std-ref">NXtransformations</span></a>, <a class="reference internal" href="../base_classes/NXuser.html#nxuser"><span class="std std-ref">NXuser</span></a></p>
+</dd>
+</dl>
+<p id="index-1"><strong>Structure</strong>:</p>
+<blockquote>
+<div><p id="nxapm-paraprobe-results-ranger-entry-group"><strong>ENTRY</strong>: (required) <a class="reference internal" href="NXentry.html#nxentry"><span class="std std-ref">NXentry</span></a></p>
+<blockquote>
+<div><span class="target" id="nxapm-paraprobe-results-ranger-entry-version-attribute"></span><p id="index-2"><strong>&#64;version</strong>: (required) <a class="reference internal" href="../../nxdl-types.html#nx-char"><span class="std std-ref">NX_CHAR</span></a></p>
+<blockquote>
+<div><p>Version specifier of this application definition.</p>
+</div></blockquote>
+<span class="target" id="nxapm-paraprobe-results-ranger-entry-definition-field"></span><p id="index-3"><strong>definition</strong>: (required) <a class="reference internal" href="../../nxdl-types.html#nx-char"><span class="std std-ref">NX_CHAR</span></a></p>
+<blockquote>
+<div><p>Official NeXus NXDL schema with which this file was written.</p>
+<p>Obligatory value: <code class="docutils literal notranslate"><span class="pre">NXapm_paraprobe_results_ranger</span></code></p>
+</div></blockquote>
+<span class="target" id="nxapm-paraprobe-results-ranger-entry-program-field"></span><p id="index-4"><strong>program</strong>: (required) <a class="reference internal" href="../../nxdl-types.html#nx-char"><span class="std std-ref">NX_CHAR</span></a></p>
+<blockquote>
+<div><p>Given name of the program/software/tool with which this NeXus
+(configuration) file was generated.</p>
+<span class="target" id="nxapm-paraprobe-results-ranger-entry-program-version-attribute"></span><p id="index-5"><strong>&#64;version</strong>: (required) <a class="reference internal" href="../../nxdl-types.html#nx-char"><span class="std std-ref">NX_CHAR</span></a></p>
+<blockquote>
+<div><p>Ideally program version plus build number, or commit hash or description
+of ever persistent resources where the source code of the program and
+build instructions can be found so that the program can be configured
+ideally in such a manner that the result of this computational process
+is recreatable in the same deterministic manner.</p>
+</div></blockquote>
+</div></blockquote>
+<span class="target" id="nxapm-paraprobe-results-ranger-entry-analysis-identifier-field"></span><p id="index-6"><strong>analysis_identifier</strong>: (optional) <a class="reference internal" href="../../nxdl-types.html#nx-char"><span class="std std-ref">NX_CHAR</span></a></p>
+<blockquote>
+<div><p>Ideally, a (globally persistent) unique identifier for referring
+to this analysis.</p>
+</div></blockquote>
+<span class="target" id="nxapm-paraprobe-results-ranger-entry-analysis-description-field"></span><p id="index-7"><strong>analysis_description</strong>: (optional) <a class="reference internal" href="../../nxdl-types.html#nx-char"><span class="std std-ref">NX_CHAR</span></a></p>
+<blockquote>
+<div><p>Possibility for leaving a free-text description about this analysis.</p>
+</div></blockquote>
+<span class="target" id="nxapm-paraprobe-results-ranger-entry-time-stamp-field"></span><p id="index-8"><strong>time_stamp</strong>: (required) <a class="reference internal" href="../../nxdl-types.html#nx-date-time"><span class="std std-ref">NX_DATE_TIME</span></a></p>
+<blockquote>
+<div><p>ISO 8601 formatted time code with local time zone offset to UTC
+information included when this configuration file was created.</p>
+</div></blockquote>
+<span class="target" id="nxapm-paraprobe-results-ranger-entry-config-filename-field"></span><p id="index-9"><strong>config_filename</strong>: (required) <a class="reference internal" href="../../nxdl-types.html#nx-char"><span class="std std-ref">NX_CHAR</span></a></p>
+<blockquote>
+<div><p>The absolute path and name of the config file for this analysis.</p>
+<span class="target" id="nxapm-paraprobe-results-ranger-entry-config-filename-version-attribute"></span><p id="index-10"><strong>&#64;version</strong>: (required) <a class="reference internal" href="../../nxdl-types.html#nx-char"><span class="std std-ref">NX_CHAR</span></a></p>
+<blockquote>
+<div><p>At least SHA256 strong hash of the specific config_file for
+tracking provenance.</p>
+</div></blockquote>
+</div></blockquote>
+<p id="nxapm-paraprobe-results-ranger-entry-user-group"><strong>USER</strong>: (recommended) <a class="reference internal" href="../base_classes/NXuser.html#nxuser"><span class="std std-ref">NXuser</span></a></p>
+<blockquote>
+<div><p>If used, contact information and eventually details
+of at least the person who performed this analysis.</p>
+<span class="target" id="nxapm-paraprobe-results-ranger-entry-user-name-field"></span><p id="index-11"><strong>name</strong>: (required) <a class="reference internal" href="../../nxdl-types.html#nx-char"><span class="std std-ref">NX_CHAR</span></a></p>
+<span class="target" id="nxapm-paraprobe-results-ranger-entry-user-affiliation-field"></span><p id="index-12"><strong>affiliation</strong>: (recommended) <a class="reference internal" href="../../nxdl-types.html#nx-char"><span class="std std-ref">NX_CHAR</span></a></p>
+<span class="target" id="nxapm-paraprobe-results-ranger-entry-user-address-field"></span><p id="index-13"><strong>address</strong>: (optional) <a class="reference internal" href="../../nxdl-types.html#nx-char"><span class="std std-ref">NX_CHAR</span></a></p>
+<span class="target" id="nxapm-paraprobe-results-ranger-entry-user-email-field"></span><p id="index-14"><strong>email</strong>: (recommended) <a class="reference internal" href="../../nxdl-types.html#nx-char"><span class="std std-ref">NX_CHAR</span></a></p>
+<span class="target" id="nxapm-paraprobe-results-ranger-entry-user-orcid-field"></span><p id="index-15"><strong>orcid</strong>: (recommended) <a class="reference internal" href="../../nxdl-types.html#nx-char"><span class="std std-ref">NX_CHAR</span></a></p>
+<span class="target" id="nxapm-paraprobe-results-ranger-entry-user-orcid-platform-field"></span><p id="index-16"><strong>orcid_platform</strong>: (recommended) <a class="reference internal" href="../../nxdl-types.html#nx-char"><span class="std std-ref">NX_CHAR</span></a></p>
+<span class="target" id="nxapm-paraprobe-results-ranger-entry-user-telephone-number-field"></span><p id="index-17"><strong>telephone_number</strong>: (optional) <a class="reference internal" href="../../nxdl-types.html#nx-char"><span class="std std-ref">NX_CHAR</span></a></p>
+<span class="target" id="nxapm-paraprobe-results-ranger-entry-user-role-field"></span><p id="index-18"><strong>role</strong>: (recommended) <a class="reference internal" href="../../nxdl-types.html#nx-char"><span class="std std-ref">NX_CHAR</span></a></p>
+<span class="target" id="nxapm-paraprobe-results-ranger-entry-user-social-media-name-field"></span><p id="index-19"><strong>social_media_name</strong>: (optional) <a class="reference internal" href="../../nxdl-types.html#nx-char"><span class="std std-ref">NX_CHAR</span></a></p>
+<span class="target" id="nxapm-paraprobe-results-ranger-entry-user-social-media-platform-field"></span><p id="index-20"><strong>social_media_platform</strong>: (optional) <a class="reference internal" href="../../nxdl-types.html#nx-char"><span class="std std-ref">NX_CHAR</span></a></p>
+</div></blockquote>
+<p id="nxapm-paraprobe-results-ranger-entry-coordinate-system-set-group"><strong>COORDINATE_SYSTEM_SET</strong>: (optional) <a class="reference internal" href="NXcoordinate_system_set.html#nxcoordinate-system-set"><span class="std std-ref">NXcoordinate_system_set</span></a></p>
+<blockquote>
+<div><p>Details about the coordinate system conventions used.</p>
+<p id="nxapm-paraprobe-results-ranger-entry-coordinate-system-set-transformations-group"><strong>TRANSFORMATIONS</strong>: (required) <a class="reference internal" href="../base_classes/NXtransformations.html#nxtransformations"><span class="std std-ref">NXtransformations</span></a></p>
+<blockquote>
+<div><p>The individual coordinate systems which used.
+fields should be prefixed with a prefix taken from an
+enumeration which details the individual coordinate systems:</p>
+<ul class="simple">
+<li><p>lab</p></li>
+<li><p>specimen</p></li>
+<li><p>laser</p></li>
+<li><p>leap</p></li>
+<li><p>detector</p></li>
+<li><p>recon</p></li>
+</ul>
+</div></blockquote>
+</div></blockquote>
+<p id="nxapm-paraprobe-results-ranger-entry-process-group"><strong>PROCESS</strong>: (optional) <a class="reference internal" href="NXprocess.html#nxprocess"><span class="std std-ref">NXprocess</span></a></p>
+<blockquote>
+<div><p id="nxapm-paraprobe-results-ranger-entry-process-use-existent-ranging-group"><strong>use_existent_ranging</strong>: (optional) <a class="reference internal" href="NXprocess.html#nxprocess"><span class="std std-ref">NXprocess</span></a></p>
+<blockquote>
+<div><p>Paraprobe-ranger loads the iontypes and evaluates for each
+ion on which iontype it matches. If it matches on none, the
+ion is considered of the default unknown type with a 0 as its
+respective value in the iontypes array.</p>
+<span class="target" id="nxapm-paraprobe-results-ranger-entry-process-use-existent-ranging-iontypes-field"></span><p id="index-21"><strong>iontypes</strong>: (required) <a class="reference internal" href="../../nxdl-types.html#nx-uint"><span class="std std-ref">NX_UINT</span></a> (Rank: 1, Dimensions: [n_ions]) {units=<a class="reference internal" href="../../nxdl-types.html#nx-unitless"><span class="std std-ref">NX_UNITLESS</span></a>}</p>
+<blockquote>
+<div><p>The iontype ID for each ion that was best matching, stored in the
+order of the evaporation sequence ID.</p>
+</div></blockquote>
+<p id="nxapm-paraprobe-results-ranger-entry-process-use-existent-ranging-ion-group"><strong>ION</strong>: (required) <a class="reference internal" href="NXion.html#nxion"><span class="std std-ref">NXion</span></a></p>
+<blockquote>
+<div><span class="target" id="nxapm-paraprobe-results-ranger-entry-process-use-existent-ranging-ion-isotope-vector-field"></span><p id="index-22"><strong>isotope_vector</strong>: (required) <a class="reference internal" href="../../nxdl-types.html#nx-uint"><span class="std std-ref">NX_UINT</span></a></p>
+<span class="target" id="nxapm-paraprobe-results-ranger-entry-process-use-existent-ranging-ion-nuclid-list-field"></span><p id="index-23"><strong>nuclid_list</strong>: (recommended) <a class="reference internal" href="../../nxdl-types.html#nx-uint"><span class="std std-ref">NX_UINT</span></a></p>
+<span class="target" id="nxapm-paraprobe-results-ranger-entry-process-use-existent-ranging-ion-charge-state-field"></span><p id="index-24"><strong>charge_state</strong>: (required) <a class="reference internal" href="../../nxdl-types.html#nx-int"><span class="std std-ref">NX_INT</span></a></p>
+<span class="target" id="nxapm-paraprobe-results-ranger-entry-process-use-existent-ranging-ion-mass-to-charge-range-field"></span><p id="index-25"><strong>mass_to_charge_range</strong>: (required) <a class="reference internal" href="../../nxdl-types.html#nx-float"><span class="std std-ref">NX_FLOAT</span></a></p>
+</div></blockquote>
+</div></blockquote>
+<p id="nxapm-paraprobe-results-ranger-entry-process-molecular-ion-search-group"><strong>molecular_ion_search</strong>: (optional) <a class="reference internal" href="NXprocess.html#nxprocess"><span class="std std-ref">NXprocess</span></a></p>
+<blockquote>
+<div><p>Paraprobe-ranger performs a combinatorial search over
+all possible or a reduced set of nuclids to identify
+into which ions these can be composed.</p>
+<span class="target" id="nxapm-paraprobe-results-ranger-entry-process-molecular-ion-search-isotope-vector-matrix-field"></span><p id="index-26"><strong>isotope_vector_matrix</strong>: (required) <a class="reference internal" href="../../nxdl-types.html#nx-uint"><span class="std std-ref">NX_UINT</span></a> (Rank: 2, Dimensions: [i, 32]) {units=<a class="reference internal" href="../../nxdl-types.html#nx-unitless"><span class="std std-ref">NX_UNITLESS</span></a>}</p>
+<blockquote>
+<div><p>The main result is the list of molecular ions, here formatted
+according to the definitions of a set of isotope_vectors
+as detailed in <a class="reference internal" href="NXion.html#nxion"><span class="std std-ref">NXion</span></a>.</p>
+</div></blockquote>
+<span class="target" id="nxapm-paraprobe-results-ranger-entry-process-molecular-ion-search-mass-to-charge-state-ratio-field"></span><p id="index-27"><strong>mass_to_charge_state_ratio</strong>: (required) <a class="reference internal" href="../../nxdl-types.html#nx-float"><span class="std std-ref">NX_FLOAT</span></a> (Rank: 1, Dimensions: [i]) {units=<a class="reference internal" href="../../nxdl-types.html#nx-any"><span class="std std-ref">NX_ANY</span></a>}</p>
+<blockquote>
+<div><p>The mass-to-charge-state ratio of each molecular ion
+without considering relativistic or quantum effects.</p>
+</div></blockquote>
+<span class="target" id="nxapm-paraprobe-results-ranger-entry-process-molecular-ion-search-mass-field"></span><p id="index-28"><strong>mass</strong>: (optional) <a class="reference internal" href="../../nxdl-types.html#nx-float"><span class="std std-ref">NX_FLOAT</span></a> (Rank: 1, Dimensions: [i]) {units=<a class="reference internal" href="../../nxdl-types.html#nx-any"><span class="std std-ref">NX_ANY</span></a>}</p>
+<blockquote>
+<div><p>The mass of each molecular ion without
+considering relativistic or quantum effects.</p>
+</div></blockquote>
+<span class="target" id="nxapm-paraprobe-results-ranger-entry-process-molecular-ion-search-charge-state-field"></span><p id="index-29"><strong>charge_state</strong>: (required) <a class="reference internal" href="../../nxdl-types.html#nx-uint"><span class="std std-ref">NX_UINT</span></a> (Rank: 1, Dimensions: [i]) {units=<a class="reference internal" href="../../nxdl-types.html#nx-charge"><span class="std std-ref">NX_CHARGE</span></a>}</p>
+<blockquote>
+<div><p>The charge_state of each molecular ion.</p>
+</div></blockquote>
+<span class="target" id="nxapm-paraprobe-results-ranger-entry-process-molecular-ion-search-natural-abundance-product-field"></span><p id="index-30"><strong>natural_abundance_product</strong>: (optional) <a class="reference internal" href="../../nxdl-types.html#nx-float"><span class="std std-ref">NX_FLOAT</span></a> (Rank: 1, Dimensions: [i]) {units=<a class="reference internal" href="../../nxdl-types.html#nx-dimensionless"><span class="std std-ref">NX_DIMENSIONLESS</span></a>}</p>
+<blockquote>
+<div><p>The product of the natural abundance of the isotopes building
+each molecular ion. Further details are available in
+<a class="reference internal" href="NXapm_paraprobe_config_ranger.html#nxapm-paraprobe-config-ranger"><span class="std std-ref">NXapm_paraprobe_config_ranger</span></a>.</p>
+</div></blockquote>
+<span class="target" id="nxapm-paraprobe-results-ranger-entry-process-molecular-ion-search-composition-product-field"></span><p id="index-31"><strong>composition_product</strong>: (optional) <a class="reference internal" href="../../nxdl-types.html#nx-float"><span class="std std-ref">NX_FLOAT</span></a> (Rank: 1, Dimensions: [i]) {units=<a class="reference internal" href="../../nxdl-types.html#nx-dimensionless"><span class="std std-ref">NX_DIMENSIONLESS</span></a>}</p>
+<blockquote>
+<div><p>The product of the natural abundance of the isotopes building
+each molecular ion. Further details are available in
+<a class="reference internal" href="NXapm_paraprobe_config_ranger.html#nxapm-paraprobe-config-ranger"><span class="std std-ref">NXapm_paraprobe_config_ranger</span></a>.</p>
+</div></blockquote>
+<span class="target" id="nxapm-paraprobe-results-ranger-entry-process-molecular-ion-search-number-of-disjoint-nuclids-field"></span><p id="index-32"><strong>number_of_disjoint_nuclids</strong>: (optional) <a class="reference internal" href="../../nxdl-types.html#nx-posint"><span class="std std-ref">NX_POSINT</span></a> (Rank: 1, Dimensions: [i]) {units=<a class="reference internal" href="../../nxdl-types.html#nx-unitless"><span class="std std-ref">NX_UNITLESS</span></a>}</p>
+<blockquote>
+<div><p>The number of disjoint nuclids for each molecular ion.</p>
+</div></blockquote>
+<span class="target" id="nxapm-paraprobe-results-ranger-entry-process-molecular-ion-search-number-of-nuclids-field"></span><p id="index-33"><strong>number_of_nuclids</strong>: (optional) <a class="reference internal" href="../../nxdl-types.html#nx-posint"><span class="std std-ref">NX_POSINT</span></a> (Rank: 1, Dimensions: [i]) {units=<a class="reference internal" href="../../nxdl-types.html#nx-unitless"><span class="std std-ref">NX_UNITLESS</span></a>}</p>
+<blockquote>
+<div><p>The number of nuclids for each molecular ion.</p>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p id="nxapm-paraprobe-results-ranger-entry-performance-group"><strong>performance</strong>: (recommended) <a class="reference internal" href="NXcs_profiling.html#nxcs-profiling"><span class="std std-ref">NXcs_profiling</span></a></p>
+<blockquote>
+<div><span class="target" id="nxapm-paraprobe-results-ranger-entry-performance-command-line-call-field"></span><p id="index-34"><strong>command_line_call</strong>: (optional) <a class="reference internal" href="../../nxdl-types.html#nx-char"><span class="std std-ref">NX_CHAR</span></a></p>
+<span class="target" id="nxapm-paraprobe-results-ranger-entry-performance-start-time-field"></span><p id="index-35"><strong>start_time</strong>: (recommended) <a class="reference internal" href="../../nxdl-types.html#nx-date-time"><span class="std std-ref">NX_DATE_TIME</span></a></p>
+<span class="target" id="nxapm-paraprobe-results-ranger-entry-performance-end-time-field"></span><p id="index-36"><strong>end_time</strong>: (recommended) <a class="reference internal" href="../../nxdl-types.html#nx-date-time"><span class="std std-ref">NX_DATE_TIME</span></a></p>
+<span class="target" id="nxapm-paraprobe-results-ranger-entry-performance-total-elapsed-time-field"></span><p id="index-37"><strong>total_elapsed_time</strong>: (required) <a class="reference internal" href="../../nxdl-types.html#nx-number"><span class="std std-ref">NX_NUMBER</span></a></p>
+<span class="target" id="nxapm-paraprobe-results-ranger-entry-performance-number-of-processes-field"></span><p id="index-38"><strong>number_of_processes</strong>: (required) <a class="reference internal" href="../../nxdl-types.html#nx-posint"><span class="std std-ref">NX_POSINT</span></a></p>
+<span class="target" id="nxapm-paraprobe-results-ranger-entry-performance-number-of-threads-field"></span><p id="index-39"><strong>number_of_threads</strong>: (required) <a class="reference internal" href="../../nxdl-types.html#nx-posint"><span class="std std-ref">NX_POSINT</span></a></p>
+<span class="target" id="nxapm-paraprobe-results-ranger-entry-performance-number-of-gpus-field"></span><p id="index-40"><strong>number_of_gpus</strong>: (required) <a class="reference internal" href="../../nxdl-types.html#nx-posint"><span class="std std-ref">NX_POSINT</span></a></p>
+<p id="nxapm-paraprobe-results-ranger-entry-performance-cs-computer-group"><strong>CS_COMPUTER</strong>: (recommended) <a class="reference internal" href="NXcs_computer.html#nxcs-computer"><span class="std std-ref">NXcs_computer</span></a></p>
+<blockquote>
+<div><span class="target" id="nxapm-paraprobe-results-ranger-entry-performance-cs-computer-name-field"></span><p id="index-41"><strong>name</strong>: (recommended) <a class="reference internal" href="../../nxdl-types.html#nx-char"><span class="std std-ref">NX_CHAR</span></a></p>
+<span class="target" id="nxapm-paraprobe-results-ranger-entry-performance-cs-computer-operating-system-field"></span><p id="index-42"><strong>operating_system</strong>: (required) <a class="reference internal" href="../../nxdl-types.html#nx-char"><span class="std std-ref">NX_CHAR</span></a></p>
+<blockquote>
+<div><span class="target" id="nxapm-paraprobe-results-ranger-entry-performance-cs-computer-operating-system-version-attribute"></span><p id="index-43"><strong>&#64;version</strong>: (required) <a class="reference internal" href="../../nxdl-types.html#nx-char"><span class="std std-ref">NX_CHAR</span></a></p>
+</div></blockquote>
+<span class="target" id="nxapm-paraprobe-results-ranger-entry-performance-cs-computer-uuid-field"></span><p id="index-44"><strong>uuid</strong>: (optional) <a class="reference internal" href="../../nxdl-types.html#nx-char"><span class="std std-ref">NX_CHAR</span></a></p>
+<p id="nxapm-paraprobe-results-ranger-entry-performance-cs-computer-cs-cpu-group"><strong>CS_CPU</strong>: (optional) <a class="reference internal" href="NXcs_cpu.html#nxcs-cpu"><span class="std std-ref">NXcs_cpu</span></a></p>
+<blockquote>
+<div><span class="target" id="nxapm-paraprobe-results-ranger-entry-performance-cs-computer-cs-cpu-name-field"></span><p id="index-45"><strong>name</strong>: (optional) <a class="reference internal" href="../../nxdl-types.html#nx-char"><span class="std std-ref">NX_CHAR</span></a></p>
+<p id="nxapm-paraprobe-results-ranger-entry-performance-cs-computer-cs-cpu-fabrication-group"><strong>FABRICATION</strong>: (recommended) <a class="reference internal" href="NXfabrication.html#nxfabrication"><span class="std std-ref">NXfabrication</span></a></p>
+<blockquote>
+<div><span class="target" id="nxapm-paraprobe-results-ranger-entry-performance-cs-computer-cs-cpu-fabrication-identifier-field"></span><p id="index-46"><strong>identifier</strong>: (optional) <a class="reference internal" href="../../nxdl-types.html#nx-char"><span class="std std-ref">NX_CHAR</span></a></p>
+<span class="target" id="nxapm-paraprobe-results-ranger-entry-performance-cs-computer-cs-cpu-fabrication-capabilities-field"></span><p id="index-47"><strong>capabilities</strong>: (optional) <a class="reference internal" href="../../nxdl-types.html#nx-char"><span class="std std-ref">NX_CHAR</span></a></p>
+</div></blockquote>
+</div></blockquote>
+<p id="nxapm-paraprobe-results-ranger-entry-performance-cs-computer-cs-gpu-group"><strong>CS_GPU</strong>: (optional) <a class="reference internal" href="NXcs_gpu.html#nxcs-gpu"><span class="std std-ref">NXcs_gpu</span></a></p>
+<blockquote>
+<div><span class="target" id="nxapm-paraprobe-results-ranger-entry-performance-cs-computer-cs-gpu-name-field"></span><p id="index-48"><strong>name</strong>: (optional) <a class="reference internal" href="../../nxdl-types.html#nx-char"><span class="std std-ref">NX_CHAR</span></a></p>
+<p id="nxapm-paraprobe-results-ranger-entry-performance-cs-computer-cs-gpu-fabrication-group"><strong>FABRICATION</strong>: (recommended) <a class="reference internal" href="NXfabrication.html#nxfabrication"><span class="std std-ref">NXfabrication</span></a></p>
+<blockquote>
+<div><span class="target" id="nxapm-paraprobe-results-ranger-entry-performance-cs-computer-cs-gpu-fabrication-identifier-field"></span><p id="index-49"><strong>identifier</strong>: (optional) <a class="reference internal" href="../../nxdl-types.html#nx-char"><span class="std std-ref">NX_CHAR</span></a></p>
+<span class="target" id="nxapm-paraprobe-results-ranger-entry-performance-cs-computer-cs-gpu-fabrication-capabilities-field"></span><p id="index-50"><strong>capabilities</strong>: (optional) <a class="reference internal" href="../../nxdl-types.html#nx-char"><span class="std std-ref">NX_CHAR</span></a></p>
+</div></blockquote>
+</div></blockquote>
+<p id="nxapm-paraprobe-results-ranger-entry-performance-cs-computer-cs-mm-sys-group"><strong>CS_MM_SYS</strong>: (optional) <a class="reference internal" href="NXcs_mm_sys.html#nxcs-mm-sys"><span class="std std-ref">NXcs_mm_sys</span></a></p>
+<blockquote>
+<div><span class="target" id="nxapm-paraprobe-results-ranger-entry-performance-cs-computer-cs-mm-sys-total-physical-memory-field"></span><p id="index-51"><strong>total_physical_memory</strong>: (required) <a class="reference internal" href="../../nxdl-types.html#nx-number"><span class="std std-ref">NX_NUMBER</span></a></p>
+</div></blockquote>
+<p id="nxapm-paraprobe-results-ranger-entry-performance-cs-computer-cs-io-sys-group"><strong>CS_IO_SYS</strong>: (optional) <a class="reference internal" href="NXcs_io_sys.html#nxcs-io-sys"><span class="std std-ref">NXcs_io_sys</span></a></p>
+<blockquote>
+<div><p id="nxapm-paraprobe-results-ranger-entry-performance-cs-computer-cs-io-sys-cs-io-obj-group"><strong>CS_IO_OBJ</strong>: (required) <a class="reference internal" href="NXcs_io_obj.html#nxcs-io-obj"><span class="std std-ref">NXcs_io_obj</span></a></p>
+<blockquote>
+<div><span class="target" id="nxapm-paraprobe-results-ranger-entry-performance-cs-computer-cs-io-sys-cs-io-obj-technology-field"></span><p id="index-52"><strong>technology</strong>: (required) <a class="reference internal" href="../../nxdl-types.html#nx-char"><span class="std std-ref">NX_CHAR</span></a></p>
+<span class="target" id="nxapm-paraprobe-results-ranger-entry-performance-cs-computer-cs-io-sys-cs-io-obj-max-physical-capacity-field"></span><p id="index-53"><strong>max_physical_capacity</strong>: (required) <a class="reference internal" href="../../nxdl-types.html#nx-number"><span class="std std-ref">NX_NUMBER</span></a></p>
+<span class="target" id="nxapm-paraprobe-results-ranger-entry-performance-cs-computer-cs-io-sys-cs-io-obj-name-field"></span><p id="index-54"><strong>name</strong>: (optional) <a class="reference internal" href="../../nxdl-types.html#nx-char"><span class="std std-ref">NX_CHAR</span></a></p>
+<p id="nxapm-paraprobe-results-ranger-entry-performance-cs-computer-cs-io-sys-cs-io-obj-fabrication-group"><strong>FABRICATION</strong>: (recommended) <a class="reference internal" href="NXfabrication.html#nxfabrication"><span class="std std-ref">NXfabrication</span></a></p>
+<blockquote>
+<div><span class="target" id="nxapm-paraprobe-results-ranger-entry-performance-cs-computer-cs-io-sys-cs-io-obj-fabrication-identifier-field"></span><p id="index-55"><strong>identifier</strong>: (optional) <a class="reference internal" href="../../nxdl-types.html#nx-char"><span class="std std-ref">NX_CHAR</span></a></p>
+<span class="target" id="nxapm-paraprobe-results-ranger-entry-performance-cs-computer-cs-io-sys-cs-io-obj-fabrication-capabilities-field"></span><p id="index-56"><strong>capabilities</strong>: (optional) <a class="reference internal" href="../../nxdl-types.html#nx-char"><span class="std std-ref">NX_CHAR</span></a></p>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p id="nxapm-paraprobe-results-ranger-entry-performance-cs-computer-cs-profiling-event-group"><strong>CS_PROFILING_EVENT</strong>: (required) <a class="reference internal" href="NXcs_profiling_event.html#nxcs-profiling-event"><span class="std std-ref">NXcs_profiling_event</span></a></p>
+<blockquote>
+<div><span class="target" id="nxapm-paraprobe-results-ranger-entry-performance-cs-computer-cs-profiling-event-start-time-field"></span><p id="index-57"><strong>start_time</strong>: (optional) <a class="reference internal" href="../../nxdl-types.html#nx-date-time"><span class="std std-ref">NX_DATE_TIME</span></a></p>
+<span class="target" id="nxapm-paraprobe-results-ranger-entry-performance-cs-computer-cs-profiling-event-end-time-field"></span><p id="index-58"><strong>end_time</strong>: (optional) <a class="reference internal" href="../../nxdl-types.html#nx-date-time"><span class="std std-ref">NX_DATE_TIME</span></a></p>
+<span class="target" id="nxapm-paraprobe-results-ranger-entry-performance-cs-computer-cs-profiling-event-description-field"></span><p id="index-59"><strong>description</strong>: (required) <a class="reference internal" href="../../nxdl-types.html#nx-char"><span class="std std-ref">NX_CHAR</span></a></p>
+<span class="target" id="nxapm-paraprobe-results-ranger-entry-performance-cs-computer-cs-profiling-event-elapsed-time-field"></span><p id="index-60"><strong>elapsed_time</strong>: (required) <a class="reference internal" href="../../nxdl-types.html#nx-number"><span class="std std-ref">NX_NUMBER</span></a></p>
+<span class="target" id="nxapm-paraprobe-results-ranger-entry-performance-cs-computer-cs-profiling-event-number-of-processes-field"></span><p id="index-61"><strong>number_of_processes</strong>: (required) <a class="reference internal" href="../../nxdl-types.html#nx-posint"><span class="std std-ref">NX_POSINT</span></a></p>
+<blockquote>
+<div><p>Specify if it was different from the number_of_processes
+in the NXcs_profiling super class.</p>
+</div></blockquote>
+<span class="target" id="nxapm-paraprobe-results-ranger-entry-performance-cs-computer-cs-profiling-event-number-of-threads-field"></span><p id="index-62"><strong>number_of_threads</strong>: (required) <a class="reference internal" href="../../nxdl-types.html#nx-posint"><span class="std std-ref">NX_POSINT</span></a></p>
+<blockquote>
+<div><p>Specify if it was different from the number_of_threads
+in the NXcs_profiling super class.</p>
+</div></blockquote>
+<span class="target" id="nxapm-paraprobe-results-ranger-entry-performance-cs-computer-cs-profiling-event-number-of-gpus-field"></span><p id="index-63"><strong>number_of_gpus</strong>: (required) <a class="reference internal" href="../../nxdl-types.html#nx-posint"><span class="std std-ref">NX_POSINT</span></a></p>
+<blockquote>
+<div><p>Specify if it was different from the number_of_threads
+in the NXcs_profiling super class.</p>
+</div></blockquote>
+<span class="target" id="nxapm-paraprobe-results-ranger-entry-performance-cs-computer-cs-profiling-event-max-virtual-memory-snapshot-field"></span><p id="index-64"><strong>max_virtual_memory_snapshot</strong>: (recommended) <a class="reference internal" href="../../nxdl-types.html#nx-number"><span class="std std-ref">NX_NUMBER</span></a></p>
+<span class="target" id="nxapm-paraprobe-results-ranger-entry-performance-cs-computer-cs-profiling-event-max-resident-memory-snapshot-field"></span><p id="index-65"><strong>max_resident_memory_snapshot</strong>: (recommended) <a class="reference internal" href="../../nxdl-types.html#nx-number"><span class="std std-ref">NX_NUMBER</span></a></p>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<section id="hypertext-anchors">
+<h2>Hypertext Anchors<a class="headerlink" href="#hypertext-anchors" title="Permalink to this heading">¶</a></h2>
+<p>List of hypertext anchors for all groups, fields,
+attributes, and links defined in this class.</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#nxapm-paraprobe-results-ranger-entry-group"><span class="std std-ref">/NXapm_paraprobe_results_ranger/ENTRY-group</span></a></p></li>
+<li><p><a class="reference internal" href="#nxapm-paraprobe-results-ranger-entry-analysis-description-field"><span class="std std-ref">/NXapm_paraprobe_results_ranger/ENTRY/analysis_description-field</span></a></p></li>
+<li><p><a class="reference internal" href="#nxapm-paraprobe-results-ranger-entry-analysis-identifier-field"><span class="std std-ref">/NXapm_paraprobe_results_ranger/ENTRY/analysis_identifier-field</span></a></p></li>
+<li><p><a class="reference internal" href="#nxapm-paraprobe-results-ranger-entry-config-filename-field"><span class="std std-ref">/NXapm_paraprobe_results_ranger/ENTRY/config_filename-field</span></a></p></li>
+<li><p><a class="reference internal" href="#nxapm-paraprobe-results-ranger-entry-config-filename-version-attribute"><span class="std std-ref">/NXapm_paraprobe_results_ranger/ENTRY/config_filename&#64;version-attribute</span></a></p></li>
+<li><p><a class="reference internal" href="#nxapm-paraprobe-results-ranger-entry-coordinate-system-set-group"><span class="std std-ref">/NXapm_paraprobe_results_ranger/ENTRY/COORDINATE_SYSTEM_SET-group</span></a></p></li>
+<li><p><a class="reference internal" href="#nxapm-paraprobe-results-ranger-entry-coordinate-system-set-transformations-group"><span class="std std-ref">/NXapm_paraprobe_results_ranger/ENTRY/COORDINATE_SYSTEM_SET/TRANSFORMATIONS-group</span></a></p></li>
+<li><p><a class="reference internal" href="#nxapm-paraprobe-results-ranger-entry-definition-field"><span class="std std-ref">/NXapm_paraprobe_results_ranger/ENTRY/definition-field</span></a></p></li>
+<li><p><a class="reference internal" href="#nxapm-paraprobe-results-ranger-entry-performance-group"><span class="std std-ref">/NXapm_paraprobe_results_ranger/ENTRY/performance-group</span></a></p></li>
+<li><p><a class="reference internal" href="#nxapm-paraprobe-results-ranger-entry-performance-command-line-call-field"><span class="std std-ref">/NXapm_paraprobe_results_ranger/ENTRY/performance/command_line_call-field</span></a></p></li>
+<li><p><a class="reference internal" href="#nxapm-paraprobe-results-ranger-entry-performance-cs-computer-group"><span class="std std-ref">/NXapm_paraprobe_results_ranger/ENTRY/performance/CS_COMPUTER-group</span></a></p></li>
+<li><p><a class="reference internal" href="#nxapm-paraprobe-results-ranger-entry-performance-cs-computer-cs-cpu-group"><span class="std std-ref">/NXapm_paraprobe_results_ranger/ENTRY/performance/CS_COMPUTER/CS_CPU-group</span></a></p></li>
+<li><p><a class="reference internal" href="#nxapm-paraprobe-results-ranger-entry-performance-cs-computer-cs-cpu-fabrication-group"><span class="std std-ref">/NXapm_paraprobe_results_ranger/ENTRY/performance/CS_COMPUTER/CS_CPU/FABRICATION-group</span></a></p></li>
+<li><p><a class="reference internal" href="#nxapm-paraprobe-results-ranger-entry-performance-cs-computer-cs-cpu-fabrication-capabilities-field"><span class="std std-ref">/NXapm_paraprobe_results_ranger/ENTRY/performance/CS_COMPUTER/CS_CPU/FABRICATION/capabilities-field</span></a></p></li>
+<li><p><a class="reference internal" href="#nxapm-paraprobe-results-ranger-entry-performance-cs-computer-cs-cpu-fabrication-identifier-field"><span class="std std-ref">/NXapm_paraprobe_results_ranger/ENTRY/performance/CS_COMPUTER/CS_CPU/FABRICATION/identifier-field</span></a></p></li>
+<li><p><a class="reference internal" href="#nxapm-paraprobe-results-ranger-entry-performance-cs-computer-cs-cpu-name-field"><span class="std std-ref">/NXapm_paraprobe_results_ranger/ENTRY/performance/CS_COMPUTER/CS_CPU/name-field</span></a></p></li>
+<li><p><a class="reference internal" href="#nxapm-paraprobe-results-ranger-entry-performance-cs-computer-cs-gpu-group"><span class="std std-ref">/NXapm_paraprobe_results_ranger/ENTRY/performance/CS_COMPUTER/CS_GPU-group</span></a></p></li>
+<li><p><a class="reference internal" href="#nxapm-paraprobe-results-ranger-entry-performance-cs-computer-cs-gpu-fabrication-group"><span class="std std-ref">/NXapm_paraprobe_results_ranger/ENTRY/performance/CS_COMPUTER/CS_GPU/FABRICATION-group</span></a></p></li>
+<li><p><a class="reference internal" href="#nxapm-paraprobe-results-ranger-entry-performance-cs-computer-cs-gpu-fabrication-capabilities-field"><span class="std std-ref">/NXapm_paraprobe_results_ranger/ENTRY/performance/CS_COMPUTER/CS_GPU/FABRICATION/capabilities-field</span></a></p></li>
+<li><p><a class="reference internal" href="#nxapm-paraprobe-results-ranger-entry-performance-cs-computer-cs-gpu-fabrication-identifier-field"><span class="std std-ref">/NXapm_paraprobe_results_ranger/ENTRY/performance/CS_COMPUTER/CS_GPU/FABRICATION/identifier-field</span></a></p></li>
+<li><p><a class="reference internal" href="#nxapm-paraprobe-results-ranger-entry-performance-cs-computer-cs-gpu-name-field"><span class="std std-ref">/NXapm_paraprobe_results_ranger/ENTRY/performance/CS_COMPUTER/CS_GPU/name-field</span></a></p></li>
+<li><p><a class="reference internal" href="#nxapm-paraprobe-results-ranger-entry-performance-cs-computer-cs-io-sys-group"><span class="std std-ref">/NXapm_paraprobe_results_ranger/ENTRY/performance/CS_COMPUTER/CS_IO_SYS-group</span></a></p></li>
+<li><p><a class="reference internal" href="#nxapm-paraprobe-results-ranger-entry-performance-cs-computer-cs-io-sys-cs-io-obj-group"><span class="std std-ref">/NXapm_paraprobe_results_ranger/ENTRY/performance/CS_COMPUTER/CS_IO_SYS/CS_IO_OBJ-group</span></a></p></li>
+<li><p><a class="reference internal" href="#nxapm-paraprobe-results-ranger-entry-performance-cs-computer-cs-io-sys-cs-io-obj-fabrication-group"><span class="std std-ref">/NXapm_paraprobe_results_ranger/ENTRY/performance/CS_COMPUTER/CS_IO_SYS/CS_IO_OBJ/FABRICATION-group</span></a></p></li>
+<li><p><a class="reference internal" href="#nxapm-paraprobe-results-ranger-entry-performance-cs-computer-cs-io-sys-cs-io-obj-fabrication-capabilities-field"><span class="std std-ref">/NXapm_paraprobe_results_ranger/ENTRY/performance/CS_COMPUTER/CS_IO_SYS/CS_IO_OBJ/FABRICATION/capabilities-field</span></a></p></li>
+<li><p><a class="reference internal" href="#nxapm-paraprobe-results-ranger-entry-performance-cs-computer-cs-io-sys-cs-io-obj-fabrication-identifier-field"><span class="std std-ref">/NXapm_paraprobe_results_ranger/ENTRY/performance/CS_COMPUTER/CS_IO_SYS/CS_IO_OBJ/FABRICATION/identifier-field</span></a></p></li>
+<li><p><a class="reference internal" href="#nxapm-paraprobe-results-ranger-entry-performance-cs-computer-cs-io-sys-cs-io-obj-max-physical-capacity-field"><span class="std std-ref">/NXapm_paraprobe_results_ranger/ENTRY/performance/CS_COMPUTER/CS_IO_SYS/CS_IO_OBJ/max_physical_capacity-field</span></a></p></li>
+<li><p><a class="reference internal" href="#nxapm-paraprobe-results-ranger-entry-performance-cs-computer-cs-io-sys-cs-io-obj-name-field"><span class="std std-ref">/NXapm_paraprobe_results_ranger/ENTRY/performance/CS_COMPUTER/CS_IO_SYS/CS_IO_OBJ/name-field</span></a></p></li>
+<li><p><a class="reference internal" href="#nxapm-paraprobe-results-ranger-entry-performance-cs-computer-cs-io-sys-cs-io-obj-technology-field"><span class="std std-ref">/NXapm_paraprobe_results_ranger/ENTRY/performance/CS_COMPUTER/CS_IO_SYS/CS_IO_OBJ/technology-field</span></a></p></li>
+<li><p><a class="reference internal" href="#nxapm-paraprobe-results-ranger-entry-performance-cs-computer-cs-mm-sys-group"><span class="std std-ref">/NXapm_paraprobe_results_ranger/ENTRY/performance/CS_COMPUTER/CS_MM_SYS-group</span></a></p></li>
+<li><p><a class="reference internal" href="#nxapm-paraprobe-results-ranger-entry-performance-cs-computer-cs-mm-sys-total-physical-memory-field"><span class="std std-ref">/NXapm_paraprobe_results_ranger/ENTRY/performance/CS_COMPUTER/CS_MM_SYS/total_physical_memory-field</span></a></p></li>
+<li><p><a class="reference internal" href="#nxapm-paraprobe-results-ranger-entry-performance-cs-computer-cs-profiling-event-group"><span class="std std-ref">/NXapm_paraprobe_results_ranger/ENTRY/performance/CS_COMPUTER/CS_PROFILING_EVENT-group</span></a></p></li>
+<li><p><a class="reference internal" href="#nxapm-paraprobe-results-ranger-entry-performance-cs-computer-cs-profiling-event-description-field"><span class="std std-ref">/NXapm_paraprobe_results_ranger/ENTRY/performance/CS_COMPUTER/CS_PROFILING_EVENT/description-field</span></a></p></li>
+<li><p><a class="reference internal" href="#nxapm-paraprobe-results-ranger-entry-performance-cs-computer-cs-profiling-event-elapsed-time-field"><span class="std std-ref">/NXapm_paraprobe_results_ranger/ENTRY/performance/CS_COMPUTER/CS_PROFILING_EVENT/elapsed_time-field</span></a></p></li>
+<li><p><a class="reference internal" href="#nxapm-paraprobe-results-ranger-entry-performance-cs-computer-cs-profiling-event-end-time-field"><span class="std std-ref">/NXapm_paraprobe_results_ranger/ENTRY/performance/CS_COMPUTER/CS_PROFILING_EVENT/end_time-field</span></a></p></li>
+<li><p><a class="reference internal" href="#nxapm-paraprobe-results-ranger-entry-performance-cs-computer-cs-profiling-event-max-resident-memory-snapshot-field"><span class="std std-ref">/NXapm_paraprobe_results_ranger/ENTRY/performance/CS_COMPUTER/CS_PROFILING_EVENT/max_resident_memory_snapshot-field</span></a></p></li>
+<li><p><a class="reference internal" href="#nxapm-paraprobe-results-ranger-entry-performance-cs-computer-cs-profiling-event-max-virtual-memory-snapshot-field"><span class="std std-ref">/NXapm_paraprobe_results_ranger/ENTRY/performance/CS_COMPUTER/CS_PROFILING_EVENT/max_virtual_memory_snapshot-field</span></a></p></li>
+<li><p><a class="reference internal" href="#nxapm-paraprobe-results-ranger-entry-performance-cs-computer-cs-profiling-event-number-of-gpus-field"><span class="std std-ref">/NXapm_paraprobe_results_ranger/ENTRY/performance/CS_COMPUTER/CS_PROFILING_EVENT/number_of_gpus-field</span></a></p></li>
+<li><p><a class="reference internal" href="#nxapm-paraprobe-results-ranger-entry-performance-cs-computer-cs-profiling-event-number-of-processes-field"><span class="std std-ref">/NXapm_paraprobe_results_ranger/ENTRY/performance/CS_COMPUTER/CS_PROFILING_EVENT/number_of_processes-field</span></a></p></li>
+<li><p><a class="reference internal" href="#nxapm-paraprobe-results-ranger-entry-performance-cs-computer-cs-profiling-event-number-of-threads-field"><span class="std std-ref">/NXapm_paraprobe_results_ranger/ENTRY/performance/CS_COMPUTER/CS_PROFILING_EVENT/number_of_threads-field</span></a></p></li>
+<li><p><a class="reference internal" href="#nxapm-paraprobe-results-ranger-entry-performance-cs-computer-cs-profiling-event-start-time-field"><span class="std std-ref">/NXapm_paraprobe_results_ranger/ENTRY/performance/CS_COMPUTER/CS_PROFILING_EVENT/start_time-field</span></a></p></li>
+<li><p><a class="reference internal" href="#nxapm-paraprobe-results-ranger-entry-performance-cs-computer-name-field"><span class="std std-ref">/NXapm_paraprobe_results_ranger/ENTRY/performance/CS_COMPUTER/name-field</span></a></p></li>
+<li><p><a class="reference internal" href="#nxapm-paraprobe-results-ranger-entry-performance-cs-computer-operating-system-field"><span class="std std-ref">/NXapm_paraprobe_results_ranger/ENTRY/performance/CS_COMPUTER/operating_system-field</span></a></p></li>
+<li><p><a class="reference internal" href="#nxapm-paraprobe-results-ranger-entry-performance-cs-computer-operating-system-version-attribute"><span class="std std-ref">/NXapm_paraprobe_results_ranger/ENTRY/performance/CS_COMPUTER/operating_system&#64;version-attribute</span></a></p></li>
+<li><p><a class="reference internal" href="#nxapm-paraprobe-results-ranger-entry-performance-cs-computer-uuid-field"><span class="std std-ref">/NXapm_paraprobe_results_ranger/ENTRY/performance/CS_COMPUTER/uuid-field</span></a></p></li>
+<li><p><a class="reference internal" href="#nxapm-paraprobe-results-ranger-entry-performance-end-time-field"><span class="std std-ref">/NXapm_paraprobe_results_ranger/ENTRY/performance/end_time-field</span></a></p></li>
+<li><p><a class="reference internal" href="#nxapm-paraprobe-results-ranger-entry-performance-number-of-gpus-field"><span class="std std-ref">/NXapm_paraprobe_results_ranger/ENTRY/performance/number_of_gpus-field</span></a></p></li>
+<li><p><a class="reference internal" href="#nxapm-paraprobe-results-ranger-entry-performance-number-of-processes-field"><span class="std std-ref">/NXapm_paraprobe_results_ranger/ENTRY/performance/number_of_processes-field</span></a></p></li>
+<li><p><a class="reference internal" href="#nxapm-paraprobe-results-ranger-entry-performance-number-of-threads-field"><span class="std std-ref">/NXapm_paraprobe_results_ranger/ENTRY/performance/number_of_threads-field</span></a></p></li>
+<li><p><a class="reference internal" href="#nxapm-paraprobe-results-ranger-entry-performance-start-time-field"><span class="std std-ref">/NXapm_paraprobe_results_ranger/ENTRY/performance/start_time-field</span></a></p></li>
+<li><p><a class="reference internal" href="#nxapm-paraprobe-results-ranger-entry-performance-total-elapsed-time-field"><span class="std std-ref">/NXapm_paraprobe_results_ranger/ENTRY/performance/total_elapsed_time-field</span></a></p></li>
+<li><p><a class="reference internal" href="#nxapm-paraprobe-results-ranger-entry-process-group"><span class="std std-ref">/NXapm_paraprobe_results_ranger/ENTRY/PROCESS-group</span></a></p></li>
+<li><p><a class="reference internal" href="#nxapm-paraprobe-results-ranger-entry-process-molecular-ion-search-group"><span class="std std-ref">/NXapm_paraprobe_results_ranger/ENTRY/PROCESS/molecular_ion_search-group</span></a></p></li>
+<li><p><a class="reference internal" href="#nxapm-paraprobe-results-ranger-entry-process-molecular-ion-search-charge-state-field"><span class="std std-ref">/NXapm_paraprobe_results_ranger/ENTRY/PROCESS/molecular_ion_search/charge_state-field</span></a></p></li>
+<li><p><a class="reference internal" href="#nxapm-paraprobe-results-ranger-entry-process-molecular-ion-search-composition-product-field"><span class="std std-ref">/NXapm_paraprobe_results_ranger/ENTRY/PROCESS/molecular_ion_search/composition_product-field</span></a></p></li>
+<li><p><a class="reference internal" href="#nxapm-paraprobe-results-ranger-entry-process-molecular-ion-search-isotope-vector-matrix-field"><span class="std std-ref">/NXapm_paraprobe_results_ranger/ENTRY/PROCESS/molecular_ion_search/isotope_vector_matrix-field</span></a></p></li>
+<li><p><a class="reference internal" href="#nxapm-paraprobe-results-ranger-entry-process-molecular-ion-search-mass-field"><span class="std std-ref">/NXapm_paraprobe_results_ranger/ENTRY/PROCESS/molecular_ion_search/mass-field</span></a></p></li>
+<li><p><a class="reference internal" href="#nxapm-paraprobe-results-ranger-entry-process-molecular-ion-search-mass-to-charge-state-ratio-field"><span class="std std-ref">/NXapm_paraprobe_results_ranger/ENTRY/PROCESS/molecular_ion_search/mass_to_charge_state_ratio-field</span></a></p></li>
+<li><p><a class="reference internal" href="#nxapm-paraprobe-results-ranger-entry-process-molecular-ion-search-natural-abundance-product-field"><span class="std std-ref">/NXapm_paraprobe_results_ranger/ENTRY/PROCESS/molecular_ion_search/natural_abundance_product-field</span></a></p></li>
+<li><p><a class="reference internal" href="#nxapm-paraprobe-results-ranger-entry-process-molecular-ion-search-number-of-disjoint-nuclids-field"><span class="std std-ref">/NXapm_paraprobe_results_ranger/ENTRY/PROCESS/molecular_ion_search/number_of_disjoint_nuclids-field</span></a></p></li>
+<li><p><a class="reference internal" href="#nxapm-paraprobe-results-ranger-entry-process-molecular-ion-search-number-of-nuclids-field"><span class="std std-ref">/NXapm_paraprobe_results_ranger/ENTRY/PROCESS/molecular_ion_search/number_of_nuclids-field</span></a></p></li>
+<li><p><a class="reference internal" href="#nxapm-paraprobe-results-ranger-entry-process-use-existent-ranging-group"><span class="std std-ref">/NXapm_paraprobe_results_ranger/ENTRY/PROCESS/use_existent_ranging-group</span></a></p></li>
+<li><p><a class="reference internal" href="#nxapm-paraprobe-results-ranger-entry-process-use-existent-ranging-ion-group"><span class="std std-ref">/NXapm_paraprobe_results_ranger/ENTRY/PROCESS/use_existent_ranging/ION-group</span></a></p></li>
+<li><p><a class="reference internal" href="#nxapm-paraprobe-results-ranger-entry-process-use-existent-ranging-ion-charge-state-field"><span class="std std-ref">/NXapm_paraprobe_results_ranger/ENTRY/PROCESS/use_existent_ranging/ION/charge_state-field</span></a></p></li>
+<li><p><a class="reference internal" href="#nxapm-paraprobe-results-ranger-entry-process-use-existent-ranging-ion-isotope-vector-field"><span class="std std-ref">/NXapm_paraprobe_results_ranger/ENTRY/PROCESS/use_existent_ranging/ION/isotope_vector-field</span></a></p></li>
+<li><p><a class="reference internal" href="#nxapm-paraprobe-results-ranger-entry-process-use-existent-ranging-ion-mass-to-charge-range-field"><span class="std std-ref">/NXapm_paraprobe_results_ranger/ENTRY/PROCESS/use_existent_ranging/ION/mass_to_charge_range-field</span></a></p></li>
+<li><p><a class="reference internal" href="#nxapm-paraprobe-results-ranger-entry-process-use-existent-ranging-ion-nuclid-list-field"><span class="std std-ref">/NXapm_paraprobe_results_ranger/ENTRY/PROCESS/use_existent_ranging/ION/nuclid_list-field</span></a></p></li>
+<li><p><a class="reference internal" href="#nxapm-paraprobe-results-ranger-entry-process-use-existent-ranging-iontypes-field"><span class="std std-ref">/NXapm_paraprobe_results_ranger/ENTRY/PROCESS/use_existent_ranging/iontypes-field</span></a></p></li>
+<li><p><a class="reference internal" href="#nxapm-paraprobe-results-ranger-entry-program-field"><span class="std std-ref">/NXapm_paraprobe_results_ranger/ENTRY/program-field</span></a></p></li>
+<li><p><a class="reference internal" href="#nxapm-paraprobe-results-ranger-entry-program-version-attribute"><span class="std std-ref">/NXapm_paraprobe_results_ranger/ENTRY/program&#64;version-attribute</span></a></p></li>
+<li><p><a class="reference internal" href="#nxapm-paraprobe-results-ranger-entry-time-stamp-field"><span class="std std-ref">/NXapm_paraprobe_results_ranger/ENTRY/time_stamp-field</span></a></p></li>
+<li><p><a class="reference internal" href="#nxapm-paraprobe-results-ranger-entry-user-group"><span class="std std-ref">/NXapm_paraprobe_results_ranger/ENTRY/USER-group</span></a></p></li>
+<li><p><a class="reference internal" href="#nxapm-paraprobe-results-ranger-entry-user-address-field"><span class="std std-ref">/NXapm_paraprobe_results_ranger/ENTRY/USER/address-field</span></a></p></li>
+<li><p><a class="reference internal" href="#nxapm-paraprobe-results-ranger-entry-user-affiliation-field"><span class="std std-ref">/NXapm_paraprobe_results_ranger/ENTRY/USER/affiliation-field</span></a></p></li>
+<li><p><a class="reference internal" href="#nxapm-paraprobe-results-ranger-entry-user-email-field"><span class="std std-ref">/NXapm_paraprobe_results_ranger/ENTRY/USER/email-field</span></a></p></li>
+<li><p><a class="reference internal" href="#nxapm-paraprobe-results-ranger-entry-user-name-field"><span class="std std-ref">/NXapm_paraprobe_results_ranger/ENTRY/USER/name-field</span></a></p></li>
+<li><p><a class="reference internal" href="#nxapm-paraprobe-results-ranger-entry-user-orcid-field"><span class="std std-ref">/NXapm_paraprobe_results_ranger/ENTRY/USER/orcid-field</span></a></p></li>
+<li><p><a class="reference internal" href="#nxapm-paraprobe-results-ranger-entry-user-orcid-platform-field"><span class="std std-ref">/NXapm_paraprobe_results_ranger/ENTRY/USER/orcid_platform-field</span></a></p></li>
+<li><p><a class="reference internal" href="#nxapm-paraprobe-results-ranger-entry-user-role-field"><span class="std std-ref">/NXapm_paraprobe_results_ranger/ENTRY/USER/role-field</span></a></p></li>
+<li><p><a class="reference internal" href="#nxapm-paraprobe-results-ranger-entry-user-social-media-name-field"><span class="std std-ref">/NXapm_paraprobe_results_ranger/ENTRY/USER/social_media_name-field</span></a></p></li>
+<li><p><a class="reference internal" href="#nxapm-paraprobe-results-ranger-entry-user-social-media-platform-field"><span class="std std-ref">/NXapm_paraprobe_results_ranger/ENTRY/USER/social_media_platform-field</span></a></p></li>
+<li><p><a class="reference internal" href="#nxapm-paraprobe-results-ranger-entry-user-telephone-number-field"><span class="std std-ref">/NXapm_paraprobe_results_ranger/ENTRY/USER/telephone_number-field</span></a></p></li>
+<li><p><a class="reference internal" href="#nxapm-paraprobe-results-ranger-entry-version-attribute"><span class="std std-ref">/NXapm_paraprobe_results_ranger/ENTRY&#64;version-attribute</span></a></p></li>
+</ul>
+<dl class="simple">
+<dt><strong>NXDL Source</strong>:</dt><dd><p><a class="reference external" href="https://github.com/FAIRmat-Experimental/nexus_definitions/tree/fairmat/contributed_definitions/NXapm_paraprobe_results_ranger.nxdl.xml">https://github.com/FAIRmat-Experimental/nexus_definitions/tree/fairmat/contributed_definitions/NXapm_paraprobe_results_ranger.nxdl.xml</a></p>
+</dd>
+</dl>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../../index.html">
+              <img class="logo" src="../../_static/FAIRmat.png" alt="Logo"/>
+            </a></p>
+<h1 class="logo"><a href="../../index.html">NeXus-FAIRmat</a></h1>
+
+
+
+<p class="blurb">Proposal of NeXus expansion for FAIRmat data.</p>
+
+
+
+
+<p>
+<iframe src="https://ghbtns.com/github-btn.html?user=FAIRmat-Experimental&repo=nexus_definitions/tree/fairmat&type=watch&count=false&size=large&v=2"
+  allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="35px"></iframe>
+</p>
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../fairmat-cover.html">FAIRmat-NeXus Proposal</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../nexus-index.html">NeXus Documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../user_manual.html">NeXus: User Manual</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/index.html">Examples of writing and reading NeXus data files</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../ref_doc.html">NeXus: Reference Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../community.html">NeXus Community</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../installation.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../utilities.html">NeXus Utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../docs_about.html">About these docs</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../em-structure.html">B1: Electron microscopy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../mpes-structure.html">B2/B3: Photoemission &amp; core-level spectroscopy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ellipsometry-structure.html">B4: Optical spectroscopy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apm-structure.html">B5: Atom-probe tomography</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../transport-structure.html">Transport Phenomena</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cgms-structure.html">Geometry &amp; microstructure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../north-structure.html">Nomad Remote Tools Hub (NORTH)</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../../nexus-index.html">NeXus Documentation</a><ul>
+  <li><a href="../../ref_doc.html">NeXus: Reference Documentation</a><ul>
+  <li><a href="../index.html">NeXus Class Definitions</a><ul>
+  <li><a href="index.html">Contributed Definitions</a><ul>
+      <li>Previous: <a href="NXapm_paraprobe_config_transcoder.html" title="previous chapter">NXapm_paraprobe_config_transcoder</a></li>
+      <li>Next: <a href="NXapm_paraprobe_results_transcoder.html" title="next chapter">NXapm_paraprobe_results_transcoder</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+<div id="google_search" style="display: none">
+	<hr />
+	<h3>Google search</h3>
+	<form method="get" action="https://www.google.com/search">
+		<table border="0" align="center" cellpadding="0">
+			<tr>
+				<td>
+					<input type="text"   name="q" value="" />
+				</td>
+			</tr>
+			<tr>
+				<td align="center" style="font-size:75%">
+					<input type="radio"  name="sitesearch" value="" />global
+					<input type="radio"  name="sitesearch"
+						value="manual.nexusformat.org" 
+						checked />NeXus manual
+					<input type="submit" value="Go" />
+					<br />
+				</td>
+			</tr>
+		</table>
+	</form>                                
+</div>
+<script type="text/javascript">$('#google_search').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2022-2022, The FAIRmat collaboration.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.0.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../../_sources/classes/contributed_definitions/NXapm_paraprobe_results_ranger.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

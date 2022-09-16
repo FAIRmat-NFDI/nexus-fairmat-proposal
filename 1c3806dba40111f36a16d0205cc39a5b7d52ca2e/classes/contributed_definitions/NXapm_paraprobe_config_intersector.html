@@ -1,0 +1,559 @@
+
+
+
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>NXapm_paraprobe_config_intersector &#8212; NeXus-FAIRmat v2020.10 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/alabaster.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/to_alabaster.css" />
+    <link rel="stylesheet" href="../../_static/blockquote.css" type="text/css" />
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="copyright" title="Copyright" href="../../copyright.html" />
+    <link rel="next" title="NXapm_paraprobe_config_nanochem" href="NXapm_paraprobe_config_nanochem.html" />
+    <link rel="prev" title="NXapm_paraprobe_config_distancer" href="NXapm_paraprobe_config_distancer.html" /> 
+    <link rel="stylesheet" href="../../_static/blockquote.css" type="text/css" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="nxapm-paraprobe-config-intersector">
+<span id="index-0"></span><span id="id1"></span><h1>NXapm_paraprobe_config_intersector<a class="headerlink" href="#nxapm-paraprobe-config-intersector" title="Permalink to this heading">¶</a></h1>
+<p><strong>Status</strong>:</p>
+<blockquote>
+<div><p>application definition, extends <a class="reference internal" href="../base_classes/NXobject.html#nxobject"><span class="std std-ref">NXobject</span></a></p>
+</div></blockquote>
+<p><strong>Description</strong>:</p>
+<blockquote>
+<div><p>Configuration of a paraprobe-intersector tool run in atom probe microscopy.</p>
+</div></blockquote>
+<p><strong>Symbols</strong>:</p>
+<blockquote>
+<div><p>The symbols used in the schema to specify e.g. dimensions of arrays.</p>
+<p><strong>n_elements</strong>: How many elements to use for computing a composition.</p>
+</div></blockquote>
+<dl class="simple">
+<dt><strong>Groups cited</strong>:</dt><dd><p><a class="reference internal" href="../base_classes/NXcollection.html#nxcollection"><span class="std std-ref">NXcollection</span></a>, <a class="reference internal" href="NXentry.html#nxentry"><span class="std std-ref">NXentry</span></a>, <a class="reference internal" href="NXprocess.html#nxprocess"><span class="std std-ref">NXprocess</span></a></p>
+</dd>
+</dl>
+<p id="index-1"><strong>Structure</strong>:</p>
+<blockquote>
+<div><p id="nxapm-paraprobe-config-intersector-entry-group"><strong>ENTRY</strong>: (required) <a class="reference internal" href="NXentry.html#nxentry"><span class="std std-ref">NXentry</span></a></p>
+<blockquote>
+<div><span class="target" id="nxapm-paraprobe-config-intersector-entry-version-attribute"></span><p id="index-2"><strong>&#64;version</strong>: (required) <a class="reference internal" href="../../nxdl-types.html#nx-char"><span class="std std-ref">NX_CHAR</span></a></p>
+<blockquote>
+<div><p>Version specifier of this application definition.</p>
+</div></blockquote>
+<span class="target" id="nxapm-paraprobe-config-intersector-entry-definition-field"></span><p id="index-3"><strong>definition</strong>: (required) <a class="reference internal" href="../../nxdl-types.html#nx-char"><span class="std std-ref">NX_CHAR</span></a></p>
+<blockquote>
+<div><p>Official NeXus NXDL schema with which this file was written.</p>
+<p>Obligatory value: <code class="docutils literal notranslate"><span class="pre">NXapm_paraprobe_config_intersector</span></code></p>
+</div></blockquote>
+<span class="target" id="nxapm-paraprobe-config-intersector-entry-program-field"></span><p id="index-4"><strong>program</strong>: (required) <a class="reference internal" href="../../nxdl-types.html#nx-char"><span class="std std-ref">NX_CHAR</span></a></p>
+<blockquote>
+<div><p>Given name of the program/software/tool with which this NeXus
+(configuration) file was generated.</p>
+<span class="target" id="nxapm-paraprobe-config-intersector-entry-program-version-attribute"></span><p id="index-5"><strong>&#64;version</strong>: (required) <a class="reference internal" href="../../nxdl-types.html#nx-char"><span class="std std-ref">NX_CHAR</span></a></p>
+<blockquote>
+<div><p>Ideally program version plus build number, or commit hash or description
+of ever persistent resources where the source code of the program and
+build instructions can be found so that the program can be configured
+ideally in such a manner that the result of this computational process
+is recreatable in the same deterministic manner.</p>
+</div></blockquote>
+</div></blockquote>
+<span class="target" id="nxapm-paraprobe-config-intersector-entry-analysis-identifier-field"></span><p id="index-6"><strong>analysis_identifier</strong>: (optional) <a class="reference internal" href="../../nxdl-types.html#nx-char"><span class="std std-ref">NX_CHAR</span></a></p>
+<blockquote>
+<div><p>Ideally, a (globally persistent) unique identifier for referring
+to this analysis.</p>
+</div></blockquote>
+<span class="target" id="nxapm-paraprobe-config-intersector-entry-analysis-description-field"></span><p id="index-7"><strong>analysis_description</strong>: (optional) <a class="reference internal" href="../../nxdl-types.html#nx-char"><span class="std std-ref">NX_CHAR</span></a></p>
+<blockquote>
+<div><p>Possibility for leaving a free-text description about this analysis.</p>
+</div></blockquote>
+<span class="target" id="nxapm-paraprobe-config-intersector-entry-time-stamp-field"></span><p id="index-8"><strong>time_stamp</strong>: (required) <a class="reference internal" href="../../nxdl-types.html#nx-date-time"><span class="std std-ref">NX_DATE_TIME</span></a></p>
+<blockquote>
+<div><p>ISO 8601 formatted time code with local time zone offset to
+UTC information included when this configuration file was created.</p>
+</div></blockquote>
+<span class="target" id="nxapm-paraprobe-config-intersector-entry-intersection-detection-method-field"></span><p id="index-9"><strong>intersection_detection_method</strong>: (required) <a class="reference internal" href="../../nxdl-types.html#nx-char"><span class="std std-ref">NX_CHAR</span></a></p>
+<blockquote>
+<div><p>Specifies the method to use which decides if two objects intersect.
+For reasons which are detailed in the supplementary material of
+<a class="reference external" href="https://arxiv.org/abs/2205.13510">M. Kühbach et al.</a>, the tool by
+default assumes that two objects intersect if they share at least one
+ion with the same evaporation ID
+(shared_ion). Alternatively, with specifying tetrahedra_intersections,
+the tool can perform an intersection analysis which attempts to
+tetrahedralize first each polyhedron. If successful, the tool then checks
+for at least one pair of intersecting tetrahedra to identify if two objects
+intersect or not.</p>
+<p>However, we found that these geometrical analyses can result in corner
+cases which the currently used library (TetGen) was not unable to
+tetrahedralize successfully. These cases were virtually always
+associated with complicated non-convex polyhedra
+which had portions of the mesh that were connected by almost point like
+tubes of triangles.</p>
+<p>Any of these values: <code class="docutils literal notranslate"><span class="pre">shared_ion</span></code> | <code class="docutils literal notranslate"><span class="pre">tetrahedra_intersections</span></code></p>
+</div></blockquote>
+<span class="target" id="nxapm-paraprobe-config-intersector-entry-has-object-volume-field"></span><p id="index-10"><strong>has_object_volume</strong>: (required) <a class="reference internal" href="../../nxdl-types.html#nx-boolean"><span class="std std-ref">NX_BOOLEAN</span></a></p>
+<blockquote>
+<div><p>Specifies if the tool should load the volume of each object
+(if existent in the input file) to characterize the evolution of the
+objects’ volume as a function of set identifier (e.g. time).</p>
+<p>This and the has_object_composition option enables to activate
+computations in the code which correlate the spatio-temporal tracking
+with an object’s properties. This is useful to explore/understand how
+the object descriptor values evolve as a function of the parameterization
+of the object. To arrive at a detailed understanding and quantification
+of the differences of a given object as a function of delocalization and
+e.g. iso-surfacing settings.</p>
+<p>The point made in M. Kühbach et al. 2022, is that this functionality
+can be used to track for instance how the accumulated volume and
+composition of an object depends on its segmentation via iso-surfaces.
+The benefit of such computations is that users can inspect the
+parameter sensitivity of an objects representation rigorously.</p>
+</div></blockquote>
+<span class="target" id="nxapm-paraprobe-config-intersector-entry-has-object-composition-field"></span><p id="index-11"><strong>has_object_composition</strong>: (required) <a class="reference internal" href="../../nxdl-types.html#nx-boolean"><span class="std std-ref">NX_BOOLEAN</span></a></p>
+<blockquote>
+<div><p>Specifies if the tool should load the composition of each object
+(if existent in the input file) to characterize the evolution of the
+object’s composition as a function of set identifier. See the description
+of has_object_volume for further details. In M. Kühbach et al. 2022, both
+has_object options were used to characterize e.g. the parameter
+sensitivity of computed composition, volume, and shape specifically,
+for a carbide that was segmented via different carbon iso-composition
+values.</p>
+</div></blockquote>
+<span class="target" id="nxapm-paraprobe-config-intersector-entry-element-whitelist-field"></span><p id="index-12"><strong>element_whitelist</strong>: (required) <a class="reference internal" href="../../nxdl-types.html#nx-uint"><span class="std std-ref">NX_UINT</span></a> (Rank: 1, Dimensions: [n_elements]) {units=<a class="reference internal" href="../../nxdl-types.html#nx-unitless"><span class="std std-ref">NX_UNITLESS</span></a>}</p>
+<blockquote>
+<div><p>List of np.uint16 elements, via their proton number. The whitelist is
+evaluated to compute the composition of an object during tracking
+when has_object_composition is set to true.</p>
+</div></blockquote>
+<span class="target" id="nxapm-paraprobe-config-intersector-entry-number-of-processes-field"></span><p id="index-13"><strong>number_of_processes</strong>: (required) <a class="reference internal" href="../../nxdl-types.html#nx-uint"><span class="std std-ref">NX_UINT</span></a> {units=<a class="reference internal" href="../../nxdl-types.html#nx-unitless"><span class="std std-ref">NX_UNITLESS</span></a>}</p>
+<blockquote>
+<div><p>For now a support field for the tool to identify how many individual
+analyses the tool should execute as part of the analysis.</p>
+</div></blockquote>
+<p id="nxapm-paraprobe-config-intersector-entry-process-group"><strong>PROCESS</strong>: (required) <a class="reference internal" href="NXprocess.html#nxprocess"><span class="std std-ref">NXprocess</span></a></p>
+<blockquote>
+<div><span class="target" id="nxapm-paraprobe-config-intersector-entry-process-number-of-tracking-sets-field"></span><p id="index-14"><strong>number_of_tracking_sets</strong>: (required) <a class="reference internal" href="../../nxdl-types.html#nx-uint"><span class="std std-ref">NX_UINT</span></a> {units=<a class="reference internal" href="../../nxdl-types.html#nx-unitless"><span class="std std-ref">NX_UNITLESS</span></a>}</p>
+<blockquote>
+<div><p>For now a support field for the tool to identify how many individual
+analyses (i. e. individual current_to_next mappings) the tool should
+perform as part of the high-throughput analysis.</p>
+</div></blockquote>
+<p id="nxapm-paraprobe-config-intersector-entry-process-process-group"><strong>PROCESS</strong>: (required) <a class="reference internal" href="NXprocess.html#nxprocess"><span class="std std-ref">NXprocess</span></a></p>
+<blockquote>
+<div><p>Tracking is the process of building logical relations between objects
+based on proximity and mesh intersections. For each time step pairs
+of sets are compared: members of a current_set and a next_set.
+Members have to be objects and eventually can in addition be so-called
+proxies. Objects and proxies are non-degenerated closed polyhedra which
+are not necessarily convex. Proxies are doppelganger/replacement
+meshes of objects which would otherwise be impossible to describe
+with a closed mesh.</p>
+<span class="target" id="nxapm-paraprobe-config-intersector-entry-process-process-add-proxies-to-objects-field"></span><p id="index-15"><strong>add_proxies_to_objects</strong>: (required) <a class="reference internal" href="../../nxdl-types.html#nx-boolean"><span class="std std-ref">NX_BOOLEAN</span></a></p>
+<blockquote>
+<div><p>Specifies if, in the case of small finite datasets, objects which are
+located at the edge of the dataset should be accounted for or not.
+If these so-called proxy/doppelganger objects are accounted for, the
+respective groupname_proxy and dataset_proxy fields have to be
+filled to tell the tool where to load which proxy meshes from.</p>
+</div></blockquote>
+<span class="target" id="nxapm-paraprobe-config-intersector-entry-process-process-analyze-intersection-field"></span><p id="index-16"><strong>analyze_intersection</strong>: (required) <a class="reference internal" href="../../nxdl-types.html#nx-boolean"><span class="std std-ref">NX_BOOLEAN</span></a></p>
+<blockquote>
+<div><p>Specifies if the tool evaluates if for each pair the two objects
+(and proxies if used) intersect volumetrically.</p>
+</div></blockquote>
+<span class="target" id="nxapm-paraprobe-config-intersector-entry-process-process-analyze-proximity-field"></span><p id="index-17"><strong>analyze_proximity</strong>: (required) <a class="reference internal" href="../../nxdl-types.html#nx-boolean"><span class="std std-ref">NX_BOOLEAN</span></a></p>
+<blockquote>
+<div><p>Specifies if the tool evaluates if for each pair the two objects
+(and proxies if used) lie closer to one another than the
+threshold_proximity.</p>
+</div></blockquote>
+<span class="target" id="nxapm-paraprobe-config-intersector-entry-process-process-analyze-coprecipitation-field"></span><p id="index-18"><strong>analyze_coprecipitation</strong>: (required) <a class="reference internal" href="../../nxdl-types.html#nx-boolean"><span class="std std-ref">NX_BOOLEAN</span></a></p>
+<blockquote>
+<div><p>Specifies if the tool evaluates, ones all tracking tasks were
+successfully completed, how intersecting or proximity related
+objects build sub-graphs. This is the feature which enabled
+M. Kühbach et al. 2022 the high-throughput analyses of how many
+objects are coprecipitates in the sense that they are single,
+duplet, triplet, or high-order. For these analyses to work
+has_object_volume needs to be activated.</p>
+</div></blockquote>
+<span class="target" id="nxapm-paraprobe-config-intersector-entry-process-process-threshold-proximity-field"></span><p id="index-19"><strong>threshold_proximity</strong>: (required) <a class="reference internal" href="../../nxdl-types.html#nx-float"><span class="std std-ref">NX_FLOAT</span></a> {units=<a class="reference internal" href="../../nxdl-types.html#nx-length"><span class="std std-ref">NX_LENGTH</span></a>}</p>
+<blockquote>
+<div><p>The maximum Euclidean distance between two objects below which
+both objects are still considered within proximity.</p>
+</div></blockquote>
+<span class="target" id="nxapm-paraprobe-config-intersector-entry-process-process-has-current-to-next-links-field"></span><p id="index-20"><strong>has_current_to_next_links</strong>: (required) <a class="reference internal" href="../../nxdl-types.html#nx-boolean"><span class="std std-ref">NX_BOOLEAN</span></a></p>
+<blockquote>
+<div><p>Specifies if the tool stores the so-called forward relations between
+nodes representing members of the current_set to nodes representing
+members of the next_set.</p>
+</div></blockquote>
+<span class="target" id="nxapm-paraprobe-config-intersector-entry-process-process-has-next-to-current-links-field"></span><p id="index-21"><strong>has_next_to_current_links</strong>: (required) <a class="reference internal" href="../../nxdl-types.html#nx-boolean"><span class="std std-ref">NX_BOOLEAN</span></a></p>
+<blockquote>
+<div><p>Specifies if the tool stores the so-called backward relations between
+nodes representing members of the next_set to nodes representing
+members of the current_set.</p>
+</div></blockquote>
+<p id="nxapm-paraprobe-config-intersector-entry-process-process-current-set-group"><strong>current_set</strong>: (required) <a class="reference internal" href="../base_classes/NXcollection.html#nxcollection"><span class="std std-ref">NXcollection</span></a></p>
+<blockquote>
+<div><p>Current set stores a set of object geometries that should be checked
+for proximity and/or intersection with member of the next_set.</p>
+<span class="target" id="nxapm-paraprobe-config-intersector-entry-process-process-current-set-identifier-field"></span><p id="index-22"><strong>identifier</strong>: (required) <a class="reference internal" href="../../nxdl-types.html#nx-uint"><span class="std std-ref">NX_UINT</span></a> {units=<a class="reference internal" href="../../nxdl-types.html#nx-any"><span class="std std-ref">NX_ANY</span></a>}</p>
+<blockquote>
+<div><p>This identifier can be used to label the current set. The label
+effectively represents the time/iteration step when the current
+set was taken. As it is detailed in M. Kühbach et al. 2022,
+this identifier takes the role of the time variable k.</p>
+</div></blockquote>
+<span class="target" id="nxapm-paraprobe-config-intersector-entry-process-process-current-set-filename-field"></span><p id="index-23"><strong>filename</strong>: (required) <a class="reference internal" href="../../nxdl-types.html#nx-char"><span class="std std-ref">NX_CHAR</span></a></p>
+<blockquote>
+<div><p>Name of the HDF5 file which contain geometry (vertex coordinates,
+facet indices) and properties (ions, composition) of polyhedra
+(l objects) which should be included in the current set.
+The user has to ensure that the datasets under list_of_dataset_names
+(vertices, facet_indices, ions) exist and are formatted consistently.</p>
+<span class="target" id="nxapm-paraprobe-config-intersector-entry-process-process-current-set-filename-version-attribute"></span><p id="index-24"><strong>&#64;version</strong>: (required) <a class="reference internal" href="../../nxdl-types.html#nx-char"><span class="std std-ref">NX_CHAR</span></a></p>
+<blockquote>
+<div><p>Version identifier of the file such as a secure hash which documents
+the binary state of the file to add an additional layer of
+reproducibility from which file specifically contains these data.</p>
+</div></blockquote>
+</div></blockquote>
+<span class="target" id="nxapm-paraprobe-config-intersector-entry-process-process-current-set-groupname-object-geometry-data-field"></span><p id="index-25"><strong>groupname_object_geometry_data</strong>: (required) <a class="reference internal" href="../../nxdl-types.html#nx-char"><span class="std std-ref">NX_CHAR</span></a></p>
+<blockquote>
+<div><p>Paraprobe-intersector loads triangulated surface mesh data of a
+set of objects. For each object its mesh is expected to have
+three-dimensional position data of the unique vertices and a
+matrix of vertex indices which describe the faces.
+As each object has to be a polyhedron/closed surface mesh, this
+matrix has as many rows as faces, i.e. triangles and three columns.
+Vertex indices have to start at zero.</p>
+</div></blockquote>
+<span class="target" id="nxapm-paraprobe-config-intersector-entry-process-process-current-set-groupname-object-supplementary-data-field"></span><p id="index-26"><strong>groupname_object_supplementary_data</strong>: (required) <a class="reference internal" href="../../nxdl-types.html#nx-char"><span class="std std-ref">NX_CHAR</span></a></p>
+<blockquote>
+<div><p>The default intersection detection method uses shared ions.
+Therefore, it is necessary to specify where the results from the
+paraprobe-nanochem tool run are located which document which ions
+(with their evaporation IDs) are inside or on the surface of each
+object. This field points the tool to these evaporation IDs.</p>
+</div></blockquote>
+<span class="target" id="nxapm-paraprobe-config-intersector-entry-process-process-current-set-groupname-object-property-data-field"></span><p id="index-27"><strong>groupname_object_property_data</strong>: (required) <a class="reference internal" href="../../nxdl-types.html#nx-char"><span class="std std-ref">NX_CHAR</span></a></p>
+<blockquote>
+<div><p>In order to correlate object properties like volume and composition
+with tracking data, it is necessary to specify where the results
+(object properties) from the paraprobe-nanochem tool run are located.
+This field instructs the tool where to load these object property data
+from.</p>
+</div></blockquote>
+<span class="target" id="nxapm-paraprobe-config-intersector-entry-process-process-current-set-dataset-object-identifier-field"></span><p id="index-28"><strong>dataset_object_identifier</strong>: (required) <a class="reference internal" href="../../nxdl-types.html#nx-char"><span class="std std-ref">NX_CHAR</span></a></p>
+<blockquote>
+<div><p>Paraprobe-intersector does not just compare two objects but a set
+of sets of objects. This field instructs the tool where to load
+the identifiers (names) of each object in a current_set or next_set
+respectively from.</p>
+</div></blockquote>
+<span class="target" id="nxapm-paraprobe-config-intersector-entry-process-process-current-set-groupname-proxy-geometry-data-field"></span><p id="index-29"><strong>groupname_proxy_geometry_data</strong>: (optional) <a class="reference internal" href="../../nxdl-types.html#nx-char"><span class="std std-ref">NX_CHAR</span></a></p>
+<blockquote>
+<div><p>Like groupname_object_geometry_data but for the proxies.
+Triangulated surface meshes of proxies have to be formatted
+in the same manner as objects.</p>
+</div></blockquote>
+<span class="target" id="nxapm-paraprobe-config-intersector-entry-process-process-current-set-groupname-proxy-interior-supplementary-data-field"></span><p id="index-30"><strong>groupname_proxy_interior_supplementary_data</strong>: (optional) <a class="reference internal" href="../../nxdl-types.html#nx-char"><span class="std std-ref">NX_CHAR</span></a></p>
+<blockquote>
+<div><p>Like groupname_proxy_supplementary_data but for the interior proxies.
+Leave an empty string if proxies should not be used.</p>
+</div></blockquote>
+<span class="target" id="nxapm-paraprobe-config-intersector-entry-process-process-current-set-groupname-proxy-exterior-supplementary-data-field"></span><p id="index-31"><strong>groupname_proxy_exterior_supplementary_data</strong>: (optional) <a class="reference internal" href="../../nxdl-types.html#nx-char"><span class="std std-ref">NX_CHAR</span></a></p>
+<blockquote>
+<div><p>Like groupname_proxy_supplementary_data but for the exterior proxies.
+Leave an empty string if proxies should not be used.</p>
+</div></blockquote>
+</div></blockquote>
+<p id="nxapm-paraprobe-config-intersector-entry-process-process-next-set-group"><strong>next_set</strong>: (required) <a class="reference internal" href="../base_classes/NXcollection.html#nxcollection"><span class="std std-ref">NXcollection</span></a></p>
+<blockquote>
+<div><p>Next set stores a set of object geometries that should be checked
+for proximity and/or intersection with (each) member(s) of the
+current_set.</p>
+<span class="target" id="nxapm-paraprobe-config-intersector-entry-process-process-next-set-identifier-field"></span><p id="index-32"><strong>identifier</strong>: (required) <a class="reference internal" href="../../nxdl-types.html#nx-uint"><span class="std std-ref">NX_UINT</span></a> {units=<a class="reference internal" href="../../nxdl-types.html#nx-any"><span class="std std-ref">NX_ANY</span></a>}</p>
+<blockquote>
+<div><p>This identifier can be used to label the next set. Like for the current_set
+the identifier is effectively the time/iteration step when the next set was taken.
+As it is detailed in M. Kühbach et al. 2022, this identifier
+takes the role of the time variable k+1.</p>
+</div></blockquote>
+<span class="target" id="nxapm-paraprobe-config-intersector-entry-process-process-next-set-filename-field"></span><p id="index-33"><strong>filename</strong>: (required) <a class="reference internal" href="../../nxdl-types.html#nx-char"><span class="std std-ref">NX_CHAR</span></a></p>
+<blockquote>
+<div><p>Name of the HDF5 file which contain geometry (vertex coordinates,
+facet indices) and properties (ions, composition) of
+polyhedra(l objects) which should be included in the current set.
+The user has to ensure that the datasets that are referred to
+under list_of_dataset_names (vertices, facet_indices, ions).</p>
+<span class="target" id="nxapm-paraprobe-config-intersector-entry-process-process-next-set-filename-version-attribute"></span><p id="index-34"><strong>&#64;version</strong>: (required) <a class="reference internal" href="../../nxdl-types.html#nx-char"><span class="std std-ref">NX_CHAR</span></a></p>
+<blockquote>
+<div><p>Version identifier of the file such as a secure hash which documents
+the binary state of the file to add an additional layer of
+reproducibility from which file specifically contains these data.</p>
+</div></blockquote>
+</div></blockquote>
+<span class="target" id="nxapm-paraprobe-config-intersector-entry-process-process-next-set-groupname-object-geometry-data-field"></span><p id="index-35"><strong>groupname_object_geometry_data</strong>: (required) <a class="reference internal" href="../../nxdl-types.html#nx-char"><span class="std std-ref">NX_CHAR</span></a></p>
+<blockquote>
+<div><p>Paraprobe-intersector loads triangulated surface mesh data of a
+set of objects. For each object its mesh is expected to have
+three-dimensional position data of the unique vertices and a
+matrix of vertex indices which describe the faces.
+As each object has to be a polyhedron/closed surface mesh
+this matrix has as many rows as faces, i.e. triangles and
+three columns. Vertex indices have to start at zero.</p>
+</div></blockquote>
+<span class="target" id="nxapm-paraprobe-config-intersector-entry-process-process-next-set-groupname-object-supplementary-data-field"></span><p id="index-36"><strong>groupname_object_supplementary_data</strong>: (required) <a class="reference internal" href="../../nxdl-types.html#nx-char"><span class="std std-ref">NX_CHAR</span></a></p>
+<blockquote>
+<div><p>The default intersection detection method uses shared ions.
+Therefore, it is necessary to specify where the results from the
+paraprobe-nanochem tool run are located which document which ions
+(with their identifiers) are inside or on the surface of each object.
+This field instructs the tool where to load these
+ion evaporation ids from.</p>
+</div></blockquote>
+<span class="target" id="nxapm-paraprobe-config-intersector-entry-process-process-next-set-groupname-object-property-data-field"></span><p id="index-37"><strong>groupname_object_property_data</strong>: (required) <a class="reference internal" href="../../nxdl-types.html#nx-char"><span class="std std-ref">NX_CHAR</span></a></p>
+<blockquote>
+<div><p>In order to correlate object properties like volume and composition
+with tracking data, it is necessary to specify where the results
+(object properties) from the paraprobe-nanochem tool run are located.
+This field instructs the tool where to load these object property
+data from.</p>
+</div></blockquote>
+<span class="target" id="nxapm-paraprobe-config-intersector-entry-process-process-next-set-dataset-object-identifier-field"></span><p id="index-38"><strong>dataset_object_identifier</strong>: (required) <a class="reference internal" href="../../nxdl-types.html#nx-char"><span class="std std-ref">NX_CHAR</span></a></p>
+<blockquote>
+<div><p>Paraprobe-intersector does not just compare two objects but a set
+of sets of objects. This field instructs the tool where to load
+the identifiers (names) of each object in a current or next set
+respectively from.</p>
+</div></blockquote>
+<span class="target" id="nxapm-paraprobe-config-intersector-entry-process-process-next-set-groupname-proxy-geometry-data-field"></span><p id="index-39"><strong>groupname_proxy_geometry_data</strong>: (optional) <a class="reference internal" href="../../nxdl-types.html#nx-char"><span class="std std-ref">NX_CHAR</span></a></p>
+<blockquote>
+<div><p>Like groupname_object_geometry_data but for the proxies.
+Triangulated surface meshes of proxies have to be formatted
+in the same manner. Leave an empty string if proxies should not
+be used.</p>
+</div></blockquote>
+<span class="target" id="nxapm-paraprobe-config-intersector-entry-process-process-next-set-groupname-proxy-interior-supplementary-data-field"></span><p id="index-40"><strong>groupname_proxy_interior_supplementary_data</strong>: (optional) <a class="reference internal" href="../../nxdl-types.html#nx-char"><span class="std std-ref">NX_CHAR</span></a></p>
+<blockquote>
+<div><p>Like groupname_proxy_supplementary_data but for the interior proxies.
+Leave an empty string if proxies should not be used.</p>
+</div></blockquote>
+<span class="target" id="nxapm-paraprobe-config-intersector-entry-process-process-next-set-groupname-proxy-exterior-supplementary-data-field"></span><p id="index-41"><strong>groupname_proxy_exterior_supplementary_data</strong>: (optional) <a class="reference internal" href="../../nxdl-types.html#nx-char"><span class="std std-ref">NX_CHAR</span></a></p>
+<blockquote>
+<div><p>Like groupname_proxy_supplementary_data but for the exterior proxies.
+Leave an empty string if proxies should not be used.</p>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<section id="hypertext-anchors">
+<h2>Hypertext Anchors<a class="headerlink" href="#hypertext-anchors" title="Permalink to this heading">¶</a></h2>
+<p>List of hypertext anchors for all groups, fields,
+attributes, and links defined in this class.</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#nxapm-paraprobe-config-intersector-entry-group"><span class="std std-ref">/NXapm_paraprobe_config_intersector/ENTRY-group</span></a></p></li>
+<li><p><a class="reference internal" href="#nxapm-paraprobe-config-intersector-entry-analysis-description-field"><span class="std std-ref">/NXapm_paraprobe_config_intersector/ENTRY/analysis_description-field</span></a></p></li>
+<li><p><a class="reference internal" href="#nxapm-paraprobe-config-intersector-entry-analysis-identifier-field"><span class="std std-ref">/NXapm_paraprobe_config_intersector/ENTRY/analysis_identifier-field</span></a></p></li>
+<li><p><a class="reference internal" href="#nxapm-paraprobe-config-intersector-entry-definition-field"><span class="std std-ref">/NXapm_paraprobe_config_intersector/ENTRY/definition-field</span></a></p></li>
+<li><p><a class="reference internal" href="#nxapm-paraprobe-config-intersector-entry-element-whitelist-field"><span class="std std-ref">/NXapm_paraprobe_config_intersector/ENTRY/element_whitelist-field</span></a></p></li>
+<li><p><a class="reference internal" href="#nxapm-paraprobe-config-intersector-entry-has-object-composition-field"><span class="std std-ref">/NXapm_paraprobe_config_intersector/ENTRY/has_object_composition-field</span></a></p></li>
+<li><p><a class="reference internal" href="#nxapm-paraprobe-config-intersector-entry-has-object-volume-field"><span class="std std-ref">/NXapm_paraprobe_config_intersector/ENTRY/has_object_volume-field</span></a></p></li>
+<li><p><a class="reference internal" href="#nxapm-paraprobe-config-intersector-entry-intersection-detection-method-field"><span class="std std-ref">/NXapm_paraprobe_config_intersector/ENTRY/intersection_detection_method-field</span></a></p></li>
+<li><p><a class="reference internal" href="#nxapm-paraprobe-config-intersector-entry-number-of-processes-field"><span class="std std-ref">/NXapm_paraprobe_config_intersector/ENTRY/number_of_processes-field</span></a></p></li>
+<li><p><a class="reference internal" href="#nxapm-paraprobe-config-intersector-entry-process-group"><span class="std std-ref">/NXapm_paraprobe_config_intersector/ENTRY/PROCESS-group</span></a></p></li>
+<li><p><a class="reference internal" href="#nxapm-paraprobe-config-intersector-entry-process-number-of-tracking-sets-field"><span class="std std-ref">/NXapm_paraprobe_config_intersector/ENTRY/PROCESS/number_of_tracking_sets-field</span></a></p></li>
+<li><p><a class="reference internal" href="#nxapm-paraprobe-config-intersector-entry-process-process-group"><span class="std std-ref">/NXapm_paraprobe_config_intersector/ENTRY/PROCESS/PROCESS-group</span></a></p></li>
+<li><p><a class="reference internal" href="#nxapm-paraprobe-config-intersector-entry-process-process-add-proxies-to-objects-field"><span class="std std-ref">/NXapm_paraprobe_config_intersector/ENTRY/PROCESS/PROCESS/add_proxies_to_objects-field</span></a></p></li>
+<li><p><a class="reference internal" href="#nxapm-paraprobe-config-intersector-entry-process-process-analyze-coprecipitation-field"><span class="std std-ref">/NXapm_paraprobe_config_intersector/ENTRY/PROCESS/PROCESS/analyze_coprecipitation-field</span></a></p></li>
+<li><p><a class="reference internal" href="#nxapm-paraprobe-config-intersector-entry-process-process-analyze-intersection-field"><span class="std std-ref">/NXapm_paraprobe_config_intersector/ENTRY/PROCESS/PROCESS/analyze_intersection-field</span></a></p></li>
+<li><p><a class="reference internal" href="#nxapm-paraprobe-config-intersector-entry-process-process-analyze-proximity-field"><span class="std std-ref">/NXapm_paraprobe_config_intersector/ENTRY/PROCESS/PROCESS/analyze_proximity-field</span></a></p></li>
+<li><p><a class="reference internal" href="#nxapm-paraprobe-config-intersector-entry-process-process-current-set-group"><span class="std std-ref">/NXapm_paraprobe_config_intersector/ENTRY/PROCESS/PROCESS/current_set-group</span></a></p></li>
+<li><p><a class="reference internal" href="#nxapm-paraprobe-config-intersector-entry-process-process-current-set-dataset-object-identifier-field"><span class="std std-ref">/NXapm_paraprobe_config_intersector/ENTRY/PROCESS/PROCESS/current_set/dataset_object_identifier-field</span></a></p></li>
+<li><p><a class="reference internal" href="#nxapm-paraprobe-config-intersector-entry-process-process-current-set-filename-field"><span class="std std-ref">/NXapm_paraprobe_config_intersector/ENTRY/PROCESS/PROCESS/current_set/filename-field</span></a></p></li>
+<li><p><a class="reference internal" href="#nxapm-paraprobe-config-intersector-entry-process-process-current-set-filename-version-attribute"><span class="std std-ref">/NXapm_paraprobe_config_intersector/ENTRY/PROCESS/PROCESS/current_set/filename&#64;version-attribute</span></a></p></li>
+<li><p><a class="reference internal" href="#nxapm-paraprobe-config-intersector-entry-process-process-current-set-groupname-object-geometry-data-field"><span class="std std-ref">/NXapm_paraprobe_config_intersector/ENTRY/PROCESS/PROCESS/current_set/groupname_object_geometry_data-field</span></a></p></li>
+<li><p><a class="reference internal" href="#nxapm-paraprobe-config-intersector-entry-process-process-current-set-groupname-object-property-data-field"><span class="std std-ref">/NXapm_paraprobe_config_intersector/ENTRY/PROCESS/PROCESS/current_set/groupname_object_property_data-field</span></a></p></li>
+<li><p><a class="reference internal" href="#nxapm-paraprobe-config-intersector-entry-process-process-current-set-groupname-object-supplementary-data-field"><span class="std std-ref">/NXapm_paraprobe_config_intersector/ENTRY/PROCESS/PROCESS/current_set/groupname_object_supplementary_data-field</span></a></p></li>
+<li><p><a class="reference internal" href="#nxapm-paraprobe-config-intersector-entry-process-process-current-set-groupname-proxy-exterior-supplementary-data-field"><span class="std std-ref">/NXapm_paraprobe_config_intersector/ENTRY/PROCESS/PROCESS/current_set/groupname_proxy_exterior_supplementary_data-field</span></a></p></li>
+<li><p><a class="reference internal" href="#nxapm-paraprobe-config-intersector-entry-process-process-current-set-groupname-proxy-geometry-data-field"><span class="std std-ref">/NXapm_paraprobe_config_intersector/ENTRY/PROCESS/PROCESS/current_set/groupname_proxy_geometry_data-field</span></a></p></li>
+<li><p><a class="reference internal" href="#nxapm-paraprobe-config-intersector-entry-process-process-current-set-groupname-proxy-interior-supplementary-data-field"><span class="std std-ref">/NXapm_paraprobe_config_intersector/ENTRY/PROCESS/PROCESS/current_set/groupname_proxy_interior_supplementary_data-field</span></a></p></li>
+<li><p><a class="reference internal" href="#nxapm-paraprobe-config-intersector-entry-process-process-current-set-identifier-field"><span class="std std-ref">/NXapm_paraprobe_config_intersector/ENTRY/PROCESS/PROCESS/current_set/identifier-field</span></a></p></li>
+<li><p><a class="reference internal" href="#nxapm-paraprobe-config-intersector-entry-process-process-has-current-to-next-links-field"><span class="std std-ref">/NXapm_paraprobe_config_intersector/ENTRY/PROCESS/PROCESS/has_current_to_next_links-field</span></a></p></li>
+<li><p><a class="reference internal" href="#nxapm-paraprobe-config-intersector-entry-process-process-has-next-to-current-links-field"><span class="std std-ref">/NXapm_paraprobe_config_intersector/ENTRY/PROCESS/PROCESS/has_next_to_current_links-field</span></a></p></li>
+<li><p><a class="reference internal" href="#nxapm-paraprobe-config-intersector-entry-process-process-next-set-group"><span class="std std-ref">/NXapm_paraprobe_config_intersector/ENTRY/PROCESS/PROCESS/next_set-group</span></a></p></li>
+<li><p><a class="reference internal" href="#nxapm-paraprobe-config-intersector-entry-process-process-next-set-dataset-object-identifier-field"><span class="std std-ref">/NXapm_paraprobe_config_intersector/ENTRY/PROCESS/PROCESS/next_set/dataset_object_identifier-field</span></a></p></li>
+<li><p><a class="reference internal" href="#nxapm-paraprobe-config-intersector-entry-process-process-next-set-filename-field"><span class="std std-ref">/NXapm_paraprobe_config_intersector/ENTRY/PROCESS/PROCESS/next_set/filename-field</span></a></p></li>
+<li><p><a class="reference internal" href="#nxapm-paraprobe-config-intersector-entry-process-process-next-set-filename-version-attribute"><span class="std std-ref">/NXapm_paraprobe_config_intersector/ENTRY/PROCESS/PROCESS/next_set/filename&#64;version-attribute</span></a></p></li>
+<li><p><a class="reference internal" href="#nxapm-paraprobe-config-intersector-entry-process-process-next-set-groupname-object-geometry-data-field"><span class="std std-ref">/NXapm_paraprobe_config_intersector/ENTRY/PROCESS/PROCESS/next_set/groupname_object_geometry_data-field</span></a></p></li>
+<li><p><a class="reference internal" href="#nxapm-paraprobe-config-intersector-entry-process-process-next-set-groupname-object-property-data-field"><span class="std std-ref">/NXapm_paraprobe_config_intersector/ENTRY/PROCESS/PROCESS/next_set/groupname_object_property_data-field</span></a></p></li>
+<li><p><a class="reference internal" href="#nxapm-paraprobe-config-intersector-entry-process-process-next-set-groupname-object-supplementary-data-field"><span class="std std-ref">/NXapm_paraprobe_config_intersector/ENTRY/PROCESS/PROCESS/next_set/groupname_object_supplementary_data-field</span></a></p></li>
+<li><p><a class="reference internal" href="#nxapm-paraprobe-config-intersector-entry-process-process-next-set-groupname-proxy-exterior-supplementary-data-field"><span class="std std-ref">/NXapm_paraprobe_config_intersector/ENTRY/PROCESS/PROCESS/next_set/groupname_proxy_exterior_supplementary_data-field</span></a></p></li>
+<li><p><a class="reference internal" href="#nxapm-paraprobe-config-intersector-entry-process-process-next-set-groupname-proxy-geometry-data-field"><span class="std std-ref">/NXapm_paraprobe_config_intersector/ENTRY/PROCESS/PROCESS/next_set/groupname_proxy_geometry_data-field</span></a></p></li>
+<li><p><a class="reference internal" href="#nxapm-paraprobe-config-intersector-entry-process-process-next-set-groupname-proxy-interior-supplementary-data-field"><span class="std std-ref">/NXapm_paraprobe_config_intersector/ENTRY/PROCESS/PROCESS/next_set/groupname_proxy_interior_supplementary_data-field</span></a></p></li>
+<li><p><a class="reference internal" href="#nxapm-paraprobe-config-intersector-entry-process-process-next-set-identifier-field"><span class="std std-ref">/NXapm_paraprobe_config_intersector/ENTRY/PROCESS/PROCESS/next_set/identifier-field</span></a></p></li>
+<li><p><a class="reference internal" href="#nxapm-paraprobe-config-intersector-entry-process-process-threshold-proximity-field"><span class="std std-ref">/NXapm_paraprobe_config_intersector/ENTRY/PROCESS/PROCESS/threshold_proximity-field</span></a></p></li>
+<li><p><a class="reference internal" href="#nxapm-paraprobe-config-intersector-entry-program-field"><span class="std std-ref">/NXapm_paraprobe_config_intersector/ENTRY/program-field</span></a></p></li>
+<li><p><a class="reference internal" href="#nxapm-paraprobe-config-intersector-entry-program-version-attribute"><span class="std std-ref">/NXapm_paraprobe_config_intersector/ENTRY/program&#64;version-attribute</span></a></p></li>
+<li><p><a class="reference internal" href="#nxapm-paraprobe-config-intersector-entry-time-stamp-field"><span class="std std-ref">/NXapm_paraprobe_config_intersector/ENTRY/time_stamp-field</span></a></p></li>
+<li><p><a class="reference internal" href="#nxapm-paraprobe-config-intersector-entry-version-attribute"><span class="std std-ref">/NXapm_paraprobe_config_intersector/ENTRY&#64;version-attribute</span></a></p></li>
+</ul>
+<dl class="simple">
+<dt><strong>NXDL Source</strong>:</dt><dd><p><a class="reference external" href="https://github.com/FAIRmat-Experimental/nexus_definitions/tree/fairmat/contributed_definitions/NXapm_paraprobe_config_intersector.nxdl.xml">https://github.com/FAIRmat-Experimental/nexus_definitions/tree/fairmat/contributed_definitions/NXapm_paraprobe_config_intersector.nxdl.xml</a></p>
+</dd>
+</dl>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../../index.html">
+              <img class="logo" src="../../_static/FAIRmat.png" alt="Logo"/>
+            </a></p>
+<h1 class="logo"><a href="../../index.html">NeXus-FAIRmat</a></h1>
+
+
+
+<p class="blurb">Proposal of NeXus expansion for FAIRmat data.</p>
+
+
+
+
+<p>
+<iframe src="https://ghbtns.com/github-btn.html?user=FAIRmat-Experimental&repo=nexus_definitions/tree/fairmat&type=watch&count=false&size=large&v=2"
+  allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="35px"></iframe>
+</p>
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../fairmat-cover.html">FAIRmat-NeXus Proposal</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../nexus-index.html">NeXus Documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../user_manual.html">NeXus: User Manual</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/index.html">Examples of writing and reading NeXus data files</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../ref_doc.html">NeXus: Reference Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../community.html">NeXus Community</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../installation.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../utilities.html">NeXus Utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../docs_about.html">About these docs</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../em-structure.html">B1: Electron microscopy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../mpes-structure.html">B2/B3: Photoemission &amp; core-level spectroscopy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ellipsometry-structure.html">B4: Optical spectroscopy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apm-structure.html">B5: Atom-probe tomography</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../transport-structure.html">Transport Phenomena</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cgms-structure.html">Geometry &amp; microstructure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../north-structure.html">Nomad Remote Tools Hub (NORTH)</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../../nexus-index.html">NeXus Documentation</a><ul>
+  <li><a href="../../ref_doc.html">NeXus: Reference Documentation</a><ul>
+  <li><a href="../index.html">NeXus Class Definitions</a><ul>
+  <li><a href="index.html">Contributed Definitions</a><ul>
+      <li>Previous: <a href="NXapm_paraprobe_config_distancer.html" title="previous chapter">NXapm_paraprobe_config_distancer</a></li>
+      <li>Next: <a href="NXapm_paraprobe_config_nanochem.html" title="next chapter">NXapm_paraprobe_config_nanochem</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+<div id="google_search" style="display: none">
+	<hr />
+	<h3>Google search</h3>
+	<form method="get" action="https://www.google.com/search">
+		<table border="0" align="center" cellpadding="0">
+			<tr>
+				<td>
+					<input type="text"   name="q" value="" />
+				</td>
+			</tr>
+			<tr>
+				<td align="center" style="font-size:75%">
+					<input type="radio"  name="sitesearch" value="" />global
+					<input type="radio"  name="sitesearch"
+						value="manual.nexusformat.org" 
+						checked />NeXus manual
+					<input type="submit" value="Go" />
+					<br />
+				</td>
+			</tr>
+		</table>
+	</form>                                
+</div>
+<script type="text/javascript">$('#google_search').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2022-2022, The FAIRmat collaboration.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.0.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../../_sources/classes/contributed_definitions/NXapm_paraprobe_config_intersector.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
