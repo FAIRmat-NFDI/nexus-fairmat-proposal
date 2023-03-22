@@ -28,7 +28,7 @@ jobs:
         run: |
           echo $GITHUB_WORKSPACE
           pip install --upgrade pip
-          pip install lxml==4.9.1 pyyaml==6.0 Sphinx==5.0.2 sphinx_comments==0.0.3 pyRestTable==2020.0.3 six==1.16.0
+          pip install lxml==4.9.2 pyyaml==6.0 Sphinx==6.1.3 sphinx_comments==0.0.3 sphinx_tools==3.4.1 pyRestTable==2020.0.8 six==1.16.0
         
       - name: Pull the state of the source repo, i.e. the one with the rst source code
         run: |
@@ -37,7 +37,7 @@ jobs:
           git clone https://github.com/FAIRmat-Experimental/nexus_definitions.git
           cd $GITHUB_WORKSPACE/source/nexus_definitions
           git checkout fairmat
-          make all
+          make nexus-fairmat-proposal
           # get commit id of the source repo, not of the nexus-fairmat-proposal target repo !
           MYCOMMITID=$(git log -1 | grep ^commit | cut -d " " -f 2)
           MYCOMMITTC=$(git log -1 | grep ^Date)
@@ -48,16 +48,17 @@ jobs:
           # ... base classes and appdefs from fairmat are inside contributed_definitions, so ...
           # ... we need to replace NXDL links by how they are differently pointing to the github repo for appdefs, base, and contributed
           # NeXus base classes
-          cd $GITHUB_WORKSPACE/source/nexus_definitions/manual/build/html/classes/base_classes
+          cd $GITHUB_WORKSPACE/source/nexus_definitions/build/manual/build/html/classes/base_classes
           grep -rl 'https:\/\/github.com\/nexusformat\/definitions\/blob\/main\/base_classes' --exclude-dir=.git | xargs sed -i 's/https:\/\/github.com\/nexusformat\/definitions\/blob\/main\/base_classes/https:\/\/github.com\/FAIRmat-Experimental\/nexus_definitions\/tree\/fairmat\/base_classes/g'
           # NeXus application definitions
-          cd $GITHUB_WORKSPACE/source/nexus_definitions/manual/build/html/classes/applications
+          cd $GITHUB_WORKSPACE/source/nexus_definitions/build/manual/build/html/classes/applications
           grep -rl 'https:\/\/github.com\/nexusformat\/definitions\/blob\/main\/applications' --exclude-dir=.git | xargs sed -i 's/https:\/\/github.com\/nexusformat\/definitions\/blob\/main\/applications/https:\/\/github.com\/FAIRmat-Experimental\/nexus_definitions\/tree\/fairmat\/applications/g'
           # NeXus contributed definitions as showing up in the nexus-fairmat-proposal fairmat branch of nexus_definitions
           # in contributed definitions there can be base classes appdefs or 
-          cd $GITHUB_WORKSPACE/source/nexus_definitions/manual/build/html/classes/contributed_definitions
+          cd $GITHUB_WORKSPACE/source/nexus_definitions/build/manual/build/html/classes/contributed_definitions
           grep -rl 'https:\/\/github.com\/nexusformat\/definitions\/blob\/main\/base_classes' --exclude-dir=.git | xargs sed -i 's/https:\/\/github.com\/nexusformat\/definitions\/blob\/main\/base_classes/https:\/\/github.com\/FAIRmat-Experimental\/nexus_definitions\/tree\/fairmat\/contributed_definitions/g'
           grep -rl 'https:\/\/github.com\/nexusformat\/definitions\/blob\/main\/applications' --exclude-dir=.git | xargs sed -i 's/https:\/\/github.com\/nexusformat\/definitions\/blob\/main\/applications/https:\/\/github.com\/FAIRmat-Experimental\/nexus_definitions\/tree\/fairmat\/contributed_definitions/g'
+          grep -rl 'https:\/\/github.com\/nexusformat\/definitions\/blob\/main\/contributed_definitions' --exclude-dir=.git | xargs sed -i 's/https:\/\/github.com\/nexusformat\/definitions\/blob\/main\/contributed_definitions/https:\/\/github.com\/FAIRmat-Experimental\/nexus_definitions\/tree\/fairmat\/contributed_definitions/g'
           cd $GITHUB_WORKSPACE
           echo $MYCOMMITID
           # create sub-directory named $MYCOMMITID
@@ -65,8 +66,8 @@ jobs:
           mkdir -p $GITHUB_WORKSPACE/$MYCOMMITID
           # ls
           # shopt -s extglob
-          # mv !($MYCOMMITID) $MYCOMMITID          
-          mv $GITHUB_WORKSPACE/source/nexus_definitions/manual/build/html/* $GITHUB_WORKSPACE/$MYCOMMITID
+          # mv !($MYCOMMITID) $MYCOMMITID
+          mv $GITHUB_WORKSPACE/source/nexus_definitions/build/manual/build/html/* $GITHUB_WORKSPACE/$MYCOMMITID
           # replace time and commitid on main page
           cp $GITHUB_WORKSPACE/source/nexus_definitions/manual/source/sed/entry-page.html $GITHUB_WORKSPACE/index.html
           rm -rf $GITHUB_WORKSPACE/source
@@ -77,8 +78,8 @@ jobs:
           echo $MYCOMMITTC
           echo $MYCOMMITID
           # head -1000 $GITHUB_WORKSPACE/$MYCOMMITID/index.html
-          sed -i 's/&lt;&lt;AUTO_INJECT_COMMIT_TC&gt;&gt;/'"$MYCOMMITTC"'/' $GITHUB_WORKSPACE/$MYCOMMITID/index.html 
-          sed -i 's/&lt;&lt;AUTO_INJECT_COMMIT_ID&gt;&gt;/'"$MYCOMMITID"'/' $GITHUB_WORKSPACE/$MYCOMMITID/index.html          
+          sed -i 's/&lt;&lt;AUTO_INJECT_COMMIT_TC&gt;&gt;/'"$MYCOMMITTC"'/' $GITHUB_WORKSPACE/$MYCOMMITID/index.html
+          sed -i 's/&lt;&lt;AUTO_INJECT_COMMIT_ID&gt;&gt;/'"$MYCOMMITID"'/' $GITHUB_WORKSPACE/$MYCOMMITID/index.html
           # echo "Was auto inject commit id ??? replaced ???"
           # head -1000 $GITHUB_WORKSPACE/$MYCOMMITID/index.html
           echo "Inspecting github workspace..."
@@ -89,7 +90,7 @@ jobs:
           rm -f $GITHUB_WORKSPACE/.nojekyll
           touch $GITHUB_WORKSPACE/.nojekyll
           rm -f $GITHUB_WORKSPACE/$MYCOMMITID/.nojekyll
-          touch $GITHUB_WORKSPACE/$MYCOMMITID/.nojekyll          
+          touch $GITHUB_WORKSPACE/$MYCOMMITID/.nojekyll
 
       - name: Commit files into the local repository from which this action was triggered
         run: |
