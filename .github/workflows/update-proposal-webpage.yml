@@ -47,9 +47,6 @@ jobs:
           echo $PWD
           echo $GITHUB_WORKSPACE
           # replace the links with the current one
-          # grep -rl '  https:\/\/github.com\/nexusformat\/definitions\/blob\/main' --exclude-dir=.git | xargs sed -i 's/  https:\/\/github.com\/nexusformat\/definitions\/blob\/main/  https:\/\/github.com\/FAIRmat-Experimental\/nexus_definitions\/tree\/fairmat/'
-          # so far we got away with the next line because we placed our base classes and appdefs in the respective base and applications dirs but now ...
-          # grep -rl 'https:\/\/github.com\/nexusformat\/definitions\/blob\/main' --exclude-dir=.git | xargs sed -i 's/https:\/\/github.com\/nexusformat\/definitions\/blob\/main/https:\/\/github.com\/FAIRmat-Experimental\/nexus_definitions\/tree\/fairmat/g'
           # ... base classes and appdefs from fairmat are inside contributed_definitions, so ...
           # ... we need to replace NXDL links by how they are differently pointing to the github repo for appdefs, base, and contributed
           # NeXus base classes
@@ -61,34 +58,30 @@ jobs:
           echo $PWD
           grep -rl 'https:\/\/github.com\/nexusformat\/definitions\/blob\/main\/applications' --exclude-dir=.git | xargs sed -i 's/https:\/\/github.com\/nexusformat\/definitions\/blob\/main\/applications/https:\/\/github.com\/FAIRmat-Experimental\/nexus_definitions\/tree\/fairmat\/applications/g'
           # NeXus contributed definitions as showing up in the nexus-fairmat-proposal fairmat branch of nexus_definitions
-          # in contributed definitions there can be base classes appdefs or 
+          # in contributed definitions there can be base classes appdefs or contributed
           cd $GITHUB_WORKSPACE/source/nexus_definitions/build/manual/build/html/classes/contributed_definitions
           echo $PWD
-          grep -rl 'https:\/\/github.com\/nexusformat\/definitions\/blob\/main\/base_classes' --exclude-dir=.git | xargs sed -i 's/https:\/\/github.com\/nexusformat\/definitions\/blob\/main\/base_classes/https:\/\/github.com\/FAIRmat-Experimental\/nexus_definitions\/tree\/fairmat\/contributed_definitions/g'
-          grep -rl 'https:\/\/github.com\/nexusformat\/definitions\/blob\/main\/applications' --exclude-dir=.git | xargs sed -i 's/https:\/\/github.com\/nexusformat\/definitions\/blob\/main\/applications/https:\/\/github.com\/FAIRmat-Experimental\/nexus_definitions\/tree\/fairmat\/contributed_definitions/g'
-          # grep -rl 'https:\/\/github.com\/nexusformat\/definitions\/blob\/main\/contributed_definitions' --exclude-dir=.git | xargs sed -i 's/https:\/\/github.com\/nexusformat\/definitions\/blob\/main\/contributed_definitions/https:\/\/github.com\/FAIRmat-Experimental\/nexus_definitions\/tree\/fairmat\/contributed_definitions/g'
+          # fairmat specialized copies of original niac base classes need to point to fairmat branch contributed
+          grep -rl 'https:\/\/github.com\/nexusformat\/definitions\/blob\/main\/contributed_definitions' --exclude-dir=.git | xargs sed -i 's/https:\/\/github.com\/nexusformat\/definitions\/blob\/main\/base_classes/https:\/\/github.com\/FAIRmat-Experimental\/nexus_definitions\/tree\/fairmat\/contributed_definitions/g'
+          # fairmat (potentially specialized) appdefs including copies of original niac appdefs need to point to fairmat branch contributed
+          grep -rl 'https:\/\/github.com\/nexusformat\/definitions\/blob\/main\/contributed_definitions' --exclude-dir=.git | xargs sed -i 's/https:\/\/github.com\/nexusformat\/definitions\/blob\/main\/applications/https:\/\/github.com\/FAIRmat-Experimental\/nexus_definitions\/tree\/fairmat\/contributed_definitions/g'
+          # fairmat contributed need to point also to fairmat branch instead of niac branch
+          grep -rl 'https:\/\/github.com\/nexusformat\/definitions\/blob\/main\/contributed_definitions' --exclude-dir=.git | xargs sed -i 's/https:\/\/github.com\/nexusformat\/definitions\/blob\/main\/contributed_definitions/https:\/\/github.com\/FAIRmat-Experimental\/nexus_definitions\/tree\/fairmat\/contributed_definitions/g'
           cd $GITHUB_WORKSPACE
           echo $MYCOMMITID
           # create sub-directory named $MYCOMMITID
           rm -rf $GITHUB_WORKSPACE/$MYCOMMITID
           mkdir -p $GITHUB_WORKSPACE/$MYCOMMITID
-          # ls
           # shopt -s extglob
-          # mv !($MYCOMMITID) $MYCOMMITID
           mv $GITHUB_WORKSPACE/source/nexus_definitions/build/manual/build/html/* $GITHUB_WORKSPACE/$MYCOMMITID
           ls $GITHUB_WORKSPACE/$MYCOMMITID
           # replace time and commitid on main page
           cp $GITHUB_WORKSPACE/source/nexus_definitions/manual/source/sed/entry-page.html $GITHUB_WORKSPACE/index.html
           rm -rf $GITHUB_WORKSPACE/source
-          # head -1000 $GITHUB_WORKSPACE/index.html
           sed -i 's/<<AUTO_INJECT_CURRENT_VERSION>>/https:\/\/FAIRmat-Experimental.github.io\/nexus-fairmat-proposal\/'"$MYCOMMITID"'\/index.html/' $GITHUB_WORKSPACE/index.html
-          # head -1000 $GITHUB_WORKSPACE/index.html
           echo "Resetting auto placeholders"
-          # head -1000 $GITHUB_WORKSPACE/$MYCOMMITID/index.html
           sed -i 's/&lt;&lt;AUTO_INJECT_COMMIT_TC&gt;&gt;/'"$MYCOMMITTC"'/' $GITHUB_WORKSPACE/$MYCOMMITID/index.html
           sed -i 's/&lt;&lt;AUTO_INJECT_COMMIT_ID&gt;&gt;/'"$MYCOMMITID"'/' $GITHUB_WORKSPACE/$MYCOMMITID/index.html
-          # echo "Was auto inject commit id ??? replaced ???"
-          # head -1000 $GITHUB_WORKSPACE/$MYCOMMITID/index.html
           echo "Inspecting github workspace..."
           ls $GITHUB_WORKSPACE/*
           ls $GITHUB_WORKSPACE/$MYCOMMITID/*
