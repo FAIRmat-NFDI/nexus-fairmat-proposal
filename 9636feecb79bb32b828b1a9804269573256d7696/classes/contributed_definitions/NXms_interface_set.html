@@ -1,0 +1,271 @@
+
+
+
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>NXms_interface_set &#8212; NeXus-FAIRmat v2022.07 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/alabaster.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/to_alabaster.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
+    <link rel="stylesheet" href="../../_static/blockquote.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/rubric.css" type="text/css" />
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
+    <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="copyright" title="Copyright" href="../../copyright.html" />
+    <link rel="next" title="NXms_score_config" href="NXms_score_config.html" />
+    <link rel="prev" title="NXms_dislocation_set" href="NXms_dislocation_set.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="nxms-interface-set">
+<span id="index-0"></span><span id="id1"></span><h1>NXms_interface_set<a class="headerlink" href="#nxms-interface-set" title="Permalink to this heading">¶</a></h1>
+<p><strong>Status</strong>:</p>
+<blockquote>
+<div><p>base class, extends <a class="reference internal" href="../base_classes/NXobject.html#nxobject"><span class="std std-ref">NXobject</span></a></p>
+</div></blockquote>
+<p><strong>Description</strong>:</p>
+<blockquote>
+<div><p>Base class to describe details about interfaces observed in microstructures.</p>
+<p>Classically, interfaces are two-dimensional crystal defects whose relevance is
+that they are agents which trigger crystal growth and discontinuities of the
+crystal at which defects can accumulate and solutes segregate with fundamental
+effect on the properties of materials. Conceptually, interfaces are a
+continuum-scale description of how atoms arrange spatio-temporally. Interfaces
+manifests as persistent defects. When inspected in more detail though they show
+atom dynamics, coarse-grainable into again interactions between line-type
+crystal defects (disconnections) through which interfaces are dynamic and can
+interact with other defects. Owing to this complexity very different
+descriptions are used depending on which length-, time-scale,
+and research question people address.</p>
+<p>This is manifested in the large amount of literature on the topic:</p>
+<ul class="simple">
+<li><ol class="upperalpha simple">
+<li><ol class="upperalpha simple" start="16">
+<li><p>Sutton et al. ISBN-13 978-0198500612</p></li>
+</ol>
+</li>
+</ol>
+</li>
+<li><ol class="upperalpha simple" start="7">
+<li><p>Gottstein et al. ISBN-13 978-1-4200-5436-1</p></li>
+</ol>
+</li>
+<li><ol class="upperalpha simple" start="11">
+<li><p>Chen et al. <a class="reference external" href="https://doi.org/10.1073/pnas.1920504117">https://doi.org/10.1073/pnas.1920504117</a></p></li>
+</ol>
+</li>
+</ul>
+<p>Interfaces, specifically grain and phase boundaries, are representatives of
+two-dimensional microstructural features. It would be rude to claim that a single
+base class can encompass the entire complexity that this effective
+coarse-graining of atomic spatio-temporal configurations has. In the end,
+interfaces are a model, an effort to simplicify the description in the hope
+to arrive at physical models which do not need to take into account the static
+and dynamic details of every atom.</p>
+<p>However, it is also a fact that not every description, research question, and
+thus use cases that one could think of storing as data and metadata for
+interfaces, is equally relevant and useful for an ensemble of research studies.</p>
+<p>Thus, for the design of concrete schemes for a structured storage of data on
+interfaces are measured or characterized, one has to prioritize which
+descriptors and aspects about interfaces are likely relevant for a large
+number of users of the research infrastructure. Consequently, it is possible
+to narrow down the scope of this base class.</p>
+<p>It is noteworthy to mention that this applies not only to schemes build
+with NeXus, but points to the problem of creating a golden-bullet schema
+that could handle all possible subtleties of interfaces.</p>
+<p>For now we have to accept that there is not yet an ontology of e.g. the
+above-mentioned understanding of what interfaces are.</p>
+<p>Pragmatically we thus make the following assumptions:</p>
+<ul class="simple">
+<li><p>This base class is essentially a template how specific, often referred to
+quantities, for two-dimensional crystal defects can be stored.</p></li>
+<li><p>Coarse-graining point-like features into a curve or surfaces is an
+ill-posed problem. In practice, it has to be accounted for that interfaces
+have a finite extent, they are delineated by triple lines and quadruple
+junctions. Interfaces are thus connected into a three-dimensional network
+of defects. Interfaces can interact or intersect with other defects
+(partially or completely, as it is the case for disconnections).</p></li>
+</ul>
+<p>There are the following general approaches of studying/characterizing:</p>
+<ul class="simple">
+<li><p>Non-atomically resolved measurements of 2D or 3D sections.
+Examples are optical, electron, X-ray, or atom probe microscopy.</p></li>
+<li><p>Under specific conditions using electron microscopy, electron tomography
+(provided numerical post-processing is applied) as well as with atom probe
+microscopy these measurement can resolve structural motifs of or in the
+interface plane.</p></li>
+<li><p>Atomic-scale-resolved simulations. In this case the most frequently
+performed tasks are again post-processing snapshots with grain identification
+or graph-based techniques to identify which atoms belong to the regions
+with local changes or breakdown of the long-range crystal symmetry.</p></li>
+<li><p>Analytical approaches whereby grain boundaries are resolved at the continuum
+scale, as surface defects containing other elementary defects (for instance)
+in models of disconnection motion), using eventual statistical approaches,
+or again atomically resolved treatments.</p></li>
+</ul>
+<p>From this we can conclude that an NXms_interface_set can primarily be
+useful as a wrapper class in which specific details about interfaces
+can be stored in an arbitrarily nested manner.</p>
+</div></blockquote>
+<p><strong>Symbols</strong>:</p>
+<blockquote>
+<div><p>The symbols used in the schema to specify e.g. dimensions of arrays.</p>
+</div></blockquote>
+<dl class="simple">
+<dt><strong>Groups cited</strong>:</dt><dd><p>none</p>
+</dd>
+</dl>
+<p><strong>Structure</strong>:</p>
+<dl class="simple">
+<dt><strong>NXDL Source</strong>:</dt><dd><p><a class="reference external" href="https://github.com/FAIRmat-Experimental/nexus_definitions/tree/fairmat/contributed_definitions/NXms_interface_set.nxdl.xml">https://github.com/FAIRmat-Experimental/nexus_definitions/tree/fairmat/contributed_definitions/NXms_interface_set.nxdl.xml</a></p>
+</dd>
+</dl>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../../index.html">
+              <img class="logo" src="../../_static/FAIRmat.png" alt="Logo"/>
+            </a></p>
+<h1 class="logo"><a href="../../index.html">NeXus-FAIRmat</a></h1>
+
+
+
+<p class="blurb">Proposal of NeXus expansion for FAIRmat data.</p>
+
+
+
+
+<p>
+<iframe src="https://ghbtns.com/github-btn.html?user=FAIRmat-Experimental&repo=nexus_definitions/tree/fairmat&type=watch&count=false&size=large&v=2"
+  allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="35px"></iframe>
+</p>
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../fairmat-cover.html">FAIRmat-NeXus Proposal</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../nexus-index.html">NeXus Documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../user_manual.html">NeXus: User Manual</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/index.html">Examples of writing and reading NeXus data files</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../ref_doc.html">NeXus: Reference Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../community.html">NeXus Community</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../installation.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../utilities.html">NeXus Utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../docs_about.html">About these docs</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../em-structure.html">B1: Electron microscopy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../mpes-structure.html">B2/B3: Photoemission &amp; core-level spectroscopy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ellipsometry-structure.html">B4: Optical spectroscopy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apm-structure.html">B5: Atom-probe tomography</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../transport-structure.html">Transport Phenomena</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cgms-structure.html">Geometry &amp; microstructure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../laboratory-structure.html">Sample preparation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../north-structure.html">Nomad Remote Tools Hub (NORTH)</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../../nexus-index.html">NeXus Documentation</a><ul>
+  <li><a href="../../ref_doc.html">NeXus: Reference Documentation</a><ul>
+  <li><a href="../index.html">NeXus Class Definitions</a><ul>
+  <li><a href="index.html">Contributed Definitions</a><ul>
+      <li>Previous: <a href="NXms_dislocation_set.html" title="previous chapter">NXms_dislocation_set</a></li>
+      <li>Next: <a href="NXms_score_config.html" title="next chapter">NXms_score_config</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+<div id="google_search" style="display: none">
+	<hr />
+	<h3>Google search</h3>
+	<form method="get" action="https://www.google.com/search">
+		<table border="0" align="center" cellpadding="0">
+			<tr>
+				<td>
+					<input type="text"   name="q" value="" />
+				</td>
+			</tr>
+			<tr>
+				<td align="center" style="font-size:75%">
+					<input type="radio"  name="sitesearch" value="" />global
+					<input type="radio"  name="sitesearch"
+						value="manual.nexusformat.org" 
+						checked />NeXus manual
+					<input type="submit" value="Go" />
+					<br />
+				</td>
+			</tr>
+		</table>
+	</form>                                
+</div>
+<script type="text/javascript">$('#google_search').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2022-2023, The FAIRmat collaboration.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 6.1.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
+      
+      |
+      <a href="../../_sources/classes/contributed_definitions/NXms_interface_set.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

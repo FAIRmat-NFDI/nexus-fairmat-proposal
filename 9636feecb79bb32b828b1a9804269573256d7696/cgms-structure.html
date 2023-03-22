@@ -1,0 +1,386 @@
+
+
+
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Geometry &amp; microstructure &#8212; NeXus-FAIRmat v2022.07 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css" />
+    <link rel="stylesheet" type="text/css" href="_static/to_alabaster.css" />
+    <link rel="stylesheet" type="text/css" href="_static/tabs.css" />
+    <link rel="stylesheet" href="_static/blockquote.css" type="text/css" />
+    <link rel="stylesheet" href="_static/rubric.css" type="text/css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="copyright" title="Copyright" href="copyright.html" />
+    <link rel="next" title="Sample preparation" href="laboratory-structure.html" />
+    <link rel="prev" title="Transport Phenomena" href="transport-structure.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="geometry-microstructure">
+<span id="cgmsfeatures-structure"></span><h1>Geometry &amp; microstructure<a class="headerlink" href="#geometry-microstructure" title="Permalink to this heading">¶</a></h1>
+<section id="introduction">
+<span id="introductioncgms"></span><span id="index-0"></span><h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">¶</a></h2>
+<p>The computational-geometry/microstructure-modeling-based part of the proposal
+has the following aims:</p>
+<p>First, we would like to contribute to efforts on standardizing a controlled
+vocabulary, definitions for these terms, and relations between the terms, for
+computational-geometry-based descriptions of the microstructure of materials
+and atomic configurations used when characterizing materials in experiments
+and computer simulations.</p>
+<p>As far as NeXus is concerned, the here proposed distinct sets of simple
+geometric primitives and shapes offer a complementary alternative to the
+already existent base classes in NeXus for constructive solid geometry
+such as <a class="reference internal" href="classes/contributed_definitions/NXcsg.html#nxcsg"><span class="std std-ref">NXcsg</span></a>, <a class="reference internal" href="classes/base_classes/NXoff_geometry.html#nxoff-geometry"><span class="std std-ref">NXoff_geometry</span></a>, or <a class="reference internal" href="classes/contributed_definitions/NXquadric.html#nxquadric"><span class="std std-ref">NXquadric</span></a> to name but a few.</p>
+<p>Second, we would like to explore with this proposal how we can harmonize terms
+frequently used by materials scientists in the field of condensed-matter physics
+with definitions and terms offer by the NOMAD MetaInfo description.</p>
+<p>Third, the proposal should yield a substantiated set of arguments and suggestions
+how descriptors for the structure and atomic architecture of materials can be
+harmonized. With this we especially would like to reach out and intensify the
+cooperation between the materials-science-related consortia of the German
+National Research Infrastructure, specifically, FAIRmat, NFDI-MatWerk, NFDI4Ing,
+NFDI4Chem, NFDI4Cat, MaRDi, and DAPHNE.</p>
+</section>
+<section id="physics-background">
+<span id="physicscgms"></span><h2>Physics background<a class="headerlink" href="#physics-background" title="Permalink to this heading">¶</a></h2>
+<p>Microstructural features or crystal defects are spatial arrangements of atoms.
+Given their specific atomic arrangement and composition, such features have
+specific constraints on the degrees of freedom how atoms can arrange. This causes
+that these defects have specific properties.
+Provided well-defined coarse-graining procedures are used and regions-of-interest
+and/or regions-of-applicability are defined, microstructural features are often
+characterized and modelled to have associated thermodynamic descriptors.</p>
+<p>Another motivation for the proposal was the observation that frequently the design
+of file formats for simulation software in the computational materials science especially
+those tools at the interface between condensed-matter physics and materials engineering
+are frequently reimplementing the wheel (at least partly) when it comes to decide how to store
+e.g. atom and feature positions or shape of regions-of-interest, grids, crystals,
+grains, precipitates, and dislocations.</p>
+<p>Maybe this is a historical burden given the large set of technical terms and jargon
+in place, which then motivated pragmatic solutions that resulted in many research groups
+have developed similar formats using similar descriptions.</p>
+<p>We see this work on base classes and application definitions not primarily an
+effort to improve and extend NeXus for now. Rather this part of the proposal
+is an effort to support activities in materials science to work towards
+common terminology and using controlled vocabularies more frequently.
+These are the foundation for more sophisticated thoughts about practically
+useful ontologies.</p>
+<p>Defining crystal defects is a question of how to coarse-grain a given spatio-
+temporal set of atoms, each having a nuclid type and position/trajectory.
+In most cases, such a coarse-graining is an ill-posed task because different
+mathematical/geometrical methods exists how a point, a line, a surface, or a volumetric defect
+can be described and be spatio-temporally constrained through a geometrical model
+with defined geometric primitives and associated coarser-scale properties.</p>
+<p>The key motivation to such coarse-graining is to reduce the complexity of the
+description. On the one hand to support visualization and scientific analyses - not only
+of crystal defect arrangements. On the other hand it is the hope that using descriptors
+at a coarser level, i.e. nanometer, micrometer, and larger, it is still possible
+to find sufficiently accurate and precise descriptors which avoid that one has
+to account for the dynamics of each atom to predict or understand the properties
+of defects and their dynamics.</p>
+<p>Nevertheless, experience has shown that computational-geometry-based descriptions
+when combined with hierarchical clustering/labeling methods, applied on set of
+atoms and features turn out to yield useful descriptors. Examples include point,
+line, surface defects, such as vacancies, solute cluster, dislocations,
+disconnections, interfaces to name but a few.</p>
+</section>
+<section id="base-classes">
+<span id="cgmsbc"></span><h2>Base Classes<a class="headerlink" href="#base-classes" title="Permalink to this heading">¶</a></h2>
+<p>We propose the following base classes, starting with a set of descriptors
+for frequently used shapes and geometric primitives:</p>
+<blockquote>
+<div><dl class="simple">
+<dt><a class="reference internal" href="classes/contributed_definitions/NXcg_sphere_set.html#nxcg-sphere-set"><span class="std std-ref">NXcg_sphere_set</span></a>:</dt><dd><p>A description for a set of possibly dissimilar spheres.</p>
+</dd>
+<dt><a class="reference internal" href="classes/contributed_definitions/NXcg_ellipsoid_set.html#nxcg-ellipsoid-set"><span class="std std-ref">NXcg_ellipsoid_set</span></a>:</dt><dd><p>A description for a set of possibly dissimilar rotated ellipsoids.</p>
+</dd>
+<dt><a class="reference internal" href="classes/contributed_definitions/NXcg_cylinder_set.html#nxcg-cylinder-set"><span class="std std-ref">NXcg_cylinder_set</span></a>:</dt><dd><p>A description for a set of possibly dissimilar rotated cylinders.</p>
+</dd>
+<dt><a class="reference internal" href="classes/contributed_definitions/NXcg_point_set.html#nxcg-point-set"><span class="std std-ref">NXcg_point_set</span></a>:</dt><dd><p>A collection of points with labels or mark data.</p>
+</dd>
+<dt><a class="reference internal" href="classes/contributed_definitions/NXcg_polyline_set.html#nxcg-polyline-set"><span class="std std-ref">NXcg_polyline_set</span></a>:</dt><dd><p>A collection of lines and linearized segments.</p>
+</dd>
+<dt><a class="reference internal" href="classes/contributed_definitions/NXcg_triangle_set.html#nxcg-triangle-set"><span class="std std-ref">NXcg_triangle_set</span></a>:</dt><dd><p>A collection (or soup) of triangles.</p>
+</dd>
+<dt><a class="reference internal" href="classes/contributed_definitions/NXcg_parallelogram_set.html#nxcg-parallelogram-set"><span class="std std-ref">NXcg_parallelogram_set</span></a>:</dt><dd><p>A collection of possibly dissimilar parallelograms.</p>
+</dd>
+<dt><a class="reference internal" href="classes/contributed_definitions/NXcg_triangulated_surface_mesh.html#nxcg-triangulated-surface-mesh"><span class="std std-ref">NXcg_triangulated_surface_mesh</span></a>:</dt><dd><p>A mesh of triangles.</p>
+</dd>
+<dt><a class="reference internal" href="classes/contributed_definitions/NXcg_polygon_set.html#nxcg-polygon-set"><span class="std std-ref">NXcg_polygon_set</span></a>:</dt><dd><p>A collection (or soup) of polygons.</p>
+</dd>
+<dt><a class="reference internal" href="classes/contributed_definitions/NXcg_polyhedron_set.html#nxcg-polyhedron-set"><span class="std std-ref">NXcg_polyhedron_set</span></a>:</dt><dd><p>A collection (or soup) of polyhedra.</p>
+</dd>
+<dt><a class="reference internal" href="classes/contributed_definitions/NXcg_roi_set.html#nxcg-roi-set"><span class="std std-ref">NXcg_roi_set</span></a>:</dt><dd><p>A container to host a number of different types of primitives.</p>
+</dd>
+<dt><a class="reference internal" href="classes/contributed_definitions/NXcg_tetrahedron_set.html#nxcg-tetrahedron-set"><span class="std std-ref">NXcg_tetrahedron_set</span></a>:</dt><dd><p>A collection (or soup) of tetrahedra.</p>
+</dd>
+<dt><a class="reference internal" href="classes/contributed_definitions/NXcg_hexahedron_set.html#nxcg-hexahedron-set"><span class="std std-ref">NXcg_hexahedron_set</span></a>:</dt><dd><p>A collection (or soup) of hexahedra with capabilities to represent
+also simpler (bounding) boxes for e.g. binary trees.</p>
+</dd>
+</dl>
+</div></blockquote>
+<p>These base classes make use of new base classes which describe data structures:</p>
+<blockquote>
+<div><dl class="simple">
+<dt><a class="reference internal" href="classes/contributed_definitions/NXcg_face_list_data_structure.html#nxcg-face-list-data-structure"><span class="std std-ref">NXcg_face_list_data_structure</span></a>:</dt><dd><p>In essence, the usual way how polygon/polyhedra data are reported:
+Via a list of vertices and faces with identifier and properties.</p>
+</dd>
+<dt><a class="reference internal" href="classes/contributed_definitions/NXcg_half_edge_data_structure.html#nxcg-half-edge-data-structure"><span class="std std-ref">NXcg_half_edge_data_structure</span></a>:</dt><dd><p>A half-edge data structure is a useful complementary descriptor for
+polygon/polyhedra which enables topological analyses and traversal
+of the graph how polygons and polyhedra can alternatively be described.</p>
+</dd>
+<dt><a class="reference internal" href="classes/contributed_definitions/NXcg_unit_normal_set.html#nxcg-unit-normal-set"><span class="std std-ref">NXcg_unit_normal_set</span></a>:</dt><dd><p>As an additional structuring element especially for meshes, well-documented
+normal information is crucial for distance computations.</p>
+</dd>
+<dt><a class="reference internal" href="classes/contributed_definitions/NXcg_geodesic_mesh.html#nxcg-geodesic-mesh"><span class="std std-ref">NXcg_geodesic_mesh</span></a>:</dt><dd><p>Geodesic meshes are useful for all applications when meshing the surface
+of a sphere.</p>
+</dd>
+<dt><a class="reference internal" href="classes/contributed_definitions/NXcg_alpha_complex.html#nxcg-alpha-complex"><span class="std std-ref">NXcg_alpha_complex</span></a>:</dt><dd><p>Alpha shapes and alpha wrappings, specifically the special case of the
+convex hull, are frequently used geometrical models for describing
+a boundary or edge to a set of geometric primitives.</p>
+</dd>
+</dl>
+</div></blockquote>
+<p>Furthermore, we propose a few base classes for operations when working with
+discretized representations of material (area or volume) which can be useful
+not only for stencil-based methods:</p>
+<blockquote>
+<div><dl class="simple">
+<dt><a class="reference internal" href="classes/contributed_definitions/NXcg_grid.html#nxcg-grid"><span class="std std-ref">NXcg_grid</span></a>:</dt><dd><p>A grid of cells.</p>
+</dd>
+<dt><a class="reference internal" href="classes/contributed_definitions/NXisocontour.html#nxisocontour"><span class="std std-ref">NXisocontour</span></a>:</dt><dd><p>A description for isocontour descriptions.</p>
+</dd>
+<dt><a class="reference internal" href="classes/contributed_definitions/NXcg_marching_cubes.html#nxcg-marching-cubes"><span class="std std-ref">NXcg_marching_cubes</span></a>:</dt><dd><p>An approach to store metadata of a specific implementation of
+the Marching Cubes algorithm, whose sensitivity to specific topological
+configurations is known to result in different triangle soups.</p>
+</dd>
+<dt><a class="reference internal" href="classes/contributed_definitions/NXdelocalization.html#nxdelocalization"><span class="std std-ref">NXdelocalization</span></a>:</dt><dd><p>An approach to document procedures whereby a scalar field
+is smoothened in a controlled manner.</p>
+</dd>
+</dl>
+</div></blockquote>
+<p>Assuming that these base classes can serve as building blocks, we would like
+to test with the proposal also how these base classes can be applied in base
+classes for specific types of microstructural features and/or utility classes
+to hold metadata for these features:</p>
+<blockquote>
+<div><dl class="simple">
+<dt><a class="reference internal" href="classes/contributed_definitions/NXsimilarity_grouping.html#nxsimilarity-grouping"><span class="std std-ref">NXsimilarity_grouping</span></a>:</dt><dd><p>An alias for NXclustering.</p>
+</dd>
+<dt><a class="reference internal" href="classes/contributed_definitions/NXclustering.html#nxclustering"><span class="std std-ref">NXclustering</span></a>:</dt><dd><p>A description for clustering of objects (such as atoms or features).</p>
+</dd>
+<dt><a class="reference internal" href="classes/contributed_definitions/NXorientation_set.html#nxorientation-set"><span class="std std-ref">NXorientation_set</span></a>:</dt><dd><p>A set of rotations to describe the relative orientation of members of a set of features/objects.</p>
+</dd>
+<dt><a class="reference internal" href="classes/contributed_definitions/NXslip_system_set.html#nxslip-system-set"><span class="std std-ref">NXslip_system_set</span></a>:</dt><dd><p>Metadata to a set of slip system/slip system family for
+a given crystal structure.</p>
+</dd>
+<dt><a class="reference internal" href="classes/contributed_definitions/NXms_atom_set.html#nxms-atom-set"><span class="std std-ref">NXms_atom_set</span></a>:</dt><dd><p>Metadata to a set of atoms.</p>
+</dd>
+<dt><a class="reference internal" href="classes/contributed_definitions/NXms_dislocation_set.html#nxms-dislocation-set"><span class="std std-ref">NXms_dislocation_set</span></a>:</dt><dd><p>Metadata of a set of dislocation/disconnection (line) defects.</p>
+</dd>
+<dt><a class="reference internal" href="classes/contributed_definitions/NXms_interface_set.html#nxms-interface-set"><span class="std std-ref">NXms_interface_set</span></a>:</dt><dd><p>Metadata to a set of interfaces between crystals.</p>
+</dd>
+<dt><a class="reference internal" href="classes/contributed_definitions/NXms_crystal_set.html#nxms-crystal-set"><span class="std std-ref">NXms_crystal_set</span></a>:</dt><dd><p>A set of crystals, for e.g. a polycrystal, phases,
+grains, precipitates.</p>
+</dd>
+<dt><a class="reference internal" href="classes/contributed_definitions/NXms_snapshot.html#nxms-snapshot"><span class="std std-ref">NXms_snapshot</span></a>:</dt><dd><p>A container to describe the state of microstructural features
+at a given point in time.</p>
+</dd>
+<dt><a class="reference internal" href="classes/contributed_definitions/NXms_snapshot_set.html#nxms-snapshot-set"><span class="std std-ref">NXms_snapshot_set</span></a>:</dt><dd><p>The corresponding class to hold a set of <a class="reference internal" href="classes/contributed_definitions/NXms_snapshot.html#nxms-snapshot"><span class="std std-ref">NXms_snapshot</span></a> objects.</p>
+</dd>
+<dt><a class="reference internal" href="classes/contributed_definitions/NXchemical_composition.html#nxchemical-composition"><span class="std std-ref">NXchemical_composition</span></a>:</dt><dd><p>(Chemical) composition of a sample or a set of things.</p>
+</dd>
+</dl>
+</div></blockquote>
+<p>Furthermore, we found that it can be useful to have a set of base classes with
+which software documents it state and gives a summary for users about the performance
+and elapsed time measured while processing data. These utility classes include:</p>
+<blockquote>
+<div><dl class="simple">
+<dt><a class="reference internal" href="classes/contributed_definitions/NXprogram.html#nxprogram"><span class="std std-ref">NXprogram</span></a>:</dt><dd><p>A named and version of a program of library/component of a larger software framework.</p>
+</dd>
+<dt><a class="reference internal" href="classes/contributed_definitions/NXcs_filter_boolean_mask.html#nxcs-filter-boolean-mask"><span class="std std-ref">NXcs_filter_boolean_mask</span></a>:</dt><dd><p>A boolean mask.</p>
+</dd>
+<dt><a class="reference internal" href="classes/contributed_definitions/NXcs_prng.html#nxcs-prng"><span class="std std-ref">NXcs_prng</span></a>:</dt><dd><p>Metadata of a pseudo-random number generator (PRNG) algorithm.</p>
+</dd>
+<dt><a class="reference internal" href="classes/contributed_definitions/NXcs_profiling.html#nxcs-profiling"><span class="std std-ref">NXcs_profiling</span></a>:</dt><dd><p>A structuring group holding a set of <a class="reference internal" href="classes/contributed_definitions/NXcs_profiling_event.html#nxcs-profiling-event"><span class="std std-ref">NXcs_profiling_event</span></a> instances.</p>
+</dd>
+<dt><a class="reference internal" href="classes/contributed_definitions/NXcs_profiling_event.html#nxcs-profiling-event"><span class="std std-ref">NXcs_profiling_event</span></a>:</dt><dd><p>Profiling/benchmark data to an event of
+tracking an algorithm/computational step.</p>
+</dd>
+<dt><a class="reference internal" href="classes/contributed_definitions/NXcs_computer.html#nxcs-computer"><span class="std std-ref">NXcs_computer</span></a>:</dt><dd><p>Metadata of a computer.</p>
+</dd>
+<dt><a class="reference internal" href="classes/contributed_definitions/NXcs_cpu.html#nxcs-cpu"><span class="std std-ref">NXcs_cpu</span></a>:</dt><dd><p>Metadata of a central processing unit.</p>
+</dd>
+<dt><a class="reference internal" href="classes/contributed_definitions/NXcs_gpu.html#nxcs-gpu"><span class="std std-ref">NXcs_gpu</span></a>:</dt><dd><p>Metadata of a graphical processing unit / accelerator.</p>
+</dd>
+<dt><a class="reference internal" href="classes/contributed_definitions/NXcs_mm_sys.html#nxcs-mm-sys"><span class="std std-ref">NXcs_mm_sys</span></a>:</dt><dd><p>Metadata of the (main) memory (sub-)system.</p>
+</dd>
+<dt><a class="reference internal" href="classes/contributed_definitions/NXcs_io_sys.html#nxcs-io-sys"><span class="std std-ref">NXcs_io_sys</span></a>:</dt><dd><p>Metadata of the input/output system.</p>
+</dd>
+<dt><a class="reference internal" href="classes/contributed_definitions/NXcs_io_obj.html#nxcs-io-obj"><span class="std std-ref">NXcs_io_obj</span></a>:</dt><dd><p>Metadata of a component storing data of an <a class="reference internal" href="classes/contributed_definitions/NXcs_io_sys.html#nxcs-io-sys"><span class="std std-ref">NXcs_io_sys</span></a> instance.</p>
+</dd>
+</dl>
+</div></blockquote>
+</section>
+<section id="application-definitions-for-icme-models">
+<span id="icmemsmodels"></span><h2>Application definitions for ICME models<a class="headerlink" href="#application-definitions-for-icme-models" title="Permalink to this heading">¶</a></h2>
+<p>To bridge to our colleagues from the NFDI-MatWerk and NFDI4Ing consortia we
+have created an example how the proposed components of the nexus-fairmat-proposal
+can be used to create data schemes for vanilla-type ICME microstructure models.
+ICME is an abbreviation for Integrated Computational Materials Engineering, which
+is a design strategy and workflow whereby physics-based modelling of microstructure
+evolution at the mesoscopic scale is used to understand the relations between
+the microstructure and technological relevant descriptors for the properties
+of materials.</p>
+<p>To begin with we propose the following draft application definitions.</p>
+<blockquote>
+<div><dl class="simple">
+<dt><a class="reference internal" href="classes/contributed_definitions/NXms.html#nxms"><span class="std std-ref">NXms</span></a>:</dt><dd><p>An application definition for arbitrary spatiotemporally resolved simulations.</p>
+</dd>
+<dt><a class="reference internal" href="classes/contributed_definitions/NXms_score_config.html#nxms-score-config"><span class="std std-ref">NXms_score_config</span></a>:</dt><dd><p>A specific example how <a class="reference internal" href="classes/contributed_definitions/NXapm_paraprobe_config_ranger.html#nxapm-paraprobe-config-ranger"><span class="std std-ref">NXapm_paraprobe_config_ranger</span></a> can be specialized for documenting the configuration of a computer simulation with the static recrystallization cellular automata model SCORE.</p>
+</dd>
+<dt><a class="reference internal" href="classes/contributed_definitions/NXms_score_results.html#nxms-score-results"><span class="std std-ref">NXms_score_results</span></a>:</dt><dd><p>A specific example how <a class="reference internal" href="classes/contributed_definitions/NXms.html#nxms"><span class="std std-ref">NXms</span></a> can be specialized for documenting results of computer simulations with the static recrystallization cellular automata model SCORE.</p>
+</dd>
+</dl>
+</div></blockquote>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="index.html">
+              <img class="logo" src="_static/FAIRmat.png" alt="Logo"/>
+            </a></p>
+<h1 class="logo"><a href="index.html">NeXus-FAIRmat</a></h1>
+
+
+
+<p class="blurb">Proposal of NeXus expansion for FAIRmat data.</p>
+
+
+
+
+<p>
+<iframe src="https://ghbtns.com/github-btn.html?user=FAIRmat-Experimental&repo=nexus_definitions/tree/fairmat&type=watch&count=false&size=large&v=2"
+  allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="35px"></iframe>
+</p>
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="fairmat-cover.html">FAIRmat-NeXus Proposal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nexus-index.html">NeXus Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="em-structure.html">B1: Electron microscopy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mpes-structure.html">B2/B3: Photoemission &amp; core-level spectroscopy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ellipsometry-structure.html">B4: Optical spectroscopy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apm-structure.html">B5: Atom-probe tomography</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transport-structure.html">Transport Phenomena</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Geometry &amp; microstructure</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#physics-background">Physics background</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#base-classes">Base Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#application-definitions-for-icme-models">Application definitions for ICME models</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="laboratory-structure.html">Sample preparation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="north-structure.html">Nomad Remote Tools Hub (NORTH)</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="transport-structure.html" title="previous chapter">Transport Phenomena</a></li>
+      <li>Next: <a href="laboratory-structure.html" title="next chapter">Sample preparation</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+<div id="google_search" style="display: none">
+	<hr />
+	<h3>Google search</h3>
+	<form method="get" action="https://www.google.com/search">
+		<table border="0" align="center" cellpadding="0">
+			<tr>
+				<td>
+					<input type="text"   name="q" value="" />
+				</td>
+			</tr>
+			<tr>
+				<td align="center" style="font-size:75%">
+					<input type="radio"  name="sitesearch" value="" />global
+					<input type="radio"  name="sitesearch"
+						value="manual.nexusformat.org" 
+						checked />NeXus manual
+					<input type="submit" value="Go" />
+					<br />
+				</td>
+			</tr>
+		</table>
+	</form>                                
+</div>
+<script type="text/javascript">$('#google_search').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2022-2023, The FAIRmat collaboration.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 6.1.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
+      
+      |
+      <a href="_sources/cgms-structure.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
