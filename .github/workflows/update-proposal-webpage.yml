@@ -45,6 +45,7 @@ jobs:
           echo $MYCOMMITTC
           echo $MYCOMMITID
           echo $PWD
+          echo $GITHUB_WORKSPACE
           # replace the links with the current one
           # grep -rl '  https:\/\/github.com\/nexusformat\/definitions\/blob\/main' --exclude-dir=.git | xargs sed -i 's/  https:\/\/github.com\/nexusformat\/definitions\/blob\/main/  https:\/\/github.com\/FAIRmat-Experimental\/nexus_definitions\/tree\/fairmat/'
           # so far we got away with the next line because we placed our base classes and appdefs in the respective base and applications dirs but now ...
@@ -53,13 +54,16 @@ jobs:
           # ... we need to replace NXDL links by how they are differently pointing to the github repo for appdefs, base, and contributed
           # NeXus base classes
           cd $GITHUB_WORKSPACE/source/nexus_definitions/build/manual/build/html/classes/base_classes
+          echo $PWD
           grep -rl 'https:\/\/github.com\/nexusformat\/definitions\/blob\/main\/base_classes' --exclude-dir=.git | xargs sed -i 's/https:\/\/github.com\/nexusformat\/definitions\/blob\/main\/base_classes/https:\/\/github.com\/FAIRmat-Experimental\/nexus_definitions\/tree\/fairmat\/base_classes/g'
           # NeXus application definitions
           cd $GITHUB_WORKSPACE/source/nexus_definitions/build/manual/build/html/classes/applications
+          echo $PWD
           grep -rl 'https:\/\/github.com\/nexusformat\/definitions\/blob\/main\/applications' --exclude-dir=.git | xargs sed -i 's/https:\/\/github.com\/nexusformat\/definitions\/blob\/main\/applications/https:\/\/github.com\/FAIRmat-Experimental\/nexus_definitions\/tree\/fairmat\/applications/g'
           # NeXus contributed definitions as showing up in the nexus-fairmat-proposal fairmat branch of nexus_definitions
           # in contributed definitions there can be base classes appdefs or 
           cd $GITHUB_WORKSPACE/source/nexus_definitions/build/manual/build/html/classes/contributed_definitions
+          echo $PWD
           grep -rl 'https:\/\/github.com\/nexusformat\/definitions\/blob\/main\/base_classes' --exclude-dir=.git | xargs sed -i 's/https:\/\/github.com\/nexusformat\/definitions\/blob\/main\/base_classes/https:\/\/github.com\/FAIRmat-Experimental\/nexus_definitions\/tree\/fairmat\/contributed_definitions/g'
           grep -rl 'https:\/\/github.com\/nexusformat\/definitions\/blob\/main\/applications' --exclude-dir=.git | xargs sed -i 's/https:\/\/github.com\/nexusformat\/definitions\/blob\/main\/applications/https:\/\/github.com\/FAIRmat-Experimental\/nexus_definitions\/tree\/fairmat\/contributed_definitions/g'
           # grep -rl 'https:\/\/github.com\/nexusformat\/definitions\/blob\/main\/contributed_definitions' --exclude-dir=.git | xargs sed -i 's/https:\/\/github.com\/nexusformat\/definitions\/blob\/main\/contributed_definitions/https:\/\/github.com\/FAIRmat-Experimental\/nexus_definitions\/tree\/fairmat\/contributed_definitions/g'
@@ -72,6 +76,7 @@ jobs:
           # shopt -s extglob
           # mv !($MYCOMMITID) $MYCOMMITID
           mv $GITHUB_WORKSPACE/source/nexus_definitions/build/manual/build/html/* $GITHUB_WORKSPACE/$MYCOMMITID
+          ls $GITHUB_WORKSPACE/$MYCOMMITID
           # replace time and commitid on main page
           cp $GITHUB_WORKSPACE/source/nexus_definitions/manual/source/sed/entry-page.html $GITHUB_WORKSPACE/index.html
           rm -rf $GITHUB_WORKSPACE/source
